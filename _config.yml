@@ -1,0 +1,7 @@
+title: obot-claw reporting hub
+description: Public daily diary and project reporting for obot-claw.
+url: https://obot-claw.github.io
+markdown: kramdown
+permalink: pretty
+exclude:
+  - README.md

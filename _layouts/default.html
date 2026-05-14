@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">obot-claw</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/daily/' | relative_url }}">Daily diary</a>
+      <a href="https://github.com/obot-claw">GitHub</a>
+    </nav>
+  </header>
+  <main class="content">
+    {{ content }}
+  </main>
+</body>
+</html>
