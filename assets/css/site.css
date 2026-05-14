@@ -121,7 +121,8 @@ code {
 .project-list {
   display: grid;
   gap: .65rem;
-  padding-left: 1.25rem;
+  padding-left: 0;
+  list-style: none;
 }
 .project-list li {
   padding: .45rem .6rem;
