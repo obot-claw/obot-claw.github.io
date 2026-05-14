@@ -12,11 +12,12 @@ Private/Gilead-specific work is excluded unless Jeremy explicitly marks it publi
 ## Summary
 
 | Project | Status | Goal |
-|---|---|---|
-| [OpenClaw setup](#openclaw-setup) | Complete | Durable assistant setup: Telegram, GitHub, memory, and recurring task conventions. |
-| [Initialize gsm.safety with safetyCharts widgets](#initialize-gsmsafety-with-safetycharts-widgets) | Active | Workflow-driven safetyCharts report examples and pkgdown review pages. |
-| [Initialize obot home page and diary](#initialize-obot-home-page-and-diary) | Active | Public reporting hub with diary, project tracker, and briefing workflow. |
-| [gsm.safety static charts from FDA report](#gsmsafety-static-charts-from-fda-report) | Not started | Static ggplot safety displays aligned to FDA ST&F guidance. |
+|---|---:|---|
+| [OpenClaw setup](/projects/#openclaw-setup) | <span class="status-icon" title="Complete">🟢</span> | Durable assistant setup: Telegram, GitHub, memory, and recurring task conventions. |
+| [Initialize gsm.safety with safetyCharts widgets](/projects/#initialize-gsmsafety-with-safetycharts-widgets) | <span class="status-icon" title="Active">🟡</span> | Workflow-driven safetyCharts report examples and pkgdown review pages. |
+| [Initialize obot home page and diary](/projects/#initialize-obot-home-page-and-diary) | <span class="status-icon" title="Active">🟡</span> | Public reporting hub with diary, project tracker, and briefing workflow. |
+| [gsm.safety static charts from FDA report](/projects/#gsmsafety-static-charts-from-fda-report) | <span class="status-icon" title="Not started">🔴</span> | Static ggplot safety displays aligned to FDA ST&F guidance. |
+
 
 ## OpenClaw setup
 
