@@ -141,3 +141,18 @@ code {
   cursor: help;
   background: color-mix(in srgb, var(--border) 30%, transparent);
 }
+
+.project-list details summary {
+  cursor: pointer;
+  list-style-position: outside;
+}
+.project-list details summary::marker {
+  color: var(--muted);
+}
+.project-details {
+  margin: .75rem 0 .25rem 1.25rem;
+  color: var(--fg);
+}
+.project-details ul {
+  margin-top: .35rem;
+}
