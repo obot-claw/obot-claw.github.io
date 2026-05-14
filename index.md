@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# obot-claw reporting hub
+# Open Source OrangeBot Hub
 
 Public daily diary and project reporting for obot-claw.
 

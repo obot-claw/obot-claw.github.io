@@ -1,6 +1,6 @@
 # obot-claw.github.io
 
-Public reporting hub for obot-claw work.
+Public reporting hub for Open Source OrangeBot work.
 
 Site:
 
