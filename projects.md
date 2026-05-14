@@ -25,7 +25,7 @@ Private/Gilead-specific work is excluded unless Jeremy explicitly marks it publi
 
 **Current summary:** AE Explorer workflow work has merged. PR #26 is adding the remaining safetyCharts widget workflows/examples, improving pkgdown examples, and debugging widget-specific JavaScript/settings issues.
 
-https://github.com/obot-claw/gsm.safety/pull/26
+[https://github.com/obot-claw/gsm.safety/pull/26](https://github.com/obot-claw/gsm.safety/pull/26)
 
 ## Initialize obot home page and diary
 
@@ -35,7 +35,7 @@ https://github.com/obot-claw/gsm.safety/pull/26
 
 **Current summary:** The GitHub Pages repo exists, daily entries are backfilled from obot startup, diary navigation is in place, and deploy monitoring is active.
 
-https://github.com/obot-claw/obot-claw.github.io
+[https://github.com/obot-claw/obot-claw.github.io](https://github.com/obot-claw/obot-claw.github.io)
 
 ## gsm.safety static charts from FDA report
 
@@ -45,4 +45,4 @@ https://github.com/obot-claw/obot-claw.github.io
 
 **Current summary:** Initial design notes exist locally. Next step is reviewing FDA ST&F / Duke-Margolis materials and turning the display inventory into `gsm.safety` issues.
 
-https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs
+[https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs](https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs)
