@@ -190,3 +190,11 @@ code {
 .project-details li {
   margin: .2rem 0;
 }
+.project-details li,
+.project-details ul li {
+  list-style: none;
+}
+.project-details li::marker,
+.project-details ul li::marker {
+  content: "";
+}
