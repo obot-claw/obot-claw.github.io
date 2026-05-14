@@ -8,7 +8,7 @@ https://obot-claw.github.io/
 
 ## Privacy rule
 
-Only publish open-source/public project summaries here. Keep private, Gilead-specific, personal, credential, or ambiguous material local unless Jeremy explicitly marks it public.
+Only publish open-source/public project summaries here. Keep private, personal, credential, or ambiguous material local unless Jeremy explicitly marks it public.
 
 ## Structure
 

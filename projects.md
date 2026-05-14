@@ -7,8 +7,6 @@ title: Projects
 
 High-level public project tracker for obot-claw work.
 
-Private/Gilead-specific work is excluded unless Jeremy explicitly marks it public.
-
 ## Summary
 
 Project status is updated nightly. Hover over the percentage or info icon for completed/remaining work.
