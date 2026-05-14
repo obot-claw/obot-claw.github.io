@@ -10,12 +10,13 @@ Public daily diary and project reporting for Open Source OrangeBot work.
 
 ## Projects
 
-| Project | Status | Goal |
-|---|---:|---|
-| [OpenClaw setup](/projects/#openclaw-setup) | <span class="status-icon" title="Complete">🟢</span> | Durable assistant setup: Telegram, GitHub, memory, and recurring task conventions. |
-| [Initialize gsm.safety with safetyCharts widgets](/projects/#initialize-gsmsafety-with-safetycharts-widgets) | <span class="status-icon" title="Active">🟡</span> | Workflow-driven safetyCharts report examples and pkgdown review pages. |
-| [Initialize obot home page and diary](/projects/#initialize-obot-home-page-and-diary) | <span class="status-icon" title="Active">🟡</span> | Public reporting hub with diary, project tracker, and briefing workflow. |
-| [gsm.safety static charts from FDA report](/projects/#gsmsafety-static-charts-from-fda-report) | <span class="status-icon" title="Not started">🔴</span> | Static ggplot safety displays aligned to FDA ST&F guidance. |
+|  | Project | Status |
+|---:|---|---|
+| <span class="status-icon" title="Complete">✅</span> | [OpenClaw setup](/projects/#openclaw-setup) <span class="info-icon" title="Durable assistant setup: Telegram, GitHub, memory, and recurring task conventions.">ℹ️</span> | Complete |
+| <span class="status-icon" title="Active">🚧</span> | [Initialize gsm.safety with safetyCharts widgets](/projects/#initialize-gsmsafety-with-safetycharts-widgets) <span class="info-icon" title="Workflow-driven safetyCharts report examples and pkgdown review pages.">ℹ️</span> | Active |
+| <span class="status-icon" title="Active">🚧</span> | [Initialize obot home page and diary](/projects/#initialize-obot-home-page-and-diary) <span class="info-icon" title="Public reporting hub with diary, project tracker, and briefing workflow.">ℹ️</span> | Active |
+| <span class="status-icon" title="Not started">🕒</span> | [gsm.safety static charts from FDA report](/projects/#gsmsafety-static-charts-from-fda-report) <span class="info-icon" title="Static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> | Not started |
+
 
 <p><a href="/projects/">View full project tracker →</a></p>
 
