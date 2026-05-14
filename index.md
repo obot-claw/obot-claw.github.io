@@ -30,6 +30,13 @@ This site intentionally excludes private, Gilead-specific, personal, credential,
   </li>
 </ul>
 
+
+## Projects
+
+Current high-level project status is tracked here:
+
+[Projects](/projects/)
+
 ## Active public work
 
 - gsm.safety safetyCharts workflows and examples
