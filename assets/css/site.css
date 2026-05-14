@@ -147,9 +147,10 @@ code {
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   list-style: none;
+}
+.project-overview {
+  flex: 1 1 auto;
 }
 .project-list details summary::-webkit-details-marker {
   display: none;
@@ -174,10 +175,18 @@ code {
 .project-list details[open] summary::after {
   content: "−";
 }
+.project-details,
+.project-details ul {
+  list-style: none;
+  padding-left: 0;
+}
 .project-details {
-  margin: .75rem 0 .25rem 1.25rem;
+  margin: .75rem 0 .25rem 0;
   color: var(--fg);
 }
 .project-details ul {
-  margin-top: .35rem;
+  margin-top: .25rem;
+}
+.project-details li {
+  margin: .2rem 0;
 }

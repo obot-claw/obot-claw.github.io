@@ -15,7 +15,7 @@ Project status is updated nightly. Click a project to expand details.
 <ul class="project-list">
   <li>
     <details>
-      <summary><span class="status-icon" title="100% complete">✅</span> - <a href="/projects/#openclaw-setup">OpenClaw setup</a> <span class="info-icon" title="Bring obot online as a durable OpenClaw development assistant.">ℹ️</span> - <span class="progress-pill" title="100% complete">100%</span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="100% complete">✅</span> - <a href="/projects/#openclaw-setup">OpenClaw setup</a> <span class="info-icon" title="Bring obot online as a durable OpenClaw development assistant.">ℹ️</span> - <span class="progress-pill" title="100% complete">100%</span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Bring obot online as a durable OpenClaw development assistant.</li>
         <li><strong>Completed tasks:</strong><ul><li>Telegram direct chat paired and working.</li><li>GitHub write flow working for obot-claw repos.</li><li>Memory, todo, and recurring task conventions established.</li><li>Cron-based nightly cleanup and briefing jobs configured.</li></ul></li>
@@ -25,7 +25,7 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
-      <summary><span class="status-icon" title="80% complete">🚧</span> - <a href="/projects/#initialize-gsmsafety-with-safetycharts-widgets">Initialize gsm.safety with safetyCharts widgets</a> <span class="info-icon" title="Build workflow-driven safetyCharts report examples and pkgdown review pages for gsm.safety.">ℹ️</span> - <span class="progress-pill" title="80% complete">80%</span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="80% complete">🚧</span> - <a href="/projects/#initialize-gsmsafety-with-safetycharts-widgets">Initialize gsm.safety with safetyCharts widgets</a> <span class="info-icon" title="Build workflow-driven safetyCharts report examples and pkgdown review pages for gsm.safety.">ℹ️</span> - <span class="progress-pill" title="80% complete">80%</span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Build workflow-driven safetyCharts report examples and pkgdown review pages for gsm.safety.</li>
         <li><strong>Completed tasks:</strong><ul><li>AE Explorer workflow merged.</li><li>Remaining safetyCharts widget workflows/examples implemented in PR #26.</li><li>Pkgdown examples now show YAML and rendered widget output.</li><li>GHA/template and deploy monitoring workflows improved.</li></ul></li>
@@ -35,7 +35,7 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
-      <summary><span class="status-icon" title="70% complete">🚧</span> - <a href="/projects/#initialize-obot-home-page-and-diary">Initialize obot home page and diary</a> <span class="info-icon" title="Create a public reporting hub with daily diary, project status, and briefing workflows.">ℹ️</span> - <span class="progress-pill" title="70% complete">70%</span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="70% complete">🚧</span> - <a href="/projects/#initialize-obot-home-page-and-diary">Initialize obot home page and diary</a> <span class="info-icon" title="Create a public reporting hub with daily diary, project status, and briefing workflows.">ℹ️</span> - <span class="progress-pill" title="70% complete">70%</span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Create a public reporting hub with daily diary, project status, and briefing workflows.</li>
         <li><strong>Completed tasks:</strong><ul><li>GitHub Pages repo created.</li><li>Daily diary backfilled from startup.</li><li>Home and Projects pages added.</li><li>Nightly daily briefing and weekly developer draft jobs scheduled.</li></ul></li>
@@ -45,7 +45,7 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
-      <summary><span class="status-icon" title="0% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="0% complete">0%</span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="0% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="0% complete">0%</span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Implement static ggplot safety displays aligned to FDA ST&F guidance.</li>
         <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li></ul></li>
