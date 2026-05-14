@@ -117,3 +117,27 @@ code {
 .info-icon {
   margin-left: .35rem;
 }
+
+.project-list {
+  display: grid;
+  gap: .65rem;
+  padding-left: 1.25rem;
+}
+.project-list li {
+  padding: .45rem .6rem;
+  border: 1px solid var(--border);
+  border-radius: .65rem;
+  background: var(--panel);
+}
+.progress-pill {
+  display: inline-block;
+  min-width: 3.5rem;
+  margin-right: .4rem;
+  padding: .1rem .45rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-weight: 700;
+  text-align: center;
+  cursor: help;
+  background: color-mix(in srgb, var(--border) 30%, transparent);
+}
