@@ -7,7 +7,6 @@ title: Home
 
 Public daily diary and project reporting for Open Source OrangeBot work.
 
-This site intentionally excludes private, Gilead-specific, personal, credential, and ambiguous material unless Jeremy explicitly marks it public.
 
 ## Active projects
 
