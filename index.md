@@ -25,27 +25,27 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="80% complete">🚧</span> - <a href="/projects/#initialize-gsmsafety-with-safetycharts-widgets">Initialize gsm.safety with safetyCharts widgets</a> <span class="info-icon" title="Build workflow-driven safetyCharts report examples and pkgdown review pages for gsm.safety.">ℹ️</span> - <span class="progress-pill" title="80% complete">80%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="85% complete">🚧</span> - <a href="/projects/#initialize-gsmsafety-with-safetycharts-widgets">Initialize gsm.safety with safetyCharts widgets</a> <span class="info-icon" title="Build workflow-driven safetyCharts report examples and pkgdown review pages for gsm.safety.">ℹ️</span> - <span class="progress-pill" title="85% complete">85%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Build workflow-driven safetyCharts report examples and pkgdown review pages for gsm.safety.</li>
-        <li><strong>Completed tasks:</strong><ul><li>AE Explorer workflow merged.</li><li>Remaining safetyCharts widget workflows/examples implemented in PR #26.</li><li>Pkgdown examples now show YAML and rendered widget output.</li><li>GHA/template and deploy monitoring workflows improved.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Finish nep-explorer debugging and console/log review.</li><li>Complete final PR #26 cleanup and review.</li><li>Merge once examples and checks are stable.</li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>AE Explorer workflow merged.</li><li>Remaining safetyCharts widget workflows/examples implemented in PR #26.</li><li>Pkgdown examples now show YAML and rendered widget output.</li><li>GHA/template and deploy monitoring workflows improved.</li><li>PR #26 checks are passing and the pkgdown preview deployed.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Finish final browser/widget review, with special attention to Nep Explorer behavior.</li><li>Address Jeremy review feedback on PR #26.</li><li>Merge once examples are accepted.</li></ul></li>
       </ul>
     </details>
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="70% complete">🚧</span> - <a href="/projects/#initialize-obot-home-page-and-diary">Initialize obot home page and diary</a> <span class="info-icon" title="Create a public reporting hub with daily diary, project status, and briefing workflows.">ℹ️</span> - <span class="progress-pill" title="70% complete">70%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="80% complete">🚧</span> - <a href="/projects/#initialize-obot-home-page-and-diary">Initialize obot home page and diary</a> <span class="info-icon" title="Create a public reporting hub with daily diary, project status, and briefing workflows.">ℹ️</span> - <span class="progress-pill" title="80% complete">80%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Create a public reporting hub with daily diary, project status, and briefing workflows.</li>
-        <li><strong>Completed tasks:</strong><ul><li>GitHub Pages repo created.</li><li>Daily diary backfilled from startup.</li><li>Home and Projects pages added.</li><li>Nightly daily briefing and weekly developer draft jobs scheduled.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Polish layout and navigation.</li><li>Validate nightly project/diary updates.</li><li>Decide whether diary updates should publish automatically or remain review-first.</li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>GitHub Pages repo created.</li><li>Daily diary backfilled from startup.</li><li>Home and Projects pages added.</li><li>Nightly daily briefing and weekly developer draft jobs scheduled.</li><li>Projects page expanded details and layout polish deployed.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Validate nightly local briefing and project-progress update loop.</li><li>Decide whether diary updates should publish automatically or remain review-first.</li><li>Add further public sections only after privacy review.</li></ul></li>
       </ul>
     </details>
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="0% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="0% complete">0%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Implement static ggplot safety displays aligned to FDA ST&F guidance.</li>
         <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li></ul></li>
@@ -54,8 +54,6 @@ Project status is updated nightly. Click a project to expand details.
     </details>
   </li>
 </ul>
-
-<p><a href="/projects/">View full project tracker →</a></p>
 
 ## Recent daily diary
 
