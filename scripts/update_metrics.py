@@ -41,7 +41,7 @@ def get_repos() -> list[str]:
     repos = []
     page = 1
     while True:
-        data = gh_json([f"users/{OWNER}/repos", "-f", "per_page=100", "-f", f"page={page}"])
+        data = gh_json([f"users/{OWNER}/repos?per_page=100&page={page}"])
         if not data:
             break
         repos.extend(repo["full_name"] for repo in data if not repo.get("fork"))
