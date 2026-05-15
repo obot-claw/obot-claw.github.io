@@ -198,3 +198,30 @@ code {
 .project-details ul li::marker {
   content: "";
 }
+
+.metric-list {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.metric-list li {
+  border: 1px solid #e0d7cc;
+  border-radius: 0.75rem;
+  background: #fffaf4;
+  padding: 0.85rem 1rem;
+}
+
+.metric-list strong {
+  display: block;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.metric-list span {
+  color: #5d5146;
+  font-size: 0.9rem;
+}
