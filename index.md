@@ -45,6 +45,16 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
+      <summary><span class="project-overview"><span class="status-icon" title="0% complete">🕒</span> - <a href="/projects/#safetygraphics-renderer-modernization">SafetyGraphics renderer modernization</a> <span class="info-icon" title="Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.">ℹ️</span> - <span class="progress-pill" title="0% complete">0%</span></span></summary>
+      <ul class="project-details">
+        <li><strong>Goal:</strong> Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.</li>
+        <li><strong>Completed tasks:</strong><ul><li>Project concept captured from Jeremy's May 15 voice note.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Inventory renderer repositories currently under RoInc.</li><li>Plan fork/migration path under the SafetyGraphics organization.</li><li>Assess dependency cleanup and testing gaps.</li><li>Design a webcharts-to-Chart.js refactor strategy.</li><li>Decide how static and interactive renderer outputs should live side by side.</li></ul></li>
+      </ul>
+    </details>
+  </li>
+  <li>
+    <details>
       <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Implement static ggplot safety displays aligned to FDA ST&F guidance.</li>
