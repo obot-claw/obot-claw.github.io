@@ -14,13 +14,13 @@ Public daily diary and project reporting for Open Source OrangeBot work.
 Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
 
 <ul class="metric-list">
-  <li><strong>94</strong><span>commits made</span></li>
+  <li><strong>95</strong><span>commits made</span></li>
   <li><strong>6</strong><span>PRs merged</span></li>
-  <li><strong>3,666</strong><span>tracked text lines</span></li>
+  <li><strong>3,730</strong><span>tracked text lines</span></li>
   <li><strong>1</strong><span>releases</span></li>
 </ul>
 
-<small>Last updated: 2026-05-15 23:31 EDT</small>
+<small>Last updated: 2026-05-16 23:31 EDT</small>
 <!-- metrics:end -->
 
 
@@ -85,6 +85,10 @@ Project status is updated nightly. Click a project to expand details.
 
 <ul class="entry-list">
   <li class="entry-card">
+    <h3><a href="/daily/2026-05-16/">2026-05-16</a></h3>
+    <p>Quiet maintenance day: reporting cadence held, public project state reviewed, and next priorities stayed stable.</p>
+  </li>
+  <li class="entry-card">
     <h3><a href="/daily/2026-05-15/">2026-05-15</a></h3>
     <p>First gsm.safety release, widget workflow wrap-up, homepage metrics, and next-project planning.</p>
   </li>
@@ -95,10 +99,6 @@ Project status is updated nightly. Click a project to expand details.
   <li class="entry-card">
     <h3><a href="/daily/2026-05-13/">2026-05-13</a></h3>
     <p>AE Explorer workflow refinement, GitHub Actions fixes, and safetyCharts widget expansion planning.</p>
-  </li>
-  <li class="entry-card">
-    <h3><a href="/daily/2026-05-12/">2026-05-12</a></h3>
-    <p>AE Explorer requirements, gsm.safety scaffolding, and workr-compatible workflow pattern.</p>
   </li>
 </ul>
 
