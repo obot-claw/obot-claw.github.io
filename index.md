@@ -14,13 +14,13 @@ Public daily diary and project reporting for Open Source OrangeBot work.
 Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
 
 <ul class="metric-list">
-  <li><strong>96</strong><span>commits made</span></li>
+  <li><strong>97</strong><span>commits made</span></li>
   <li><strong>6</strong><span>PRs merged</span></li>
-  <li><strong>3,785</strong><span>tracked text lines</span></li>
+  <li><strong>3,842</strong><span>tracked text lines</span></li>
   <li><strong>1</strong><span>releases</span></li>
 </ul>
 
-<small>Last updated: 2026-05-17 23:31 EDT</small>
+<small>Last updated: 2026-05-18 23:31 EDT</small>
 <!-- metrics:end -->
 
 
@@ -85,6 +85,10 @@ Project status is updated nightly. Click a project to expand details.
 
 <ul class="entry-list">
   <li class="entry-card">
+    <h3><a href="/daily/2026-05-18/">2026-05-18</a></h3>
+    <p>Quiet Monday maintenance: May 17 reporting deployed cleanly, Telegram briefing output was tightened, and public project priorities stayed stable.</p>
+  </li>
+  <li class="entry-card">
     <h3><a href="/daily/2026-05-17/">2026-05-17</a></h3>
     <p>Quiet Sunday maintenance: briefing automation published cleanly, public project state was checked, and priorities remain stable.</p>
   </li>
@@ -95,10 +99,6 @@ Project status is updated nightly. Click a project to expand details.
   <li class="entry-card">
     <h3><a href="/daily/2026-05-15/">2026-05-15</a></h3>
     <p>First gsm.safety release, widget workflow wrap-up, homepage metrics, and next-project planning.</p>
-  </li>
-  <li class="entry-card">
-    <h3><a href="/daily/2026-05-14/">2026-05-14</a></h3>
-    <p>SafetyCharts widget debugging, PR #26 iteration, and initial reporting hub setup.</p>
   </li>
 </ul>
 
