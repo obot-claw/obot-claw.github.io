@@ -44,7 +44,7 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/#safetygraphics-renderer-modernization">SafetyGraphics renderer modernization</a> <span class="info-icon" title="Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/004/overview.html">SafetyGraphics renderer modernization</a> <span class="info-icon" title="Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.</li>
         <li><strong>Completed tasks:</strong><ul><li>Project concept captured from Jeremy's May 15 project direction.</li><li>Public tracker entry created.</li></ul></li>
