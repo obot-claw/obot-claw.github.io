@@ -118,11 +118,11 @@ These decisions are being captured through the Telegram interview workflow and m
 | Chart.js scope | Use Chart.js as the preferred reference implementation pattern, aligned with `gsm.viz`, but allow custom SVG/Canvas when justified by renderer requirements. | Decided |
 | Qualification-ready testing | Use the `safety-agent` implementation-framework spike to define a traceable standard linking wiki requirements to unit, integration, browser, visual-regression, accessibility, and review-evidence checks. | Decided |
 | Legacy API compatibility | Breaking changes are acceptable. Design clean nextgen APIs and release as new major versions or possibly new packages; do not preserve legacy APIs or wrappers by default. | Decided |
-| Static chart API boundary | Decide how much future static chart API should live in renderer repos versus `gsm.safety`. | Open |
+| Static chart API boundary | Keep static chart APIs in R-side packages such as `gsm.safety` or `safetyCharts`; nextgen renderer repos stay focused on interactive JavaScript renderers. `gsm.safety` continues orchestrating htmlwidget rendering for interactive outputs. | Decided |
 
 ## Open questions
 
-- How much of the future static chart API should live in these renderer repos versus `gsm.safety`?
+No project-level interview questions remain open. New questions should be added as the Safety Histogram implementation spike exposes concrete design decisions.
 
 ## Immediate next step
 
