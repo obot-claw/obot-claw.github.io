@@ -142,6 +142,12 @@ These decisions are being captured through the Telegram interview workflow and m
 
 No project-level interview questions remain open. New questions should be added as the Safety Histogram implementation spike exposes concrete design decisions.
 
+## Full migration tracker
+
+Full migration is now tracked in safety-agent issue #3: https://github.com/obot-claw/safety-agent/issues/3.
+
+The working definition of done for each renderer is: requirements harvested from the upstream wiki, baseline comparison available, nextgen implementation covering required controls/interactions/listings/exports/error states, browser-test evidence, and a reviewable demo page.
+
 ## Immediate next step
 
 Continue the Safety Histogram nextgen spike through PR review, then apply the same requirements-driven migration flow to the next renderer using the deployed baseline examples above as regression targets.
