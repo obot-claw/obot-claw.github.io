@@ -22,18 +22,36 @@ Initial forks were created under `obot-claw` as staging repositories before even
 
 | Area | Upstream | Staging fork | Role |
 |---|---|---|---|
-| AE Explorer | https://github.com/RhoInc/aeexplorer | https://github.com/obot-claw/aeexplorer | Adverse event incidence explorer |
-| AE Timelines | https://github.com/RhoInc/ae-timelines | https://github.com/obot-claw/ae-timelines | Participant AE timeline display |
-| Safety Outlier Explorer | https://github.com/RhoInc/safety-outlier-explorer | https://github.com/obot-claw/safety-outlier-explorer | Longitudinal participant outlier review |
-| Paneled Outlier Explorer | https://github.com/RhoInc/paneled-outlier-explorer | https://github.com/obot-claw/paneled-outlier-explorer | Multi-measure participant outlier panels |
-| Safety Results Over Time | https://github.com/RhoInc/safety-results-over-time | https://github.com/obot-claw/safety-results-over-time | Population trends over visits/time |
-| Safety Histogram | https://github.com/RhoInc/safety-histogram | https://github.com/obot-claw/safety-histogram | Distribution review for labs/vitals/other safety measures |
-| Safety Shift Plot | https://github.com/RhoInc/safety-shift-plot | https://github.com/obot-claw/safety-shift-plot | Baseline-to-postbaseline shift review |
-| Safety Delta Delta | https://github.com/RhoInc/safety-delta-delta | https://github.com/obot-claw/safety-delta-delta | Change-over-time multi-measure review |
-| Web Codebook | https://github.com/RhoInc/web-codebook | https://github.com/obot-claw/web-codebook | Interactive variable-level data summary |
-| Safety Explorer Suite | https://github.com/RhoInc/safety-explorer-suite | https://github.com/obot-claw/safety-explorer-suite | Multi-renderer suite shell/framework |
+| AE Explorer | https://github.com/RhoInc/aeexplorer | [fork](https://github.com/obot-claw/aeexplorer) | Adverse event incidence explorer |
+| AE Timelines | https://github.com/RhoInc/ae-timelines | [fork](https://github.com/obot-claw/ae-timelines) | Participant AE timeline display |
+| Safety Outlier Explorer | https://github.com/RhoInc/safety-outlier-explorer | [fork](https://github.com/obot-claw/safety-outlier-explorer) | Longitudinal participant outlier review |
+| Paneled Outlier Explorer | https://github.com/RhoInc/paneled-outlier-explorer | [fork](https://github.com/obot-claw/paneled-outlier-explorer) | Multi-measure participant outlier panels |
+| Safety Results Over Time | https://github.com/RhoInc/safety-results-over-time | [fork](https://github.com/obot-claw/safety-results-over-time) | Population trends over visits/time |
+| Safety Histogram | https://github.com/RhoInc/safety-histogram | [fork](https://github.com/obot-claw/safety-histogram) | Distribution review for labs/vitals/other safety measures |
+| Safety Shift Plot | https://github.com/RhoInc/safety-shift-plot | [fork](https://github.com/obot-claw/safety-shift-plot) | Baseline-to-postbaseline shift review |
+| Safety Delta Delta | https://github.com/RhoInc/safety-delta-delta | [fork](https://github.com/obot-claw/safety-delta-delta) | Change-over-time multi-measure review |
+| Web Codebook | https://github.com/RhoInc/web-codebook | [fork](https://github.com/obot-claw/web-codebook) | Interactive variable-level data summary |
+| Safety Explorer Suite | https://github.com/RhoInc/safety-explorer-suite | [fork](https://github.com/obot-claw/safety-explorer-suite) | Multi-renderer suite shell/framework |
 
 Hep Explorer is already under SafetyGraphics at https://github.com/safetyGraphics/hep-explorer and should be handled separately from the RhoInc fork migration.
+
+
+## Baseline example deployments
+
+Initial GitHub Pages deployments are now available for each staging fork. These are baseline legacy examples, not completed nextgen rewrites. They provide live regression targets while each renderer is migrated.
+
+| Renderer | Staging fork | Baseline example(s) | Nextgen status |
+|---|---|---|---|
+| AE Explorer | [fork](https://github.com/obot-claw/aeexplorer) | [example](https://obot-claw.github.io/aeexplorer/test-page/) | Fork deployed; migration not started. |
+| AE Timelines | [fork](https://github.com/obot-claw/ae-timelines) | [example](https://obot-claw.github.io/ae-timelines/test-page/) | Fork deployed; migration not started. |
+| Safety Outlier Explorer | [fork](https://github.com/obot-claw/safety-outlier-explorer) | [example](https://obot-claw.github.io/safety-outlier-explorer/test-page/) | Fork deployed; migration not started. |
+| Paneled Outlier Explorer | [fork](https://github.com/obot-claw/paneled-outlier-explorer) | [example](https://obot-claw.github.io/paneled-outlier-explorer/test-page/) | Fork deployed; migration not started. |
+| Safety Results Over Time | [fork](https://github.com/obot-claw/safety-results-over-time) | [example](https://obot-claw.github.io/safety-results-over-time/test-page/) | Fork deployed; migration not started. |
+| Safety Histogram | [fork](https://github.com/obot-claw/safety-histogram) | [nextgen demo](https://obot-claw.github.io/safety-histogram/test-page/) | Active nextgen Chart.js spike in PR #1. |
+| Safety Shift Plot | [fork](https://github.com/obot-claw/safety-shift-plot) | [example](https://obot-claw.github.io/safety-shift-plot/test-page/) | Fork deployed; migration not started. |
+| Safety Delta Delta | [fork](https://github.com/obot-claw/safety-delta-delta) | [example 0](https://obot-claw.github.io/safety-delta-delta/test-page/example0/) / [example 1](https://obot-claw.github.io/safety-delta-delta/test-page/example1/) | Fork deployed; migration not started. |
+| Web Codebook | [fork](https://github.com/obot-claw/web-codebook) | [default](https://obot-claw.github.io/web-codebook/test-page/default/) / [explorer](https://obot-claw.github.io/web-codebook/test-page/explorer/) | Fork deployed; migration not started. |
+| Safety Explorer Suite | [fork](https://github.com/obot-claw/safety-explorer-suite) | [example](https://obot-claw.github.io/safety-explorer-suite/test-page/) | Fork deployed as suite-level integration baseline. |
 
 ## Modernization principles
 
@@ -126,4 +144,4 @@ No project-level interview questions remain open. New questions should be added 
 
 ## Immediate next step
 
-Review the Safety Histogram implementation plan and use the `safety-agent` implementation-framework spike to define the detailed documentation, skills, tools, and test evidence needed before substantive renderer migration starts.
+Continue the Safety Histogram nextgen spike through PR review, then apply the same requirements-driven migration flow to the next renderer using the deployed baseline examples above as regression targets.
