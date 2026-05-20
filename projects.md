@@ -28,7 +28,7 @@ Project status is updated nightly. Click a project to expand details.
       <ul class="project-details">
         <li><strong>Goal:</strong> Build workflow-driven safetyCharts report examples and pkgdown review pages for gsm.safety.</li>
         <li><strong>Completed tasks:</strong><ul><li>AE Explorer workflow merged.</li><li>Remaining safetyCharts widget workflows/examples implemented in PR #26.</li><li>Pkgdown examples now show YAML and rendered widget output.</li><li>GHA/template and deploy monitoring workflows improved.</li><li>PR #26 checks are passing and the pkgdown preview deployed.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Post-release follow-up only.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review the open widget thumbnail gallery draft and decide the thumbnail capture path.</li><li>Pick up the QCThat testing framework backlog when the next testing batch starts.</li></ul></li>
       </ul>
     </details>
   </li>
@@ -78,7 +78,7 @@ Project status is updated nightly. Click a project to expand details.
 
 **Goal:** Build `gsm.safety` into a workflow-driven package for safety report generation, starting with SafetyGraphics/safetyCharts widgets rendered through `workr` workflows and reviewable pkgdown examples.
 
-**Current summary:** The initial safetyCharts widget workflow set shipped in `gsm.safety` v0.1.0. PR #26 merged, Nep Explorer was deferred because the legacy htmlwidget is no longer supported, and the first release is available for follow-up work.
+**Current summary:** The initial safetyCharts widget workflow set shipped in `gsm.safety` v0.1.0. PR #26 merged, Nep Explorer was deferred because the legacy htmlwidget is no longer supported, and post-release follow-up is now focused on the draft widget thumbnail gallery and later QCThat testing framework work.
 
 [https://github.com/obot-claw/gsm.safety/pull/26](https://github.com/obot-claw/gsm.safety/pull/26)
 
