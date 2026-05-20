@@ -12,6 +12,10 @@ Modernize the legacy Safety Explorer Suite JavaScript renderers so they can beco
 
 The current suite documentation describes nine custom interactive graphics, maintained as separate repositories, plus supporting JavaScript/R frameworks. The legacy renderers were built on `d3` v3 and `webcharts`; this project will remove the `webcharts` dependency and move toward independent modern JavaScript renderers, likely using Chart.js where it fits the display model.
 
+## Coordination repository
+
+The shared agent framework for this modernization program lives at https://github.com/obot-claw/safety-agent. It contains the GxP-oriented workflow rules, requirements-harvesting process, test framework guidance, and reusable agent skills for renderer migrations.
+
 ## Source inventory
 
 Initial forks were created under `obot-claw` as staging repositories before eventual transfer or replacement under `SafetyGraphics`.
