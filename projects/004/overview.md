@@ -108,14 +108,22 @@ Apply the proven pattern renderer by renderer:
 
 After the interactive renderer architecture is stable, define static chart equivalents for FDA-style reports using the same display contracts where possible. The target is a paired workflow: static submission-style graphics plus interactive monitoring graphics that share data mappings and display intent.
 
+## Interview decisions
+
+These decisions are being captured through the Telegram interview workflow and mirrored in the `safety-agent` interview log at https://github.com/obot-claw/safety-agent/blob/main/interviews/p004-open-questions.md.
+
+| Topic | Decision | Status |
+|---|---|---|
+| Repository structure | Keep the current fork-per-renderer structure for now; revisit monorepo consolidation after the Safety Histogram spike clarifies shared tooling and release coupling. | Decided |
+| Chart.js scope | Use Chart.js as the preferred reference implementation pattern, aligned with `gsm.viz`, but allow custom SVG/Canvas when justified by renderer requirements. | Decided |
+| Qualification-ready testing | Use the `safety-agent` implementation-framework spike to define a traceable standard linking wiki requirements to unit, integration, browser, visual-regression, accessibility, and review-evidence checks. | Decided |
+| Legacy API compatibility | Breaking changes are acceptable. Design clean nextgen APIs and release as new major versions or possibly new packages; do not preserve legacy APIs or wrappers by default. | Decided |
+| Static chart API boundary | Decide how much future static chart API should live in renderer repos versus `gsm.safety`. | Open |
+
 ## Open questions
 
-- Should each renderer remain its own npm package, or should we consolidate into a monorepo once the migration path is clear?
-- Should Chart.js be mandatory for every renderer, or should some displays stay custom SVG/Canvas where Chart.js is not a good fit?
-- What is the minimum testing standard for a renderer to be considered close to qualification-ready?
-- Should the first migration preserve the legacy public API exactly, or should we introduce a new API and provide a compatibility wrapper?
 - How much of the future static chart API should live in these renderer repos versus `gsm.safety`?
 
 ## Immediate next step
 
-Review the Safety Histogram implementation plan and decide whether to use it as the first migration spike.
+Review the Safety Histogram implementation plan and use the `safety-agent` implementation-framework spike to define the detailed documentation, skills, tools, and test evidence needed before substantive renderer migration starts.
