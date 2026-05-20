@@ -36,22 +36,22 @@ Initial forks were created under `obot-claw` as staging repositories before even
 Hep Explorer is already under SafetyGraphics at https://github.com/safetyGraphics/hep-explorer and should be handled separately from the RhoInc fork migration.
 
 
-## Baseline example deployments
+## Renderer example deployments
 
-Initial GitHub Pages deployments are now available for each staging fork. These are baseline legacy examples, not completed nextgen rewrites. They provide live regression targets while each renderer is migrated.
+GitHub Pages deployments are available for each staging fork. Baseline examples preserve the legacy renderer behavior for comparison. Nextgen examples are early Chart.js spikes used to test display direction before full requirements-driven migrations.
 
-| Renderer | Staging fork | Baseline example(s) | Nextgen status |
-|---|---|---|---|
-| AE Explorer | [fork](https://github.com/obot-claw/aeexplorer) | [example](https://obot-claw.github.io/aeexplorer/test-page/) | Fork deployed; migration not started. |
-| AE Timelines | [fork](https://github.com/obot-claw/ae-timelines) | [example](https://obot-claw.github.io/ae-timelines/test-page/) | Fork deployed; migration not started. |
-| Safety Outlier Explorer | [fork](https://github.com/obot-claw/safety-outlier-explorer) | [example](https://obot-claw.github.io/safety-outlier-explorer/test-page/) | Fork deployed; migration not started. |
-| Paneled Outlier Explorer | [fork](https://github.com/obot-claw/paneled-outlier-explorer) | [example](https://obot-claw.github.io/paneled-outlier-explorer/test-page/) | Fork deployed; migration not started. |
-| Safety Results Over Time | [fork](https://github.com/obot-claw/safety-results-over-time) | [example](https://obot-claw.github.io/safety-results-over-time/test-page/) | Fork deployed; migration not started. |
-| Safety Histogram | [fork](https://github.com/obot-claw/safety-histogram) | [nextgen demo](https://obot-claw.github.io/safety-histogram/test-page/) | Active nextgen Chart.js spike in PR #1. |
-| Safety Shift Plot | [fork](https://github.com/obot-claw/safety-shift-plot) | [example](https://obot-claw.github.io/safety-shift-plot/test-page/) | Fork deployed; migration not started. |
-| Safety Delta Delta | [fork](https://github.com/obot-claw/safety-delta-delta) | [example 0](https://obot-claw.github.io/safety-delta-delta/test-page/example0/) / [example 1](https://obot-claw.github.io/safety-delta-delta/test-page/example1/) | Fork deployed; migration not started. |
-| Web Codebook | [fork](https://github.com/obot-claw/web-codebook) | [default](https://obot-claw.github.io/web-codebook/test-page/default/) / [explorer](https://obot-claw.github.io/web-codebook/test-page/explorer/) | Fork deployed; migration not started. |
-| Safety Explorer Suite | [fork](https://github.com/obot-claw/safety-explorer-suite) | [example](https://obot-claw.github.io/safety-explorer-suite/test-page/) | Fork deployed as suite-level integration baseline. |
+| Renderer | Baseline example(s) | Nextgen spike | Spike PR | Nextgen status |
+|---|---|---|---|---|
+| AE Explorer | [baseline](https://obot-claw.github.io/aeexplorer/test-page/) | [nextgen](https://obot-claw.github.io/aeexplorer/nextgen/) | [PR #1](https://github.com/obot-claw/aeexplorer/pull/1) | Chart.js AE incidence spike. |
+| AE Timelines | [baseline](https://obot-claw.github.io/ae-timelines/test-page/) | [nextgen](https://obot-claw.github.io/ae-timelines/nextgen/) | [PR #1](https://github.com/obot-claw/ae-timelines/pull/1) | Chart.js timeline spike. |
+| Safety Outlier Explorer | [baseline](https://obot-claw.github.io/safety-outlier-explorer/test-page/) | [nextgen](https://obot-claw.github.io/safety-outlier-explorer/nextgen/) | [PR #1](https://github.com/obot-claw/safety-outlier-explorer/pull/1) | Chart.js participant trace spike. |
+| Paneled Outlier Explorer | [baseline](https://obot-claw.github.io/paneled-outlier-explorer/test-page/) | [nextgen](https://obot-claw.github.io/paneled-outlier-explorer/nextgen/) | [PR #1](https://github.com/obot-claw/paneled-outlier-explorer/pull/1) | Chart.js small-multiple spike. |
+| Safety Results Over Time | [baseline](https://obot-claw.github.io/safety-results-over-time/test-page/) | [nextgen](https://obot-claw.github.io/safety-results-over-time/nextgen/) | [PR #1](https://github.com/obot-claw/safety-results-over-time/pull/1) | Chart.js mean-over-time spike. |
+| Safety Histogram | [baseline/nextgen demo](https://obot-claw.github.io/safety-histogram/test-page/) | [nextgen](https://obot-claw.github.io/safety-histogram/test-page/) | [PR #1](https://github.com/obot-claw/safety-histogram/pull/1) | Active requirements-driven Chart.js spike. |
+| Safety Shift Plot | [baseline](https://obot-claw.github.io/safety-shift-plot/test-page/) | [nextgen](https://obot-claw.github.io/safety-shift-plot/nextgen/) | [PR #1](https://github.com/obot-claw/safety-shift-plot/pull/1) | Chart.js baseline-vs-latest spike. |
+| Safety Delta Delta | [baseline 0](https://obot-claw.github.io/safety-delta-delta/test-page/example0/) / [baseline 1](https://obot-claw.github.io/safety-delta-delta/test-page/example1/) | [nextgen](https://obot-claw.github.io/safety-delta-delta/nextgen/) | [PR #1](https://github.com/obot-claw/safety-delta-delta/pull/1) | Chart.js delta-delta scatter spike. |
+| Web Codebook | [default baseline](https://obot-claw.github.io/web-codebook/test-page/default/) / [explorer baseline](https://obot-claw.github.io/web-codebook/test-page/explorer/) | [nextgen](https://obot-claw.github.io/web-codebook/nextgen/) | [PR #1](https://github.com/obot-claw/web-codebook/pull/1) | Chart.js variable-completeness spike. |
+| Safety Explorer Suite | [baseline](https://obot-claw.github.io/safety-explorer-suite/test-page/) | Not started | — | Suite-level integration shell after renderer spikes mature. |
 
 ## Modernization principles
 
