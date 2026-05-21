@@ -44,21 +44,21 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/004/overview.html">SafetyGraphics renderer modernization</a> <span class="info-icon" title="Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="25% complete">🚧</span> - <a href="/projects/004/overview.html">SafetyGraphics renderer modernization</a> <span class="info-icon" title="Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.">ℹ️</span> - <span class="progress-pill" title="25% complete">25%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Modernize legacy SafetyGraphics JavaScript renderers and align interactive outputs with static safety-chart plans.</li>
-        <li><strong>Completed tasks:</strong><ul><li>Project concept captured from Jeremy's May 15 project direction.</li><li>Public tracker entry created.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Inventory renderer repositories currently under RoInc.</li><li>Plan fork/migration path under the SafetyGraphics organization.</li><li>Assess dependency cleanup and testing gaps.</li><li>Design a webcharts-to-Chart.js refactor strategy.</li><li>Decide how static and interactive renderer outputs should live side by side.</li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Project concept captured from Jeremy's May 15 project direction.</li><li>Public tracker entry created.</li><li>RhoInc renderer staging forks created under obot-claw.</li><li>safety-agent coordination repository initialized with migration, interview, requirements, and testing guidance.</li><li>Core interview decisions recorded.</li><li>Baseline and nextgen demo links published.</li><li>Safety Histogram draft Chart.js PR opened as the first requirements-driven spike.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review Safety Histogram PR #1 against the migration definition of done.</li><li>Complete the safety-agent implementation-framework spike.</li><li>Use the full migration tracker to choose and sequence the next renderer.</li><li>Add stronger browser/CI validation evidence for demos.</li><li>Plan eventual SafetyGraphics transfer or upstream coordination once staging stabilizes.</li></ul></li>
       </ul>
     </details>
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="10% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="10% complete">10%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Implement static ggplot safety displays aligned to FDA ST&F guidance.</li>
-        <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Review FDA ST&F and Duke-Margolis materials.</li><li>Inventory recommended displays and map to data domains.</li><li>Create implementation issues for static chart renderers and examples.</li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li><li>P004 interview decision recorded: static chart APIs should remain in R-side packages such as gsm.safety or safetyCharts.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review FDA ST&F and Duke-Margolis materials.</li><li>Inventory recommended displays and map to data domains.</li><li>Create implementation issues for static chart renderers and examples after P004 interactive renderer spike stabilizes.</li></ul></li>
       </ul>
     </details>
   </li>
@@ -94,11 +94,15 @@ Project status is updated nightly. Click a project to expand details.
 
 ## SafetyGraphics renderer modernization
 
-**Status:** Planning
+**Status:** Active
 
 **Goal:** Modernize legacy SafetyGraphics JavaScript renderers, likely by moving from `webcharts` to independent Chart.js-based renderers, improving dependency hygiene, and raising the testing bar so interactive displays can stay aligned with static safety-chart outputs.
 
-**Current summary:** Project concept has been captured and added to the public tracker. No implementation work has started yet. Next steps are inventorying the existing renderer repos under RoInc, defining the SafetyGraphics migration path, and drafting a refactor/testing strategy before starting the FDA static chart project.
+**Current summary:** P004 is active. Staging forks and demo pages exist under `obot-claw`, `safety-agent` now coordinates requirements/interview/testing guidance, project-level interview decisions are recorded, and Safety Histogram PR #1 is the first requirements-driven Chart.js spike. Next steps are finishing the implementation-framework spike, validating Safety Histogram, and sequencing the next renderer through the full migration tracker.
+
+[https://github.com/obot-claw/safety-agent](https://github.com/obot-claw/safety-agent)
+
+[https://github.com/obot-claw/safety-histogram/pull/1](https://github.com/obot-claw/safety-histogram/pull/1)
 
 [https://github.com/SafetyGraphics](https://github.com/SafetyGraphics)
 
@@ -108,6 +112,6 @@ Project status is updated nightly. Click a project to expand details.
 
 **Goal:** Design and implement static `ggplot2` safety displays aligned to FDA Standard Safety Tables and Figures guidance, parallel to the interactive safetyCharts workflow approach where useful.
 
-**Current summary:** Initial design notes exist locally. Next step is reviewing FDA ST&F / Duke-Margolis materials and turning the display inventory into `gsm.safety` issues.
+**Current summary:** Initial design notes exist locally, and P004 clarified that static chart APIs should stay in R-side packages such as `gsm.safety` or `safetyCharts`. Next step is reviewing FDA ST&F / Duke-Margolis materials and turning the display inventory into `gsm.safety` issues once P004 interactive renderer patterns are stable.
 
 [https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs](https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs)
