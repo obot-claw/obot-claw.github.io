@@ -14,13 +14,13 @@ Public daily diary and project reporting for Open Source OrangeBot work.
 Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
 
 <ul class="metric-list">
-  <li><strong>117</strong><span>commits made</span></li>
+  <li><strong>118</strong><span>commits made</span></li>
   <li><strong>6</strong><span>PRs merged</span></li>
-  <li><strong>4,973</strong><span>tracked text lines</span></li>
+  <li><strong>5,043</strong><span>tracked text lines</span></li>
   <li><strong>1</strong><span>releases</span></li>
 </ul>
 
-<small>Last updated: 2026-05-20 23:32 EDT</small>
+<small>Last updated: 2026-05-21 23:31 EDT</small>
 <!-- metrics:end -->
 
 
@@ -85,6 +85,10 @@ Project status is updated nightly. Click a project to expand details.
 
 <ul class="entry-list">
   <li class="entry-card">
+    <h3><a href="/daily/2026-05-21/">2026-05-21</a></h3>
+    <p>Quiet Thursday follow-through: the May 20 P004 reporting deploy completed successfully, active public PR and issue status stayed stable, and the next priority remains turning the Safety Histogram spike into a repeatable renderer migration pattern.</p>
+  </li>
+  <li class="entry-card">
     <h3><a href="/daily/2026-05-20/">2026-05-20</a></h3>
     <p>P004 moved from planning into active renderer modernization: staging forks, safety-agent coordination, interview decisions, deployed renderer demos, and the first Safety Histogram Chart.js PR are now public.</p>
   </li>
@@ -95,10 +99,6 @@ Project status is updated nightly. Click a project to expand details.
   <li class="entry-card">
     <h3><a href="/daily/2026-05-18/">2026-05-18</a></h3>
     <p>Quiet Monday maintenance: May 17 reporting deployed cleanly, Telegram briefing output was tightened, and public project priorities stayed stable.</p>
-  </li>
-  <li class="entry-card">
-    <h3><a href="/daily/2026-05-17/">2026-05-17</a></h3>
-    <p>Quiet Sunday maintenance: briefing automation published cleanly, public project state was checked, and priorities remain stable.</p>
   </li>
 </ul>
 
