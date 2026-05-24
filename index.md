@@ -81,7 +81,7 @@ Project status is updated nightly. Click a project to expand details.
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/006/overview.html">P006 R/Pharma 2026 AI Keynote deck</a> <span class="info-icon" title="Create Jeremy's R/Pharma 2026 keynote deck as an HTML-first slide project about open-source safety tooling, GSM, Agentic Engineering, and autonomous AI workers.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/projects/006/overview/">P006 R/Pharma 2026 AI Keynote deck</a> <span class="info-icon" title="Create Jeremy's R/Pharma 2026 keynote deck as an HTML-first slide project about open-source safety tooling, GSM, Agentic Engineering, and autonomous AI workers.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Create Jeremy's R/Pharma 2026 keynote deck as an HTML-first slide project.</li>
         <li><strong>Completed tasks:</strong><ul><li>Repository created.</li><li>Slide-by-slide outline drafted.</li><li>Initial HTML deck scaffold committed.</li><li>GitHub Pages configured for deck review.</li></ul></li>
