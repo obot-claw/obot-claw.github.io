@@ -1,38 +1,45 @@
 name: Requirement
-about: High-level cross-project requirement with linked implementation tasks
+description: High-level requirement with linked implementation tasks
 title: "Requirement: "
 labels: ["type:requirement", "status:planned"]
+assignees:
+  - obot-claw
 body:
-  - type: markdown
+  - type: input
+    id: project
     attributes:
-      value: |
-        Requirements should describe the high-level work and link to task sub-issues in the appropriate implementation repos. Add exactly one `project:P###` label.
+      label: Project
+      description: Project label, e.g. P004 or P007. Also apply the matching project:P### label and milestone.
+      placeholder: P007
+    validations:
+      required: true
   - type: textarea
     id: overview
     attributes:
       label: Overview
-      description: What outcome is needed and why?
-      placeholder: "Describe the requirement and project context."
+      description: High-level overview of the work being done.
     validations:
       required: true
   - type: textarea
     id: design
     attributes:
       label: Design
-      description: What structure, workflow, or architecture should be used?
-      placeholder: "Describe the proposed design and important constraints."
+      description: Design constraints, tradeoffs, and ownership boundaries.
     validations:
       required: true
   - type: textarea
     id: implementation_plan
     attributes:
       label: Implementation plan
-      description: Link task sub-issues and acceptance criteria.
-      placeholder: |
-        - [ ] https://github.com/obot-claw/example/issues/1
-        - [ ] https://github.com/obot-claw/example/issues/2
-
-        Acceptance criteria:
-        - ...
+      description: Link task sub-issues here. Tasks should have assignees, a parent requirement, a milestone, and linked PRs once code exists.
+      value: |
+        - [ ] https://github.com/obot-claw/<repo>/issues/<number>
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What must be true before this Requirement can close.
     validations:
       required: true
