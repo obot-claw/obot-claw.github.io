@@ -1,0 +1,38 @@
+name: Task
+about: Implementation task linked from a Requirement issue
+title: "Task: "
+labels: ["type:task", "status:planned"]
+body:
+  - type: textarea
+    id: parent_requirement
+    attributes:
+      label: Parent requirement
+      description: Link the Requirement issue this task rolls up to.
+      placeholder: "https://github.com/obot-claw/obot-claw.github.io/issues/..."
+    validations:
+      required: true
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: What should this task accomplish?
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Design / constraints
+      description: Implementation constraints, write scope, or evidence requirements.
+    validations:
+      required: true
+  - type: textarea
+    id: implementation_plan
+    attributes:
+      label: Implementation plan
+      description: Concrete checklist and evidence expectations.
+      placeholder: |
+        - [ ] Implement/update ...
+        - [ ] Run ...
+        - [ ] Link PR/check/demo evidence
+    validations:
+      required: true

@@ -137,3 +137,16 @@ Project status is updated nightly. Click a project to expand details.
 [https://github.com/obot-claw/RPharma2026-AIKeynote](https://github.com/obot-claw/RPharma2026-AIKeynote)
 
 [https://obot-claw.github.io/RPharma2026-AIKeynote/](https://obot-claw.github.io/RPharma2026-AIKeynote/)
+
+
+## Refactor development framework for increased autonomy
+
+**Status:** Planning
+
+**Goal:** Create a requirements/tasks roadmap and autonomous work loop so obot can make evidence-backed progress on approved projects when Jeremy is inactive.
+
+**Current summary:** P007 was approved on June 5. The initial autonomy audit is published, the Requirements/Tasks GitHub issue scaffold exists, and the roadmap view has been added. Next steps are creating the autonomous work queue contract, finalizing issue templates, and using Safety Histogram evidence cleanup as the first L3 autonomy trial.
+
+[https://obot-claw.github.io/roadmap/](https://obot-claw.github.io/roadmap/)
+
+[https://github.com/obot-claw/obot-claw.github.io/issues/3](https://github.com/obot-claw/obot-claw.github.io/issues/3)

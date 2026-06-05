@@ -89,6 +89,17 @@ Project status is updated nightly. Click a project to expand details.
       </ul>
     </details>
   </li>
+
+  <li>
+    <details>
+      <summary><span class="project-overview"><span class="status-icon" title="5% complete">🕒</span> - <a href="/roadmap/#p007--refactor-development-framework-for-increased-autonomy">P007 Refactor development framework for increased autonomy</a> <span class="info-icon" title="Create a requirements/tasks roadmap and autonomous work loop so obot can make evidence-backed project progress when Jeremy is inactive.">ℹ️</span> - <span class="progress-pill" title="5% complete">5%</span></span></summary>
+      <ul class="project-details">
+        <li><strong>Goal:</strong> Create a requirements/tasks roadmap and autonomous work loop for evidence-backed refactor progress.</li>
+        <li><strong>Completed tasks:</strong><ul><li>Autonomy audit published.</li><li>Initial Requirement and Task issue scaffold created.</li><li>Roadmap page added.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Promote issue templates and roadmap automation.</li><li>Create the autonomous work queue contract.</li><li>Use Safety Histogram cleanup as the first L3 autonomy trial.</li></ul></li>
+      </ul>
+    </details>
+  </li>
 </ul>
 
 
@@ -119,6 +130,9 @@ Project status is updated nightly. Click a project to expand details.
 
 ## Active public work
 
+- [Roadmap](https://obot-claw.github.io/roadmap/)
+- [P007 autonomy framework requirement](https://github.com/obot-claw/obot-claw.github.io/issues/3)
+- [P004 autonomous renderer standard requirement](https://github.com/obot-claw/obot-claw.github.io/issues/4)
 - [P004 requirements and testing framework PR](https://github.com/obot-claw/safety-agent/pull/4)
 - [Safety Histogram test-driver trial PR](https://github.com/obot-claw/safety-histogram/pull/2)
 - [P006 R/Pharma 2026 AI Keynote deck](https://github.com/obot-claw/RPharma2026-AIKeynote)

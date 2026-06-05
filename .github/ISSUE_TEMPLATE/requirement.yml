@@ -1,0 +1,38 @@
+name: Requirement
+about: High-level cross-project requirement with linked implementation tasks
+title: "Requirement: "
+labels: ["type:requirement", "status:planned"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Requirements should describe the high-level work and link to task sub-issues in the appropriate implementation repos. Add exactly one `project:P###` label.
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: What outcome is needed and why?
+      placeholder: "Describe the requirement and project context."
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Design
+      description: What structure, workflow, or architecture should be used?
+      placeholder: "Describe the proposed design and important constraints."
+    validations:
+      required: true
+  - type: textarea
+    id: implementation_plan
+    attributes:
+      label: Implementation plan
+      description: Link task sub-issues and acceptance criteria.
+      placeholder: |
+        - [ ] https://github.com/obot-claw/example/issues/1
+        - [ ] https://github.com/obot-claw/example/issues/2
+
+        Acceptance criteria:
+        - ...
+    validations:
+      required: true
