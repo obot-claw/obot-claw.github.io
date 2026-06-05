@@ -12,6 +12,10 @@ permissions:
   issues: read
   pull-requests: read
 
+concurrency:
+  group: update-roadmap-main
+  cancel-in-progress: true
+
 jobs:
   update-roadmap:
     runs-on: ubuntu-latest
@@ -26,12 +30,37 @@ jobs:
         run: node scripts/generate-roadmap.mjs
       - name: Commit roadmap changes
         run: |
+          git config user.name "obot-claw[bot]"
+          git config user.email "obot-claw[bot]@users.noreply.github.com"
+
+          # Rebase before generating/committing so issue-triggered runs do not race.
+          git fetch origin main
+          git rebase origin/main
+          node scripts/generate-roadmap.mjs
+
           if git diff --quiet -- roadmap.md; then
             echo "No roadmap changes."
             exit 0
           fi
-          git config user.name "obot-claw[bot]"
-          git config user.email "obot-claw[bot]@users.noreply.github.com"
+
           git add roadmap.md
           git commit -m "Update generated roadmap"
-          git push
+
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push failed; rebasing and regenerating before retry $attempt."
+            git fetch origin main
+            git rebase origin/main
+            node scripts/generate-roadmap.mjs
+            if git diff --quiet -- roadmap.md; then
+              echo "Roadmap already current after rebase."
+              exit 0
+            fi
+            git add roadmap.md
+            git commit --amend --no-edit
+          done
+
+          echo "Failed to push roadmap update after retries."
+          exit 1
