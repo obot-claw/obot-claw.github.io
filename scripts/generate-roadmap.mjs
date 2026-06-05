@@ -56,6 +56,22 @@ function titleWithoutPrefix(title) {
   return title.replace(/^Requirement:\s*/i, '').replace(/^Task:\s*/i, '').trim();
 }
 
+function isComplete(item) {
+  if (!item) return false;
+  if (item.kind === 'pull') return Boolean(item.merged_at) || item.state === 'closed';
+  return item.state === 'closed' || labels(item).includes('status:complete') || labels(item).includes('status:completed');
+}
+
+function statusText(item) {
+  if (!item) return 'unknown';
+  if (item.kind === 'pull') {
+    if (item.merged_at) return 'merged';
+    return item.state;
+  }
+  if (item.state === 'closed') return 'closed';
+  return statusLabel(item).replace(/^status:/, '');
+}
+
 function extractWorkUrls(markdown = '') {
   const urls = new Set();
   const re = /https:\/\/github\.com\/obot-claw\/[A-Za-z0-9_.-]+\/(?:issues|pull)\/\d+/g;
@@ -77,21 +93,58 @@ async function fetchWorkUrl(url) {
   return { kind, ...(await github(`/repos/${owner}/${repo}/issues/${number}`)) };
 }
 
+function summarizeProjects(requirements, tasks) {
+  const projects = new Map();
+  for (const issue of requirements) {
+    const proj = projectNumber(projectLabel(issue));
+    if (!projects.has(proj)) projects.set(proj, { requirements: [], taskItems: [] });
+    const entry = projects.get(proj);
+    entry.requirements.push(issue);
+    for (const url of extractWorkUrls(issue.body || '')) {
+      const task = tasks.get(workKeyFromUrl(url));
+      entry.taskItems.push({ url, item: task });
+    }
+  }
+  return [...projects.entries()].sort(([a], [b]) => a.localeCompare(b));
+}
+
+function countComplete(items, picker = (x) => x) {
+  return items.filter((x) => isComplete(picker(x))).length;
+}
+
+function renderProjectSummary(requirements, tasks) {
+  const projects = summarizeProjects(requirements, tasks);
+  if (!projects.length) return 'No active projects found.\n';
+  return projects.map(([proj, entry]) => {
+    const reqDone = countComplete(entry.requirements);
+    const taskDone = countComplete(entry.taskItems, (x) => x.item);
+    const reqList = entry.requirements.map((issue) => `  - ${issue.html_url} — ${titleWithoutPrefix(issue.title)} (${statusText(issue)})`);
+    return [
+      `### ${proj}`,
+      '',
+      `- Requirements: ${reqDone}/${entry.requirements.length} complete`,
+      `- Linked tasks/evidence: ${taskDone}/${entry.taskItems.length} complete`,
+      '- Requirement drilldown:',
+      ...(reqList.length ? reqList : ['  - None']),
+      ''
+    ].join('\n');
+  }).join('\n');
+}
+
 function renderRequirement(issue, tasks) {
   const proj = projectNumber(projectLabel(issue));
-  const status = statusLabel(issue).replace(/^status:/, '');
+  const status = statusText(issue);
   const bodyUrls = extractWorkUrls(issue.body || '');
   const taskLines = bodyUrls.map((url) => {
     const task = tasks.get(workKeyFromUrl(url));
     if (!task) return `  - ${url}`;
     if (task.kind === 'pull') {
-      return `  - ${url} — PR: ${titleWithoutPrefix(task.title)} (${task.state})`;
+      return `  - ${url} — PR: ${titleWithoutPrefix(task.title)} (${statusText(task)})`;
     }
-    const taskStatus = statusLabel(task).replace(/^status:/, '');
-    return `  - ${url} — ${titleWithoutPrefix(task.title)} (${taskStatus})`;
+    return `  - ${url} — ${titleWithoutPrefix(task.title)} (${statusText(task)})`;
   });
   return [
-    `### ${proj} — ${titleWithoutPrefix(issue.title)}`,
+    `### ${proj} — ${titleWithoutPrefix(issue.title).replace(new RegExp(`^${proj}\\s+`, 'i'), '')}`,
     '',
     `- Requirement: ${issue.html_url}`,
     `- Status: ${status}`,
@@ -104,11 +157,13 @@ function renderRequirement(issue, tasks) {
 
 async function main() {
   const requirements = await listIssues(requirementsRepo, {
-    state: 'open',
+    state: 'all',
     labels: 'type:requirement'
   });
+  const activeRequirements = requirements.filter((issue) => issue.state === 'open');
 
   requirements.sort((a, b) => projectNumber(projectLabel(a)).localeCompare(projectNumber(projectLabel(b))) || a.number - b.number);
+  activeRequirements.sort((a, b) => projectNumber(projectLabel(a)).localeCompare(projectNumber(projectLabel(b))) || a.number - b.number);
 
   const taskUrls = [...new Set(requirements.flatMap((issue) => extractWorkUrls(issue.body || '')))];
   const taskEntries = await Promise.all(taskUrls.map(async (url) => [workKeyFromUrl(url), await fetchWorkUrl(url)]));
@@ -135,9 +190,12 @@ async function main() {
     '- Every Requirement should have one `project:P###` label.',
     '- Requirement implementation plans should link task sub-issues or PRs.',
     '',
+    '## Project rollup',
+    '',
+    renderProjectSummary(requirements, tasks),
     '## Active requirements',
     '',
-    ...(requirements.length ? requirements.map((issue) => renderRequirement(issue, tasks)) : ['No open Requirement issues found.', '']),
+    ...(activeRequirements.length ? activeRequirements.map((issue) => renderRequirement(issue, tasks)) : ['No open Requirement issues found.', '']),
     '## Labels',
     '',
     '- `type:requirement` — high-level requirement.',
