@@ -212,11 +212,13 @@ code {
   border: 1px solid #e0d7cc;
   border-radius: 0.75rem;
   background: #fffaf4;
+  color: #1f2933;
   padding: 0.85rem 1rem;
 }
 
 .metric-list strong {
   display: block;
+  color: #1f2933;
   font-size: 1.45rem;
   line-height: 1.1;
 }
