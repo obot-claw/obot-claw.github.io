@@ -91,6 +91,11 @@ Project status is updated nightly. Click a project to expand details.
   </li>
 </ul>
 
+
+## Reports
+
+- [Autonomy audit and refactor development framework](/reports/autonomy-audit-2026-06-05.html)
+
 ## Recent daily diary
 
 <ul class="entry-list">
