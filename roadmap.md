@@ -29,9 +29,9 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P007
 
 - Requirements: 0/1 complete
-- Linked tasks/evidence: 3/4 complete
+- Linked tasks/evidence: 4/4 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (planned; tasks/evidence 3/4 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (planned; tasks/evidence 4/4 complete)
 
 ## Active requirements
 
@@ -53,7 +53,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Status: planned
 - Labels: type:requirement, project:P007, status:planned
 - Tasks / evidence:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/1 — create autonomous work queue contract (planned; assignee: @obot-claw; milestone: P007)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/1 — create autonomous work queue contract (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/2 — add requirement and task issue templates (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/5 — automate generated roadmap from GitHub issues (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/8 — harden generated roadmap workflow concurrency (closed; assignee: @obot-claw; milestone: P007)
