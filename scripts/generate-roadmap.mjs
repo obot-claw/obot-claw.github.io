@@ -72,6 +72,24 @@ function statusText(item) {
   return statusLabel(item).replace(/^status:/, '');
 }
 
+function assigneeText(item) {
+  const assignees = item?.assignees || [];
+  return assignees.length ? assignees.map((a) => `@${a.login}`).join(', ') : 'unassigned';
+}
+
+function milestoneText(item) {
+  return item?.milestone?.title || 'no milestone';
+}
+
+function hasParentLink(task, requirementUrl) {
+  return Boolean((task?.body || '').includes(requirementUrl));
+}
+
+function linkedPullUrls(markdown = '') {
+  const re = /https:\/\/github\.com\/obot-claw\/[A-Za-z0-9_.-]+\/pull\/\d+/g;
+  return [...new Set([...(markdown || '').matchAll(re)].map((m) => m[0]))];
+}
+
 function extractWorkUrls(markdown = '') {
   const urls = new Set();
   const re = /https:\/\/github\.com\/obot-claw\/[A-Za-z0-9_.-]+\/(?:issues|pull)\/\d+/g;
@@ -118,7 +136,11 @@ function renderProjectSummary(requirements, tasks) {
   return projects.map(([proj, entry]) => {
     const reqDone = countComplete(entry.requirements);
     const taskDone = countComplete(entry.taskItems, (x) => x.item);
-    const reqList = entry.requirements.map((issue) => `  - ${issue.html_url} — ${titleWithoutPrefix(issue.title)} (${statusText(issue)})`);
+    const reqList = entry.requirements.map((issue) => {
+      const linked = extractWorkUrls(issue.body || '').map((url) => tasks.get(workKeyFromUrl(url))).filter(Boolean);
+      const done = countComplete(linked);
+      return `  - ${issue.html_url} — ${titleWithoutPrefix(issue.title)} (${statusText(issue)}; tasks/evidence ${done}/${linked.length} complete)`;
+    });
     return [
       `### ${proj}`,
       '',
@@ -139,9 +161,9 @@ function renderRequirement(issue, tasks) {
     const task = tasks.get(workKeyFromUrl(url));
     if (!task) return `  - ${url}`;
     if (task.kind === 'pull') {
-      return `  - ${url} — PR: ${titleWithoutPrefix(task.title)} (${statusText(task)})`;
+      return `  - ${url} — PR: ${titleWithoutPrefix(task.title)} (${statusText(task)}; assignee: ${assigneeText(task)}; milestone: ${milestoneText(task)})`;
     }
-    return `  - ${url} — ${titleWithoutPrefix(task.title)} (${statusText(task)})`;
+    return `  - ${url} — ${titleWithoutPrefix(task.title)} (${statusText(task)}; assignee: ${assigneeText(task)}; milestone: ${milestoneText(task)})`;
   });
   return [
     `### ${proj} — ${titleWithoutPrefix(issue.title).replace(new RegExp(`^${proj}\\s+`, 'i'), '')}`,
@@ -153,6 +175,26 @@ function renderRequirement(issue, tasks) {
     ...(taskLines.length ? taskLines : ['  - No linked task issues found in the implementation plan.']),
     ''
   ].join('\n');
+}
+
+function renderMetadataWarnings(requirements, tasks) {
+  const warnings = [];
+  for (const req of requirements) {
+    if (!req.assignees?.length) warnings.push(`${req.html_url} is missing an assignee.`);
+    if (!req.milestone) warnings.push(`${req.html_url} is missing a milestone.`);
+    for (const url of extractWorkUrls(req.body || '')) {
+      const item = tasks.get(workKeyFromUrl(url));
+      if (!item || item.kind === 'pull') continue;
+      if (!item.assignees?.length) warnings.push(`${url} is missing an assignee.`);
+      if (!item.milestone) warnings.push(`${url} is missing a milestone.`);
+      if (!hasParentLink(item, req.html_url)) warnings.push(`${url} does not link back to parent requirement ${req.html_url}.`);
+      if (statusText(item) === 'ready-review' && linkedPullUrls(item.body).length === 0) {
+        warnings.push(`${url} is ready for review but has no linked PR.`);
+      }
+    }
+  }
+  if (!warnings.length) return 'No metadata gaps found.\n';
+  return warnings.map((w) => `- ${w}`).join('\n') + '\n';
 }
 
 async function main() {
@@ -196,6 +238,9 @@ async function main() {
     '## Active requirements',
     '',
     ...(activeRequirements.length ? activeRequirements.map((issue) => renderRequirement(issue, tasks)) : ['No open Requirement issues found.', '']),
+    '## Metadata checks',
+    '',
+    renderMetadataWarnings(requirements, tasks),
     '## Labels',
     '',
     '- `type:requirement` — high-level requirement.',
