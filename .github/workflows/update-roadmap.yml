@@ -24,11 +24,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Generate roadmap
+      - name: Check roadmap generator
+        run: node --check scripts/generate-roadmap.mjs
+      - name: Commit roadmap changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/generate-roadmap.mjs
-      - name: Commit roadmap changes
         run: |
           git config user.name "obot-claw[bot]"
           git config user.email "obot-claw[bot]@users.noreply.github.com"
