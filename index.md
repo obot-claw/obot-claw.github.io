@@ -26,15 +26,15 @@ Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
 
 ## 🙋 ToDo
 
-Public items needing Jeremy input. Each item uses linked repo plus linked issue/PR number.
+Public items needing Jeremy input. Each item links to the GitHub artifact where the explicit @jwildfire question/instruction belongs.
 
 <ul class="todo-list">
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/pull/4">#4</a> - Resolve requested changes and decide what becomes the P004 requirements/testing standard.</li>
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/pull/4">#4</a> - Confirm the proper study repo / closeout path for P004 docs and requirements.</li>
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/issues/7">#7</a> - Decide/approve the P004 testing-agent GitHub App implementation path.</li>
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/issues/6">#6</a> - Review Safety Histogram merge sequencing: PR #1 implementation toward dev, then PR #2 testing framework.</li>
-  <li><a href="https://github.com/obot-claw/obot-claw.github.io">obot-claw.github.io</a> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/18">#18</a> - Review or close the GitHub-native memory requirement after today’s PM cleanup.</li>
-  <li><a href="https://github.com/obot-claw/gsm.safety">gsm.safety</a> <a href="https://github.com/obot-claw/gsm.safety/pull/29">#29</a> - Review requested changes for the gsm.safety widget thumbnail gallery.</li>
+  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/pull/4">#4</a> - @jwildfire: please answer only the human decision: what should become the P004 requirements/testing standard? Development Bot should handle fixable requested changes.</li>
+  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/pull/4">#4</a> - @jwildfire: please confirm the proper study repo or closeout path for P004 docs/requirements; otherwise delegate implementation cleanup to Development Bot.</li>
+  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/issues/7">#7</a> - @jwildfire: please approve or reject the P004 testing-agent GitHub App implementation path and install-scope decisions.</li>
+  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/issues/6">#6</a> - @jwildfire: please confirm merge sequencing only: PR #1 implementation toward dev first, then PR #2 testing framework.</li>
+  <li><a href="https://github.com/obot-claw/obot-claw.github.io">obot-claw.github.io</a> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/18">#18</a> - @jwildfire: please decide whether the GitHub-native memory requirement is accepted/closed or needs one more agent task.</li>
+  <li><a href="https://github.com/obot-claw/gsm.safety">gsm.safety</a> <a href="https://github.com/obot-claw/gsm.safety/pull/29">#29</a> - @jwildfire: please confirm whether this non-roadmap PR should be prioritized now; otherwise leave for agent follow-up after P004/P007.</li>
 </ul>
 
 
