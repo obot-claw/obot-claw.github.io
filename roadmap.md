@@ -33,11 +33,11 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 - Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/17 — P007 Refactor development framework for increased autonomy (in-progress)
 - Requirements: 1/3 complete
-- Linked tasks/evidence: 8/8 complete
+- Linked tasks/evidence: 9/9 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/4 complete)
   - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 3/3 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/18 — P007 GitHub-native memory and work artifacts (in-progress; tasks/evidence 1/1 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/18 — P007 GitHub-native memory and work artifacts (in-progress; tasks/evidence 2/2 complete)
 
 ## Active requirements
 
@@ -70,6 +70,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Labels: type:requirement, project:P007, status:in-progress
 - Tasks / evidence:
   - https://github.com/obot-claw/obot-claw.github.io/issues/19 — Codify PM issue memory and development PR workflow (closed; assignee: @obot-claw; milestone: P007)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/20 — Create Telegram formatting skill for clean status posts (closed; assignee: @obot-claw; milestone: P007)
 
 ## Metadata checks
 
