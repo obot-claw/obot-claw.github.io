@@ -82,7 +82,7 @@ Only if the answer is no should the Hub show a Jeremy ToDo. When Jeremy is neede
   <li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/22">#22 Portfolio audit helper and PM report workflow</a>.</li>
   <li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/23">#23 Hub sync gate for portfolio tracking</a>.</li>
   <li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/24">#24 PM / Development / Testing launch contracts</a>.</li>
-  <li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/25">#25 Durable work-session supervision</a>.</li>
+  <li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/25">#25 Durable work-session supervision</a> — implemented with <code>scripts/work_session.py</code> and the <a href="/docs/work-session-supervision/">supervision contract</a>.</li>
 </ul>
 
 ## References
@@ -90,5 +90,6 @@ Only if the answer is no should the Hub show a Jeremy ToDo. When Jeremy is neede
 <ul>
   <li><a href="/reports/pm-portfolio-framework-2026-06-06.html">PM Agent and Portfolio Framework Review</a>.</li>
   <li><a href="/autonomy/">Autonomy operating contract</a>.</li>
+  <li><a href="/docs/work-session-supervision/">Work-session supervision contract</a>.</li>
   <li><a href="/roadmap/">Roadmap</a>.</li>
 </ul>
