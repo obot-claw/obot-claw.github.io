@@ -29,9 +29,9 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P007
 
 - Requirements: 1/1 complete
-- Linked tasks/evidence: 4/6 complete
+- Linked tasks/evidence: 6/6 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/6 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 6/6 complete)
 
 ## Active requirements
 
@@ -49,8 +49,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ## Metadata checks
 
-- https://github.com/obot-claw/obot-claw.github.io/issues/12 is ready for review but has no linked PR.
-- https://github.com/obot-claw/obot-claw.github.io/issues/13 is ready for review but has no linked PR.
+No metadata gaps found.
 
 ## Labels
 
