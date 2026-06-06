@@ -253,3 +253,26 @@ code {
   color: #5d5146;
   font-size: 0.9rem;
 }
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.agent-grid section, .agent-status-list {
+  border: 1px solid #dbe3ef;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.agent-grid h2 {
+  margin-top: 0;
+}
+
+.agent-status-list li {
+  margin: 0.5rem 0;
+}

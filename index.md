@@ -37,6 +37,10 @@ Public items needing Jeremy input. Each item links to the GitHub artifact where 
   <li><a href="https://github.com/obot-claw/gsm.safety">gsm.safety</a> <a href="https://github.com/obot-claw/gsm.safety/pull/29">#29</a> - @jwildfire: please confirm whether this non-roadmap PR should be prioritized now; otherwise leave for agent follow-up after P004/P007.</li>
 </ul>
 
+## Agents
+
+Current agent roles and work-session rules are summarized on the <a href="/agents/">Agent Overview</a> page.
+
 
 ## Projects
 
