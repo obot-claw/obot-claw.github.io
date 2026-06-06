@@ -28,10 +28,11 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ### P007
 
-- Requirements: 1/1 complete
-- Linked tasks/evidence: 6/6 complete
+- Requirements: 1/2 complete
+- Linked tasks/evidence: 8/8 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 6/6 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 2/2 complete)
 
 ## Active requirements
 
@@ -47,9 +48,19 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
   - https://github.com/obot-claw/safety-histogram/pull/1 — PR: Refactor Safety Histogram with Chart.js (open; assignee: @obot-claw; milestone: P004)
   - https://github.com/obot-claw/safety-histogram/pull/2 — PR: test-driver: trial safety histogram requirements (open; assignee: @obot-claw; milestone: P004)
 
+### P007 — PM visibility and human ToDo tracking
+
+- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/14
+- Status: ready-review
+- Labels: type:requirement, project:P007, status:ready-review
+- Tasks / evidence:
+  - https://github.com/obot-claw/obot-claw.github.io/issues/12 — Merge roadmap visibility into homepage projects (closed; assignee: @obot-claw; milestone: P007)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/13 — Track Jeremy human ToDo queue in PM workflow (closed; assignee: @obot-claw; milestone: P007)
+
 ## Metadata checks
 
-No metadata gaps found.
+- https://github.com/obot-claw/obot-claw.github.io/issues/12 does not link back to parent requirement https://github.com/obot-claw/obot-claw.github.io/issues/14.
+- https://github.com/obot-claw/obot-claw.github.io/issues/13 does not link back to parent requirement https://github.com/obot-claw/obot-claw.github.io/issues/14.
 
 ## Labels
 
