@@ -33,10 +33,10 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 - Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/17 — P007 Refactor development framework for increased autonomy (in-progress)
 - Requirements: 1/2 complete
-- Linked tasks/evidence: 6/7 complete
+- Linked tasks/evidence: 7/7 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/4 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 2/3 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 3/3 complete)
 
 ## Active requirements
 
@@ -60,7 +60,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Tasks / evidence:
   - https://github.com/obot-claw/obot-claw.github.io/issues/12 — Merge roadmap visibility into homepage projects (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/13 — Track Jeremy human ToDo queue in PM workflow (closed; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/15 — Add Project issue type for requirement parents (in-progress; assignee: @obot-claw; milestone: P007)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/15 — Add Project issue type for requirement parents (closed; assignee: @obot-claw; milestone: P007)
 
 ## Metadata checks
 
