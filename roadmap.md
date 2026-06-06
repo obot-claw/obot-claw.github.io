@@ -36,7 +36,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Linked tasks/evidence: 9/9 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/4 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 3/3 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (in-progress; tasks/evidence 3/3 complete)
   - https://github.com/obot-claw/obot-claw.github.io/issues/18 — P007 GitHub-native memory and work artifacts (ready-review; tasks/evidence 2/2 complete)
 
 ## Active requirements
@@ -56,8 +56,8 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P007 — PM visibility and human ToDo tracking
 
 - Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/14
-- Status: ready-review
-- Labels: type:requirement, project:P007, status:ready-review
+- Status: in-progress
+- Labels: type:requirement, project:P007, status:in-progress
 - Tasks / evidence:
   - https://github.com/obot-claw/obot-claw.github.io/issues/12 — Merge roadmap visibility into homepage projects (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/13 — Track Jeremy human ToDo queue in PM workflow (closed; assignee: @obot-claw; milestone: P007)
