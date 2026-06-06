@@ -24,39 +24,28 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Requirements: 0/1 complete
 - Linked tasks/evidence: 0/5 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (planned; tasks/evidence 0/5 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (in-progress; tasks/evidence 0/5 complete)
 
 ### P007
 
-- Requirements: 0/1 complete
-- Linked tasks/evidence: 3/4 complete
+- Requirements: 1/1 complete
+- Linked tasks/evidence: 4/4 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (planned; tasks/evidence 3/4 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/4 complete)
 
 ## Active requirements
 
 ### P004 — autonomous SafetyGraphics renderer modernization standard
 
 - Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/4
-- Status: planned
-- Labels: type:requirement, project:P004, status:planned
+- Status: in-progress
+- Labels: type:requirement, project:P004, status:in-progress
 - Tasks / evidence:
   - https://github.com/obot-claw/safety-agent/issues/5 — promote P004 renderer migration standard (planned; assignee: @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-agent/issues/6 — reconcile Safety Histogram implementation and evidence PRs (planned; assignee: @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-agent/pull/4 — PR: Document P004 renderer requirements and testing framework (open; assignee: @obot-claw; milestone: no milestone)
-  - https://github.com/obot-claw/safety-histogram/pull/1 — PR: Refactor Safety Histogram with Chart.js (open; assignee: unassigned; milestone: no milestone)
-  - https://github.com/obot-claw/safety-histogram/pull/2 — PR: test-driver: trial safety histogram requirements (open; assignee: @obot-claw; milestone: no milestone)
-
-### P007 — refactor development framework for increased autonomy
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/3
-- Status: planned
-- Labels: type:requirement, project:P007, status:planned
-- Tasks / evidence:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/1 — create autonomous work queue contract (planned; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/2 — add requirement and task issue templates (closed; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/5 — automate generated roadmap from GitHub issues (closed; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/8 — harden generated roadmap workflow concurrency (closed; assignee: @obot-claw; milestone: P007)
+  - https://github.com/obot-claw/safety-agent/issues/6 — reconcile Safety Histogram implementation and evidence PRs (in-progress; assignee: @obot-claw; milestone: P004)
+  - https://github.com/obot-claw/safety-agent/pull/4 — PR: Document P004 renderer requirements and testing framework (open; assignee: @obot-claw; milestone: P004)
+  - https://github.com/obot-claw/safety-histogram/pull/1 — PR: Refactor Safety Histogram with Chart.js (open; assignee: @obot-claw; milestone: P004)
+  - https://github.com/obot-claw/safety-histogram/pull/2 — PR: test-driver: trial safety histogram requirements (open; assignee: @obot-claw; milestone: P004)
 
 ## Metadata checks
 
