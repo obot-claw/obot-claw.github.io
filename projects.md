@@ -72,6 +72,16 @@ Project status is updated nightly. Click a project to expand details.
       </ul>
     </details>
   </li>
+  <li>
+    <details>
+      <summary><span class="project-overview"><span class="status-icon" title="75% complete">🚧</span> - <a href="/roadmap/#p007--refactor-development-framework-for-increased-autonomy">Refactor development framework for increased autonomy</a> <span class="info-icon" title="Create a requirements/tasks roadmap and autonomous work loop so obot can make evidence-backed project progress when Jeremy is inactive.">ℹ️</span> - <span class="progress-pill" title="75% complete">75%</span></span></summary>
+      <ul class="project-details">
+        <li><strong>Goal:</strong> Create a requirements/tasks roadmap and autonomous work loop so obot can make evidence-backed project progress when Jeremy is inactive.</li>
+        <li><strong>Completed tasks:</strong><ul><li>Autonomy audit published.</li><li>Requirement and Task issue templates added.</li><li>Roadmap page and automation added.</li><li>Autonomy page and daily work-block schedule added.</li><li>First PM/design and development blocks exercised on P004 Safety Histogram evidence.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review/close P007 requirement #3.</li><li>Resolve stale status-label hygiene on closed tasks if needed.</li><li>Keep using Safety Histogram cleanup as the first continuing L3 autonomy trial.</li></ul></li>
+      </ul>
+    </details>
+  </li>
 </ul>
 
 ## OpenClaw setup
@@ -145,7 +155,7 @@ Project status is updated nightly. Click a project to expand details.
 
 **Goal:** Create a requirements/tasks roadmap and autonomous work loop so obot can make evidence-backed progress on approved projects when Jeremy is inactive.
 
-**Current summary:** P007 was approved on June 5. The initial autonomy audit is published, the Requirements/Tasks GitHub issue scaffold exists, and the roadmap view has been added. Next steps are creating the autonomous work queue contract, finalizing issue templates, and using Safety Histogram evidence cleanup as the first L3 autonomy trial.
+**Current summary:** P007 was approved on June 5 and is now mostly implemented. The autonomy audit, roadmap, issue templates, roadmap automation, autonomy page, and daily PM/design plus development block schedule are in place. Next steps are Jeremy review/closure of the requirement, minor status-label hygiene, and continued evidence-backed P004 trial work.
 
 [https://obot-claw.github.io/roadmap/](https://obot-claw.github.io/roadmap/)
 
