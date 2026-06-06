@@ -22,17 +22,17 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P004
 
 - Requirements: 0/1 complete
-- Linked tasks/evidence: 0/5 complete
+- Linked tasks/evidence: 0/6 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (in-progress; tasks/evidence 0/5 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (in-progress; tasks/evidence 0/6 complete)
 
 ### P007
 
 - Requirements: 1/2 complete
-- Linked tasks/evidence: 6/6 complete
+- Linked tasks/evidence: 6/9 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/4 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 2/2 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/5 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 2/4 complete)
 
 ## Active requirements
 
@@ -42,6 +42,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Status: in-progress
 - Labels: type:requirement, project:P004, status:in-progress
 - Tasks / evidence:
+  - https://github.com/obot-claw/obot-claw.github.io/issues/16 — Project: P004 SafetyGraphics renderer modernization (in-progress; assignee: @obot-claw; milestone: P004)
   - https://github.com/obot-claw/safety-agent/issues/5 — promote P004 renderer migration standard (planned; assignee: @obot-claw; milestone: P004)
   - https://github.com/obot-claw/safety-agent/issues/6 — reconcile Safety Histogram implementation and evidence PRs (in-progress; assignee: @obot-claw; milestone: P004)
   - https://github.com/obot-claw/safety-agent/pull/4 — PR: Document P004 renderer requirements and testing framework (open; assignee: @obot-claw; milestone: P004)
@@ -54,8 +55,10 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Status: ready-review
 - Labels: type:requirement, project:P007, status:ready-review
 - Tasks / evidence:
+  - https://github.com/obot-claw/obot-claw.github.io/issues/17 — Project: P007 Refactor development framework for increased autonomy (in-progress; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/12 — Merge roadmap visibility into homepage projects (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/13 — Track Jeremy human ToDo queue in PM workflow (closed; assignee: @obot-claw; milestone: P007)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/15 — Add Project issue type for requirement parents (in-progress; assignee: @obot-claw; milestone: P007)
 
 ## Metadata checks
 
