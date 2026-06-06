@@ -1,0 +1,45 @@
+name: Project
+description: Top-level project that parents Requirement issues
+title: "Project: P000 "
+labels: ["type:project", "status:planned"]
+assignees:
+  - obot-claw
+body:
+  - type: input
+    id: project
+    attributes:
+      label: Project code
+      description: Project code, e.g. P004 or P007. Also apply the matching project:P### label and milestone.
+      placeholder: P007
+    validations:
+      required: true
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: High-level project goal and boundaries.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Design
+      description: Ownership, constraints, and how Requirements should be grouped under this Project.
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: Requirements
+      description: Link child Requirement issues here. Requirements should also link back to this Project issue.
+      value: |
+        - [ ] https://github.com/obot-claw/obot-claw.github.io/issues/<number>
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What must be true before this Project can close.
+    validations:
+      required: true

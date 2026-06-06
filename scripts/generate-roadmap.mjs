@@ -53,7 +53,15 @@ function projectNumber(label) {
 }
 
 function titleWithoutPrefix(title) {
-  return title.replace(/^Requirement:\s*/i, '').replace(/^Task:\s*/i, '').trim();
+  return title
+    .replace(/^Project:\s*/i, '')
+    .replace(/^Requirement:\s*/i, '')
+    .replace(/^Task:\s*/i, '')
+    .trim();
+}
+
+function isProjectIssue(item) {
+  return Boolean(item && item.kind !== 'pull' && labels(item).includes('type:project'));
 }
 
 function isComplete(item) {
@@ -111,16 +119,21 @@ async function fetchWorkUrl(url) {
   return { kind, ...(await github(`/repos/${owner}/${repo}/issues/${number}`)) };
 }
 
-function summarizeProjects(requirements, tasks) {
+function summarizeProjects(projectIssues, requirements, tasks) {
   const projects = new Map();
+  for (const issue of projectIssues) {
+    const proj = projectNumber(projectLabel(issue));
+    if (!projects.has(proj)) projects.set(proj, { projectIssue: null, requirements: [], taskItems: [] });
+    projects.get(proj).projectIssue = issue;
+  }
   for (const issue of requirements) {
     const proj = projectNumber(projectLabel(issue));
-    if (!projects.has(proj)) projects.set(proj, { requirements: [], taskItems: [] });
+    if (!projects.has(proj)) projects.set(proj, { projectIssue: null, requirements: [], taskItems: [] });
     const entry = projects.get(proj);
     entry.requirements.push(issue);
     for (const url of extractWorkUrls(issue.body || '')) {
       const task = tasks.get(workKeyFromUrl(url));
-      entry.taskItems.push({ url, item: task });
+      if (!isProjectIssue(task)) entry.taskItems.push({ url, item: task });
     }
   }
   return [...projects.entries()].sort(([a], [b]) => a.localeCompare(b));
@@ -130,20 +143,21 @@ function countComplete(items, picker = (x) => x) {
   return items.filter((x) => isComplete(picker(x))).length;
 }
 
-function renderProjectSummary(requirements, tasks) {
-  const projects = summarizeProjects(requirements, tasks);
+function renderProjectSummary(projectIssues, requirements, tasks) {
+  const projects = summarizeProjects(projectIssues, requirements, tasks);
   if (!projects.length) return 'No active projects found.\n';
   return projects.map(([proj, entry]) => {
     const reqDone = countComplete(entry.requirements);
     const taskDone = countComplete(entry.taskItems, (x) => x.item);
     const reqList = entry.requirements.map((issue) => {
-      const linked = extractWorkUrls(issue.body || '').map((url) => tasks.get(workKeyFromUrl(url))).filter(Boolean);
+      const linked = extractWorkUrls(issue.body || '').map((url) => tasks.get(workKeyFromUrl(url))).filter((item) => item && !isProjectIssue(item));
       const done = countComplete(linked);
       return `  - ${issue.html_url} — ${titleWithoutPrefix(issue.title)} (${statusText(issue)}; tasks/evidence ${done}/${linked.length} complete)`;
     });
     return [
       `### ${proj}`,
       '',
+      entry.projectIssue ? `- Project issue: ${entry.projectIssue.html_url} — ${titleWithoutPrefix(entry.projectIssue.title)} (${statusText(entry.projectIssue)})` : '- Project issue: not created',
       `- Requirements: ${reqDone}/${entry.requirements.length} complete`,
       `- Linked tasks/evidence: ${taskDone}/${entry.taskItems.length} complete`,
       '- Requirement drilldown:',
@@ -157,7 +171,7 @@ function renderRequirement(issue, tasks) {
   const proj = projectNumber(projectLabel(issue));
   const status = statusText(issue);
   const bodyUrls = extractWorkUrls(issue.body || '');
-  const taskLines = bodyUrls.map((url) => {
+  const taskLines = bodyUrls.filter((url) => !isProjectIssue(tasks.get(workKeyFromUrl(url)))).map((url) => {
     const task = tasks.get(workKeyFromUrl(url));
     if (!task) return `  - ${url}`;
     if (task.kind === 'pull') {
@@ -177,14 +191,19 @@ function renderRequirement(issue, tasks) {
   ].join('\n');
 }
 
-function renderMetadataWarnings(requirements, tasks) {
+function renderMetadataWarnings(projectIssues, requirements, tasks) {
   const warnings = [];
+  const projectByLabel = new Map(projectIssues.map((issue) => [projectNumber(projectLabel(issue)), issue]));
   for (const req of requirements) {
     if (!req.assignees?.length) warnings.push(`${req.html_url} is missing an assignee.`);
     if (!req.milestone) warnings.push(`${req.html_url} is missing a milestone.`);
+    const parentProject = projectByLabel.get(projectNumber(projectLabel(req)));
+    if (parentProject && !(req.body || '').includes(parentProject.html_url)) {
+      warnings.push(`${req.html_url} does not link back to parent project ${parentProject.html_url}.`);
+    }
     for (const url of extractWorkUrls(req.body || '')) {
       const item = tasks.get(workKeyFromUrl(url));
-      if (!item || item.kind === 'pull') continue;
+      if (!item || item.kind === 'pull' || isProjectIssue(item)) continue;
       if (!item.assignees?.length) warnings.push(`${url} is missing an assignee.`);
       if (!item.milestone) warnings.push(`${url} is missing a milestone.`);
       if (!hasParentLink(item, req.html_url)) warnings.push(`${url} does not link back to parent requirement ${req.html_url}.`);
@@ -198,12 +217,17 @@ function renderMetadataWarnings(requirements, tasks) {
 }
 
 async function main() {
+  const projectIssues = await listIssues(requirementsRepo, {
+    state: 'all',
+    labels: 'type:project'
+  });
   const requirements = await listIssues(requirementsRepo, {
     state: 'all',
     labels: 'type:requirement'
   });
   const activeRequirements = requirements.filter((issue) => issue.state === 'open');
 
+  projectIssues.sort((a, b) => projectNumber(projectLabel(a)).localeCompare(projectNumber(projectLabel(b))) || a.number - b.number);
   requirements.sort((a, b) => projectNumber(projectLabel(a)).localeCompare(projectNumber(projectLabel(b))) || a.number - b.number);
   activeRequirements.sort((a, b) => projectNumber(projectLabel(a)).localeCompare(projectNumber(projectLabel(b))) || a.number - b.number);
 
@@ -225,31 +249,34 @@ async function main() {
     '',
     '## Issue conventions',
     '',
-    '- **Requirement issues** live in `obot-claw/obot-claw.github.io`.',
+    '- **Project issues** live in `obot-claw/obot-claw.github.io` and use `type:project`.',
+    '- **Requirement issues** live in `obot-claw/obot-claw.github.io` and link back to a parent Project issue when one exists.',
     '- **Task issues** live in the repo closest to the implementation work.',
     '- Every Requirement should include `# Overview`, `# Design`, and `# Implementation plan` sections.',
     '- Every Requirement should have one `project:P###` label.',
+    '- Project issues should link child Requirement issues.',
     '- Requirement implementation plans should link task sub-issues or PRs.',
     '',
     '## Project rollup',
     '',
-    renderProjectSummary(requirements, tasks),
+    renderProjectSummary(projectIssues, requirements, tasks),
     '## Active requirements',
     '',
     ...(activeRequirements.length ? activeRequirements.map((issue) => renderRequirement(issue, tasks)) : ['No open Requirement issues found.', '']),
     '## Metadata checks',
     '',
-    renderMetadataWarnings(requirements, tasks),
+    renderMetadataWarnings(projectIssues, requirements, tasks),
     '## Labels',
     '',
-    '- `type:requirement` — high-level requirement.',
+    '- `type:project` — top-level project that parents requirements.',
+    '- `type:requirement` — high-level requirement linked to a parent project when one exists.',
     '- `type:task` — implementation task linked from a requirement.',
     '- `project:P###` — project rollup label.',
     '- `status:planned`, `status:in-progress`, `status:blocked`, `status:ready-review` — working status labels.',
     '',
     '## Automation',
     '',
-    'This page is generated from open GitHub issues labeled `type:requirement`. Linked task issues and evidence PRs are pulled from Requirement implementation plans.',
+    'This page is generated from GitHub issues labeled `type:project` and `type:requirement`. Project issues parent Requirements; linked task issues and evidence PRs are pulled from Requirement implementation plans.',
     ''
   ].join('\n');
 

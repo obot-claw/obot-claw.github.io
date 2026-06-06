@@ -11,28 +11,32 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ## Issue conventions
 
-- **Requirement issues** live in `obot-claw/obot-claw.github.io`.
+- **Project issues** live in `obot-claw/obot-claw.github.io` and use `type:project`.
+- **Requirement issues** live in `obot-claw/obot-claw.github.io` and link back to a parent Project issue when one exists.
 - **Task issues** live in the repo closest to the implementation work.
 - Every Requirement should include `# Overview`, `# Design`, and `# Implementation plan` sections.
 - Every Requirement should have one `project:P###` label.
+- Project issues should link child Requirement issues.
 - Requirement implementation plans should link task sub-issues or PRs.
 
 ## Project rollup
 
 ### P004
 
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/16 — P004 SafetyGraphics renderer modernization (in-progress)
 - Requirements: 0/1 complete
-- Linked tasks/evidence: 0/6 complete
+- Linked tasks/evidence: 0/5 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (in-progress; tasks/evidence 0/6 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (in-progress; tasks/evidence 0/5 complete)
 
 ### P007
 
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/17 — P007 Refactor development framework for increased autonomy (in-progress)
 - Requirements: 1/2 complete
-- Linked tasks/evidence: 6/9 complete
+- Linked tasks/evidence: 6/7 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/5 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 2/4 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/4 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (ready-review; tasks/evidence 2/3 complete)
 
 ## Active requirements
 
@@ -42,7 +46,6 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Status: in-progress
 - Labels: type:requirement, project:P004, status:in-progress
 - Tasks / evidence:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/16 — Project: P004 SafetyGraphics renderer modernization (in-progress; assignee: @obot-claw; milestone: P004)
   - https://github.com/obot-claw/safety-agent/issues/5 — promote P004 renderer migration standard (planned; assignee: @obot-claw; milestone: P004)
   - https://github.com/obot-claw/safety-agent/issues/6 — reconcile Safety Histogram implementation and evidence PRs (in-progress; assignee: @obot-claw; milestone: P004)
   - https://github.com/obot-claw/safety-agent/pull/4 — PR: Document P004 renderer requirements and testing framework (open; assignee: @obot-claw; milestone: P004)
@@ -55,7 +58,6 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Status: ready-review
 - Labels: type:requirement, project:P007, status:ready-review
 - Tasks / evidence:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/17 — Project: P007 Refactor development framework for increased autonomy (in-progress; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/12 — Merge roadmap visibility into homepage projects (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/13 — Track Jeremy human ToDo queue in PM workflow (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/15 — Add Project issue type for requirement parents (in-progress; assignee: @obot-claw; milestone: P007)
@@ -66,11 +68,12 @@ No metadata gaps found.
 
 ## Labels
 
-- `type:requirement` — high-level requirement.
+- `type:project` — top-level project that parents requirements.
+- `type:requirement` — high-level requirement linked to a parent project when one exists.
 - `type:task` — implementation task linked from a requirement.
 - `project:P###` — project rollup label.
 - `status:planned`, `status:in-progress`, `status:blocked`, `status:ready-review` — working status labels.
 
 ## Automation
 
-This page is generated from open GitHub issues labeled `type:requirement`. Linked task issues and evidence PRs are pulled from Requirement implementation plans.
+This page is generated from GitHub issues labeled `type:project` and `type:requirement`. Project issues parent Requirements; linked task issues and evidence PRs are pulled from Requirement implementation plans.
