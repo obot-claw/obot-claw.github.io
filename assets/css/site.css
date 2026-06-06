@@ -199,6 +199,32 @@ code {
   content: "";
 }
 
+.completed-projects {
+  margin: 1rem 0 1.5rem;
+  padding: .7rem .85rem;
+  border: 1px dashed var(--border);
+  border-radius: .75rem;
+  background: color-mix(in srgb, var(--panel) 88%, var(--border));
+}
+
+.completed-projects > summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.todo-list {
+  display: grid;
+  gap: .55rem;
+  padding-left: 1.25rem;
+}
+
+.todo-list li {
+  padding: .45rem .6rem;
+  border-left: 4px solid var(--link);
+  border-radius: .35rem;
+  background: color-mix(in srgb, var(--panel) 86%, var(--border));
+}
+
 .metric-list {
   display: grid;
   gap: 0.75rem;
