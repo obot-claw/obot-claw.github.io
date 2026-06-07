@@ -138,6 +138,7 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 ## Reports
 
+- [Autonomous agent framework options](/reports/autonomous-agent-framework-options-2026-06-06/)
 - [Autonomy audit and refactor development framework](/reports/autonomy-audit-2026-06-05/)
 
 ## Recent daily diary
