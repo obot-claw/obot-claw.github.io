@@ -1,7 +1,8 @@
 name: Requirement
 description: High-level requirement with linked implementation tasks
+type: Requirement
 title: "Requirement: "
-labels: ["type:requirement", "status:planned"]
+labels: ["status:planned"]
 assignees:
   - obot-claw
 body:

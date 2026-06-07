@@ -1,7 +1,8 @@
 name: Task
 description: Implementation task linked to a parent Requirement
+type: Task
 title: "Task: "
-labels: ["type:task", "status:planned"]
+labels: ["status:planned"]
 assignees:
   - obot-claw
 body:

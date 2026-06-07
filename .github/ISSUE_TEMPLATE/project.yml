@@ -1,7 +1,8 @@
 name: Project
 description: Top-level project that parents Requirement issues
+type: Project
 title: "Project: P000 "
-labels: ["type:project", "status:planned"]
+labels: ["status:planned"]
 assignees:
   - obot-claw
 body:
