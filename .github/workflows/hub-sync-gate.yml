@@ -3,6 +3,7 @@ name: Hub sync gate
 on:
   pull_request:
     paths:
+      - 'README.md'
       - 'index.md'
       - 'agents.md'
       - 'roadmap.md'
