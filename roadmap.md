@@ -48,6 +48,14 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
   - https://github.com/obot-claw/obot-claw.github.io/issues/31 — P008 Paperclip local security review (planned; tasks/evidence 0/0 complete)
   - https://github.com/obot-claw/obot-claw.github.io/issues/32 — P008 Paperclip PM and Dev pilot (planned; tasks/evidence 0/0 complete)
 
+### P009
+
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/36 — P009 execution-first reliable autonomous cycle (planned)
+- Requirements: 0/0 complete
+- Linked tasks/evidence: 0/0 complete
+- Requirement drilldown:
+  - None
+
 ## Active requirements
 
 ### P004 — autonomous SafetyGraphics renderer modernization standard
