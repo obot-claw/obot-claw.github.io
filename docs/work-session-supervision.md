@@ -93,3 +93,7 @@ Telegram status messages should only summarize the ledger result. Put detailed s
 ## Codex-first path
 
 OpenClaw should supervise Codex-powered PM, Development, and Testing cycles rather than becoming a bespoke agent platform. See [Codex cycle contract](/docs/codex-cycle-contract/) for the role split, handoff fields, and prompt skeletons.
+
+## Runtime sync
+
+This public Hub contract must be mirrored into local OpenClaw runtime instructions before it is considered operational. The local runtime files are `AGENTS.md`, `HEARTBEAT.md`, and workspace `skills/`.

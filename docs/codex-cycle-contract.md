@@ -15,6 +15,14 @@ This contract defines how OpenClaw should supervise Codex-powered PM, Developmen
 - **Codex Development**: branch/worktree or cloud-task implementation, tests, docs, demos, PR body, and evidence comments.
 - **Codex Testing**: browser/GHA/static/visual evidence, failure reproduction, and blocker comments.
 
+## Source-of-truth and sync model
+
+The Hub is the public documentation/reporting layer. Runtime behavior lives in the local OpenClaw workspace: `AGENTS.md`, `HEARTBEAT.md`, workspace `skills/`, and private memory files.
+
+A framework change is not fully implemented just because this Hub page changes. If it changes agent behavior, mirror it into local OpenClaw runtime files before using it operationally. Likewise, local skill/policy changes that affect public project workflow should be summarized in Hub docs, reports, or linked GitHub issues.
+
+Current local runtime companion skill: `skills/codex-work-cycle/SKILL.md`.
+
 ## Required handoff fields
 
 Every Codex work cycle must declare:
