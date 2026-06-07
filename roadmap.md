@@ -39,6 +39,14 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
   - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (in-progress; tasks/evidence 4/4 complete)
   - https://github.com/obot-claw/obot-claw.github.io/issues/18 — P007 GitHub-native memory and work artifacts (ready-review; tasks/evidence 2/2 complete)
 
+### P008
+
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/30 — P008 Paperclip autonomous agent orchestration pilot (planned)
+- Requirements: 0/0 complete
+- Linked tasks/evidence: 0/0 complete
+- Requirement drilldown:
+  - None
+
 ## Active requirements
 
 ### P004 — autonomous SafetyGraphics renderer modernization standard
