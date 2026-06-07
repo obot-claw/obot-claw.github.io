@@ -4,17 +4,42 @@ title: Autonomous agent framework options v3
 ---
 
 <style>
-.report-callout { border-left: 4px solid #f28c28; padding: 0.8rem 1rem; background: #fff7ed; color: #1f2937; margin: 1rem 0; }
-.report-callout strong { color: #111827; }
-.report-warning { border-left: 4px solid #dc2626; padding: 0.8rem 1rem; background: #fef2f2; color: #111827; margin: 1rem 0; }
-.report-ok { border-left: 4px solid #16a34a; padding: 0.8rem 1rem; background: #f0fdf4; color: #111827; margin: 1rem 0; }
-.plan-step { border: 1px solid #ddd; border-radius: 8px; padding: 0.9rem; margin: 0.8rem 0; background: #fff; color: #1f2937; }
-.score-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
-.score-table th, .score-table td { border: 1px solid #ddd; padding: 0.55rem; vertical-align: top; color: #1f2937; }
-.score-table th { background: #f5f5f5; color: #111827; }
-.pill { display: inline-block; padding: 0.15rem 0.45rem; border-radius: 999px; background: #eef2ff; color: #1f2937; font-size: 0.85rem; }
-code { color: #111827; background: #f3f4f6; padding: 0.05rem 0.25rem; border-radius: 4px; }
+.report-page {
+  --ink: #172033;
+  --muted: #526070;
+  --paper: #fffaf3;
+  --panel: #ffffff;
+  --line: #d8cfc2;
+  --accent: #f28c28;
+  --danger: #b42318;
+  --ok: #147a3d;
+  --link: #0b5cad;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 1.25rem;
+  border-radius: 14px;
+}
+.report-page h1,
+.report-page h2,
+.report-page h3,
+.report-page p,
+.report-page li,
+.report-page strong { color: var(--ink); }
+.report-page a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset: 0.16em; }
+.report-page .report-callout { border-left: 5px solid var(--accent); padding: 0.8rem 1rem; background: #fff1dc; color: var(--ink); margin: 1rem 0; border-radius: 0 10px 10px 0; }
+.report-page .report-warning { border-left: 5px solid var(--danger); padding: 0.8rem 1rem; background: #fff0f0; color: var(--ink); margin: 1rem 0; border-radius: 0 10px 10px 0; }
+.report-page .report-ok { border-left: 5px solid var(--ok); padding: 0.8rem 1rem; background: #ecfdf3; color: var(--ink); margin: 1rem 0; border-radius: 0 10px 10px 0; }
+.report-page .plan-step { border: 1px solid var(--line); border-radius: 12px; padding: 0.95rem; margin: 0.9rem 0; background: var(--panel); color: var(--ink); box-shadow: 0 1px 2px rgba(23,32,51,0.06); }
+.report-page .score-table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: var(--panel); color: var(--ink); }
+.report-page .score-table th,
+.report-page .score-table td { border: 1px solid var(--line); padding: 0.6rem; vertical-align: top; color: var(--ink); background: var(--panel); }
+.report-page .score-table th { background: #2f3a4a; color: #ffffff; font-weight: 700; }
+.report-page .score-table tr:nth-child(even) td { background: #fff6eb; color: var(--ink); }
+.report-page .pill { display: inline-block; padding: 0.15rem 0.45rem; border-radius: 999px; background: #e8eefc; color: #172033; font-size: 0.85rem; font-weight: 600; }
+.report-page code { color: #172033; background: #f2eee8; padding: 0.05rem 0.25rem; border-radius: 4px; border: 1px solid #e4ded6; }
 </style>
+
+<div class="report-page">
 
 <h1>Autonomous agent framework options v3</h1>
 
@@ -143,4 +168,6 @@ code { color: #111827; background: #f3f4f6; padding: 0.05rem 0.25rem; border-rad
 
 <div class="report-ok">
   <strong>Immediate recommendation:</strong> move today’s work to a supervised Codex runner implementation. The first acceptance test should deliberately simulate a stalled run and prove Jeremy gets a concise alert plus a durable failure record.
+</div>
+
 </div>
