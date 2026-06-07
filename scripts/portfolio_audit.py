@@ -37,10 +37,42 @@ def run_json(cmd: list[str]) -> Any:
 
 
 def gh_issue_list(repo: str) -> list[dict[str, Any]]:
-    return run_json([
-        "gh", "issue", "list", "--repo", repo, "--state", "open", "--limit", "200",
-        "--json", "number,title,body,labels,url",
-    ])
+    """Return open issues with issueType when GraphQL exposes it.
+
+    gh issue list does not currently expose issue type in --json fields, so use
+    GraphQL for issueType and fall back to labels/title when issue types have
+    not been migrated yet.
+    """
+    owner, name = repo.split("/", 1)
+    query = """
+    query($owner:String!, $repo:String!) {
+      repository(owner:$owner, name:$repo) {
+        issues(first:100, states:OPEN) {
+          nodes {
+            number
+            title
+            body
+            url
+            issueType { name }
+            labels(first:50) { nodes { name } }
+          }
+        }
+      }
+    }
+    """
+    data = run_json(["gh", "api", "graphql", "-f", f"owner={owner}", "-f", f"repo={name}", "-f", f"query={query}"])
+    nodes = data["data"]["repository"]["issues"]["nodes"]
+    normalized = []
+    for node in nodes:
+        normalized.append({
+            "number": node["number"],
+            "title": node["title"],
+            "body": node.get("body") or "",
+            "url": node["url"],
+            "issueType": (node.get("issueType") or {}).get("name"),
+            "labels": node.get("labels", {}).get("nodes", []),
+        })
+    return normalized
 
 
 def gh_pr_list(repo: str) -> list[dict[str, Any]]:
@@ -58,10 +90,21 @@ def has_label_prefix(labels: set[str], prefix: str) -> bool:
     return any(label.startswith(prefix) for label in labels)
 
 
-def issue_type(labels: set[str]) -> str | None:
-    for t in ["type:project", "type:requirement", "type:task"]:
-        if t in labels:
-            return t
+def issue_kind(issue: dict[str, Any], labels: set[str]) -> str | None:
+    issue_type = issue.get("issueType")
+    if issue_type in {"Project", "Requirement", "Task"}:
+        return issue_type.lower()
+    legacy = {"type:project": "project", "type:requirement": "requirement", "type:task": "task"}
+    for label, kind in legacy.items():
+        if label in labels:
+            return kind
+    title = issue.get("title", "")
+    if title.startswith("Project:"):
+        return "project"
+    if title.startswith("Requirement:"):
+        return "requirement"
+    if title.startswith("Task:"):
+        return "task"
     return None
 
 
@@ -70,17 +113,19 @@ def audit_issues(repo: str, issues: list[dict[str, Any]]) -> list[Finding]:
     for issue in issues:
         labels = label_names(issue)
         artifact = f"{repo} #{issue['number']}"
-        typ = issue_type(labels)
-        if not typ:
-            findings.append(Finding("error", "issue-metadata", artifact, "missing type:* label", "PM-fix-now"))
+        kind = issue_kind(issue, labels)
+        if not kind:
+            findings.append(Finding("error", "issue-metadata", artifact, "cannot determine issue kind from Issue Type, legacy label, or title", "PM-fix-now"))
+        if kind in {"project", "requirement"} and issue.get("issueType") != kind.title():
+            findings.append(Finding("warning", "issue-type", artifact, f"{kind.title()} should use GitHub Issue Type instead of legacy type label/title fallback", "PM-fix-now"))
         if not has_label_prefix(labels, "project:"):
             findings.append(Finding("error", "issue-metadata", artifact, "missing project:* label", "PM-fix-now"))
         if not has_label_prefix(labels, "status:"):
             findings.append(Finding("error", "issue-metadata", artifact, "missing status:* label", "PM-fix-now"))
         body = issue.get("body") or ""
-        if typ == "type:requirement" and "Parent Project" not in body and "Project" not in body:
+        if kind == "requirement" and "Parent Project" not in body and "Project" not in body:
             findings.append(Finding("warning", "issue-linkage", artifact, "requirement may lack parent Project reference", "PM-fix-now"))
-        if typ == "type:task" and "Parent Requirement" not in body and "Requirement" not in body:
+        if kind == "task" and "Parent Requirement" not in body and "Requirement" not in body:
             findings.append(Finding("warning", "issue-linkage", artifact, "task may lack parent Requirement reference", "PM-fix-now"))
     return findings
 

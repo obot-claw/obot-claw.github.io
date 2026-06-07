@@ -40,7 +40,7 @@ The check is intentionally narrow. It is not a scheduler or portfolio audit engi
 
 ## Portfolio audit helper
 
-The portfolio audit helper is a read-only PM aid for checking GitHub and Hub state before a Development cycle starts. It is implemented in `scripts/portfolio_audit.py` and validates issue metadata, requirement/task parent references, PR linkage, Hub sync findings, and optional dirty local worktree risk.
+The portfolio audit helper is a read-only PM aid for checking GitHub and Hub state before a Development cycle starts. It is implemented in `scripts/portfolio_audit.py` and validates GitHub Issue Type metadata, requirement/task parent references, PR linkage, Hub sync findings, and optional dirty local worktree risk. Project and Requirement templates use GitHub Issue Types instead of legacy `type:*` labels; task templates use the standard Task issue type.
 
 Run locally:
 
