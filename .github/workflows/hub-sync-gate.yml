@@ -1,0 +1,22 @@
+name: Hub sync gate
+
+on:
+  pull_request:
+    paths:
+      - 'index.md'
+      - 'agents.md'
+      - 'roadmap.md'
+      - 'scripts/check_hub_sync.py'
+      - '.github/workflows/hub-sync-gate.yml'
+  workflow_dispatch:
+
+jobs:
+  hub-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Check Hub sync conventions
+        run: python3 scripts/check_hub_sync.py --root .
