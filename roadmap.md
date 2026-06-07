@@ -42,10 +42,11 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P008
 
 - Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/30 — P008 Paperclip autonomous agent orchestration pilot (planned)
-- Requirements: 0/0 complete
+- Requirements: 0/2 complete
 - Linked tasks/evidence: 0/0 complete
 - Requirement drilldown:
-  - None
+  - https://github.com/obot-claw/obot-claw.github.io/issues/31 — P008 Paperclip local security review (planned; tasks/evidence 0/0 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/32 — P008 Paperclip PM and Dev pilot (planned; tasks/evidence 0/0 complete)
 
 ## Active requirements
 
@@ -82,9 +83,28 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
   - https://github.com/obot-claw/obot-claw.github.io/issues/19 — Codify PM issue memory and development PR workflow (closed; assignee: @obot-claw; milestone: P007)
   - https://github.com/obot-claw/obot-claw.github.io/issues/20 — Create Telegram formatting skill for clean status posts (closed; assignee: @obot-claw; milestone: P007)
 
+### P008 — Paperclip local security review
+
+- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/31
+- Status: planned
+- Labels: type:requirement, status:planned, project:P008
+- Tasks / evidence:
+  - No linked task issues found in the implementation plan.
+
+### P008 — Paperclip PM and Dev pilot
+
+- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/32
+- Status: planned
+- Labels: type:requirement, status:planned, project:P008
+- Tasks / evidence:
+  - No linked task issues found in the implementation plan.
+
 ## Metadata checks
 
-No metadata gaps found.
+- https://github.com/obot-claw/obot-claw.github.io/issues/31 is missing a milestone.
+- https://github.com/obot-claw/obot-claw.github.io/issues/31 does not link back to parent project https://github.com/obot-claw/obot-claw.github.io/issues/30.
+- https://github.com/obot-claw/obot-claw.github.io/issues/32 is missing a milestone.
+- https://github.com/obot-claw/obot-claw.github.io/issues/32 does not link back to parent project https://github.com/obot-claw/obot-claw.github.io/issues/30.
 
 ## Labels
 
