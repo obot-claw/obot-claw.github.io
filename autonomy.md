@@ -34,7 +34,7 @@ Default daily block authority: **L2**. L3 is allowed only when the parent Requir
 
 Every autonomous block must be registered in the durable work-session ledger before it is described as active. Use `scripts/work_session.py` to record the target, session reference, checkpoint, liveness method, evidence requirement, and recovery plan. If liveness cannot be confirmed by the checkpoint, mark the block stalled/failed instead of reporting it as running.
 
-See [Work-session supervision](/docs/work-session-supervision/) for the state model and helper commands.
+See [Work-session supervision](/docs/work-session-supervision/) for the state model and helper commands. Use the [Codex cycle contract](/docs/codex-cycle-contract/) for PM, Development, and Testing execution.
 
 ## Required output
 

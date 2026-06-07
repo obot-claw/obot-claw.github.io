@@ -89,3 +89,7 @@ If a session is `not_found`, unreachable, or silent past checkpoint:
 ## Telegram rule
 
 Telegram status messages should only summarize the ledger result. Put detailed status in the issue, report, or ledger output.
+
+## Codex-first path
+
+OpenClaw should supervise Codex-powered PM, Development, and Testing cycles rather than becoming a bespoke agent platform. See [Codex cycle contract](/docs/codex-cycle-contract/) for the role split, handoff fields, and prompt skeletons.

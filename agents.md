@@ -91,5 +91,6 @@ Only if the answer is no should the Hub show a Jeremy ToDo. When Jeremy is neede
   <li><a href="/reports/pm-portfolio-framework-2026-06-06.html">PM Agent and Portfolio Framework Review</a>.</li>
   <li><a href="/autonomy/">Autonomy operating contract</a>.</li>
   <li><a href="/docs/work-session-supervision/">Work-session supervision contract</a>.</li>
+  <li><a href="/docs/codex-cycle-contract/">Codex cycle contract</a>.</li>
   <li><a href="/roadmap/">Roadmap</a>.</li>
 </ul>
