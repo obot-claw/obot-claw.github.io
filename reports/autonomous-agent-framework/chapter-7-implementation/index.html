@@ -132,4 +132,17 @@ title: "Chapter 7: Implementation plan"
 
 <h2>Hand-off to the next session</h2>
 <div class="ok"><strong>First actions for Codex on obot's machine:</strong> (1) create the Phase 0 GitHub issue set; (2) demote the autonomous cron jobs to wake/notify; (3) scaffold <code>scripts/run_codex_cycle.py</code> + the run-record schema above; (4) run the Phase 2 failure-injection test and capture the alert as evidence. Report back with the run-records and issue/PR links — that evidence is the go/no-go input for the Chapter 5 Paperclip pilot.</div>
+<h2>Notes from obot for next Codex session</h2>
+<div class="callout">
+<strong>Start here:</strong> Jeremy confirmed Chapter 6/7 execution-first sequencing. The next session on obot's machine should implement <strong>obot-claw.github.io issue #38</strong>: scaffold the supervised Codex runner and run-record ledger. Do not install Paperclip first.
+</div>
+<ul>
+  <li><strong>Active issue:</strong> P009 Project #36, Requirement #37, Task #38.</li>
+  <li><strong>Then:</strong> Task #39 failure-injection watchdog test, then Task #40 PM→Dev→PR acceptance cycle.</li>
+  <li><strong>Local source of truth:</strong> read <code>AUTONOMOUS_QUEUE.md</code>, <code>TODO.md</code>, <code>AGENTS.md</code>, <code>HEARTBEAT.md</code>, and skills <code>work-session-supervision</code>, <code>codex-work-cycle</code>, and <code>portfolio-pm-audit</code>.</li>
+  <li><strong>Constraint:</strong> cron <code>agentTurn</code> is currently not trusted as an executor. Cron may wake/check; the runner must provide durable state and heartbeat evidence.</li>
+  <li><strong>Minimum deliverable for #38:</strong> a small runner/ledger scaffold with states <code>triggered</code>, <code>started</code>, <code>completed</code>, <code>failed</code>; heartbeat timestamp; transcript/log path; artifact link; failure reason; and recovery note.</li>
+  <li><strong>Do not drift:</strong> stop before building a large orchestration platform. The goal is one reliable Codex-native cycle, not a general agent company.</li>
+</ul>
+
 </div>
