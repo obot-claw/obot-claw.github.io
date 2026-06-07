@@ -1,0 +1,22 @@
+---
+layout: default
+title: Work-session supervision acceptance evidence
+---
+
+<h1>Work-session supervision acceptance evidence</h1>
+
+<p><strong>Date:</strong> 2026-06-06</p>
+
+<table>
+  <thead><tr><th>Acceptance criterion</th><th>Evidence</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>PM handoffs include session id, checkpoint, liveness method, progress evidence, and recovery plan.</td><td><code>scripts/work_session.py start</code> requires these fields.</td><td>Met</td></tr>
+    <tr><td>Main obot checks liveness before saying a cycle is active.</td><td><code>docs/work-session-supervision.md</code> and <code>autonomy.md</code> require ledger-backed liveness.</td><td>Met</td></tr>
+    <tr><td><code>not_found</code> or unreachable sessions are marked stalled/failed, not active.</td><td>Helper classifies checkpoint-past sessions without evidence as stalled.</td><td>Met</td></tr>
+    <tr><td>Session failures are logged to memory and, when relevant, linked GitHub issues.</td><td>Recovery rule requires memory/issue logging; #25 contains failure report comments.</td><td>Met</td></tr>
+    <tr><td>Status helper/report lists active/planned/stalled/completed cycles.</td><td><code>status</code> and <code>report</code> commands implemented and smoke-tested.</td><td>Met</td></tr>
+    <tr><td><code>skills/work-session-supervision</code> is used by starts and status checks.</td><td>Workspace skill updated; public docs mirror the contract.</td><td>Met</td></tr>
+    <tr><td>Codex-first implementation path is documented.</td><td><code>docs/codex-cycle-contract.md</code> added.</td><td>Met</td></tr>
+    <tr><td>Validation is automated.</td><td><code>.github/workflows/work-session-helper.yml</code> runs helper self-test on PRs.</td><td>Met</td></tr>
+  </tbody>
+</table>

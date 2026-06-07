@@ -1,0 +1,33 @@
+name: Work-session helper validation
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/work_session.py'
+      - 'docs/work-session-supervision.md'
+      - 'docs/codex-cycle-contract.md'
+      - '.github/workflows/work-session-helper.yml'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Run work-session helper self-test
+        run: python3 scripts/work_session.py self-test
+      - name: Exercise report command
+        run: |
+          python3 scripts/work_session.py --ledger /tmp/work-session-ledger.json start \
+            --id gha-validation \
+            --cycle "GHA validation" \
+            --role Testing \
+            --target "obot-claw.github.io #25" \
+            --session-ref "github-actions:${{ github.run_id }}" \
+            --checkpoint "2099-01-01T00:00:00Z" \
+            --liveness-method "GitHub Actions run status" \
+            --recovery-plan "inspect failed workflow logs and mark stalled/failed"
+          python3 scripts/work_session.py --ledger /tmp/work-session-ledger.json report
