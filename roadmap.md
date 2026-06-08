@@ -41,11 +41,11 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ### P008
 
-- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/30 — P008 Paperclip autonomous agent orchestration pilot (planned)
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/30 — P008 Paperclip autonomous agent orchestration pilot (in-progress)
 - Requirements: 0/2 complete
 - Linked tasks/evidence: 0/0 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/31 — P008 Paperclip local security review (planned; tasks/evidence 0/0 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/31 — P008 Paperclip local security review (in-progress; tasks/evidence 0/0 complete)
   - https://github.com/obot-claw/obot-claw.github.io/issues/32 — P008 Paperclip PM and Dev pilot (planned; tasks/evidence 0/0 complete)
 
 ### P009
@@ -94,8 +94,8 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P008 — Paperclip local security review
 
 - Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/31
-- Status: planned
-- Labels: type:requirement, status:planned, project:P008
+- Status: in-progress
+- Labels: type:requirement, status:in-progress, project:P008
 - Tasks / evidence:
   - No linked task issues found in the implementation plan.
 
