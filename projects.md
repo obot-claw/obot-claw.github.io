@@ -210,7 +210,7 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 **Goal:** Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.
 
-**Current summary:** P008 was created after the autonomy framework report, then deferred behind P009 until the execution-first Codex-native runner path was proven. Task #33 completed a source/security/install-surface review without installing Paperclip or using credentials. Task #34 attempted an approved local-only PM pilot with telemetry disabled, loopback-only settings, disposable state, and no real OpenClaw auth, but setup is blocked by embedded PostgreSQL initialization. Task #35 remains blocked until PM-only local setup is safe and working.
+**Current summary:** P008 was created after the autonomy framework report, then deferred behind P009 until the execution-first Codex-native runner path was proven. Task #33 completed a source/security/install-surface review without installing Paperclip or using credentials. Task #34 completed an approved local-only PM pilot with telemetry disabled, loopback-only settings, disposable state, and no real OpenClaw auth, with a local Paperclip install currently running. Task #46 validated the loopback local API/status-update flow, and Task #35 remains the docs-only Dev PR pilot with only local documentation updates and static-file verification in progress.
 
 [https://github.com/obot-claw/obot-claw.github.io/issues/30](https://github.com/obot-claw/obot-claw.github.io/issues/30)
 
