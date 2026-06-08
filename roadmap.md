@@ -50,11 +50,11 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ### P009
 
-- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/36 — P009 execution-first reliable autonomous cycle (planned)
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/36 — P009 execution-first reliable autonomous cycle (ready-review)
 - Requirements: 0/1 complete
 - Linked tasks/evidence: 0/0 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/37 — P009 supervised Codex runner and watchdog (planned; tasks/evidence 0/0 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/37 — P009 supervised Codex runner and watchdog (ready-review; tasks/evidence 0/0 complete)
 
 ## Active requirements
 
@@ -110,8 +110,8 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P009 — supervised Codex runner and watchdog
 
 - Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/37
-- Status: planned
-- Labels: type:requirement, status:planned, project:P009
+- Status: ready-review
+- Labels: type:requirement, status:ready-review, project:P009
 - Tasks / evidence:
   - No linked task issues found in the implementation plan.
 
