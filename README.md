@@ -56,3 +56,31 @@ python3 scripts/portfolio_audit.py --root . --worktree-root /Users/obot/.opencla
 ```
 
 The helper is read-only. It reports PM-fix-now, Development-handoff, and risk classifications; it does not mutate GitHub issues, PRs, or local repos.
+
+## Supervised Codex cycle runner
+
+The supervised Codex cycle runner is the P009 execution-layer scaffold. It records a single PM, Development, or Testing worker run as `triggered`, `started`, `completed`, or `failed`, writes heartbeat timestamps while the worker is alive, and stores a transcript path plus artifact/failure metadata. Run artifacts are local by default under `.codex-runs/` and are gitignored.
+
+Run locally:
+
+```bash
+python3 scripts/run_codex_cycle.py self-test
+python3 scripts/run_codex_cycle.py status
+```
+
+Dry-run a supervised worker command:
+
+```bash
+python3 scripts/run_codex_cycle.py run \
+  --role PM \
+  --issue obot-claw/obot-claw.github.io#38 \
+  --repo obot-claw/obot-claw.github.io \
+  --write-scope none \
+  --timeout 60 \
+  --heartbeat-interval 5 \
+  --artifact dry-run:local \
+  --recovery "record failure and alert main obot" \
+  --command python3 -c "print('dry run artifact')"
+```
+
+When `--command` is omitted the runner defaults to `codex exec`, so future P009 work can wire in a real prompt template without changing the run-record schema.
