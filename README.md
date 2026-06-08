@@ -94,3 +94,16 @@ python3 scripts/run_codex_cycle.py check --id dry-run-id --mark-failed --json
 ```
 
 When a failure is marked, the runner writes `state=failed`, `failure_reason`, and a concise `alert` string suitable for Telegram status handling.
+
+Security notes:
+
+- Local run records and transcripts may contain private prompts, command output, filesystem paths, or accidental secrets.
+- Never commit `.codex-runs/` or copied transcript content without reviewing it for public-safety first.
+- Telegram/OpenClaw integrations should expose allowlisted runner actions only, such as `self-test`, `failure-test`, `status`, and `check --mark-failed`.
+- Do not forward arbitrary chat text into `--command`; real PM/Development commands should come from controlled local templates or explicit operator-reviewed commands.
+
+P009 acceptance-cycle notes:
+
+- #38 proves the runner can record a successful supervised worker run.
+- #39 proves the watchdog can mark triggered-but-not-started and stale-heartbeat runs failed without repeat alerts.
+- #40 should link the PM audit run record, the Development PR, and the post-artifact Telegram summary before treating the runner as a reliable PM to Development baseline.
