@@ -101,7 +101,7 @@ Security notes:
 
 - Local run records and transcripts may contain private prompts, command output, filesystem paths, or accidental secrets.
 - Never commit `.codex-runs/` or copied transcript content without reviewing it for public-safety first.
-- Telegram/OpenClaw integrations should expose allowlisted runner actions only, such as `self-test`, `failure-test`, `status`, and `check --mark-failed`.
+- Telegram/OpenClaw integrations should expose allowlisted runner actions only. Use `scripts/p009_runner_action.py` for Telegram/OpenClaw-facing calls; it supports `self-test`, `status`, `check`, and `check-mark-failed` and never forwards arbitrary chat text into `--command`.
 - Do not forward arbitrary chat text into `--command`; real PM/Development commands should come from controlled local templates or explicit operator-reviewed commands.
 
 P009 acceptance-cycle notes:
