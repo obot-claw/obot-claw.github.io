@@ -19,7 +19,7 @@ python3 scripts/p009_runner_action.py <action>
 Supported actions:
 
 - `self-test`: run the built-in runner self-test, then create one persistent safe dry-run record.
-- `status`: summarize local run records without mutating them.
+- `status`: summarize local run records without mutating them, including sanitized per-record run id, state, heartbeat timestamp, transcript path, exit code, effective state, and status reason.
 - `check`: run the watchdog check without marking failures.
 - `check-mark-failed`: run the watchdog check and mark triggered/stale records failed.
 

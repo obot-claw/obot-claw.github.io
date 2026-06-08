@@ -52,18 +52,22 @@ def summarize_record(record: dict[str, Any]) -> dict[str, Any]:
         "heartbeat_at": record.get("heartbeat_at"),
         "transcript": safe_transcript_path(record.get("transcript")),
         "exit_code": record.get("exit_code"),
-        "failure_reason": record.get("failure_reason"),
+        "effective_state": record.get("effective_state"),
+        "status_reason": record.get("status_reason"),
     }
 
 
-def summarize_records(records: list[dict[str, Any]], exit_code: int) -> dict[str, Any]:
+def summarize_records(records: list[dict[str, Any]], exit_code: int, include_records: bool = False) -> dict[str, Any]:
     alerts = [r.get("emitted_alert") for r in records if r.get("emitted_alert")]
-    return {
+    summary: dict[str, Any] = {
         "exit_code": exit_code,
         "records_checked": len(records),
         "newly_failed": len(alerts),
         "alerts": alerts,
     }
+    if include_records:
+        summary["records"] = [summarize_record(r) for r in records]
+    return summary
 
 
 def action_self_test(args: argparse.Namespace) -> int:
@@ -126,7 +130,7 @@ def action_status(args: argparse.Namespace) -> int:
         cmd.extend(["--id", args.id])
     code, out, err = run_cmd(cmd)
     records = json.loads(out or "[]") if code in (0, 1) else []
-    summary = {"action": "status", **summarize_records(records, code)}
+    summary = {"action": "status", **summarize_records(records, code, include_records=True)}
     if args.debug:
         summary["debug_stderr"] = err
     print(json.dumps(summary, indent=2, sort_keys=True))
