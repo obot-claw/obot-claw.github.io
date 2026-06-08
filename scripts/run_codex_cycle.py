@@ -23,6 +23,7 @@ from typing import Any
 STATES = {"triggered", "started", "completed", "failed"}
 TERMINAL_STATES = {"completed", "failed"}
 DEFAULT_RUNS_DIR = Path(os.environ.get("CODEX_RUNS_DIR", ".codex-runs"))
+DEFAULT_TRIGGER_GRACE_SECONDS = 60
 
 
 def utcnow_dt() -> datetime:
@@ -93,6 +94,7 @@ def base_record(args: argparse.Namespace, rid: str) -> dict[str, Any]:
         "completed_at": None,
         "heartbeat_at": None,
         "deadline_at": None,
+        "trigger_grace_seconds": DEFAULT_TRIGGER_GRACE_SECONDS,
         "heartbeat_interval_seconds": args.heartbeat_interval,
         "timeout_seconds": args.timeout,
         "pid": None,
@@ -118,6 +120,14 @@ def command_from_args(args: argparse.Namespace) -> list[str]:
     if args.prompt_template:
         return ["codex", "exec", args.prompt_template.read_text()]
     return ["codex", "exec"]
+
+
+def alert_text(record: dict[str, Any], reason: str) -> str:
+    target = record.get("target_issue") or "unknown-target"
+    run = record.get("run_id") or "unknown-run"
+    role = record.get("role") or "unknown-role"
+    text = f"P009 run failed: {run} {role} {target} - {reason}"
+    return text[:497] + "..." if len(text) > 500 else text
 
 
 def cmd_run(args: argparse.Namespace) -> int:
@@ -201,7 +211,7 @@ def classify_record(record: dict[str, Any], now: datetime | None = None) -> tupl
     triggered_at = parse_time(record.get("triggered_at"))
 
     if state == "triggered":
-        if triggered_at and current - triggered_at > timedelta(seconds=record.get("trigger_grace_seconds", 60)):
+        if triggered_at and current - triggered_at > timedelta(seconds=record.get("trigger_grace_seconds", DEFAULT_TRIGGER_GRACE_SECONDS)):
             return "failed", "triggered run never reached started"
         return "triggered", "waiting for worker start"
 
@@ -215,6 +225,19 @@ def classify_record(record: dict[str, Any], now: datetime | None = None) -> tupl
         return "started", "worker live"
 
     return state, "ok"
+
+
+def check_record(path: Path, mark: bool) -> tuple[dict[str, Any], str, str, str | None]:
+    record = load_json(path)
+    effective, reason = classify_record(record)
+    alert = None
+    if mark and effective == "failed" and record.get("state") not in TERMINAL_STATES:
+        mark_failed(record, reason)
+        record["alert"] = alert_text(record, reason)
+        save_json(path, record)
+        append_log(Path(record["transcript"]), f"watchdog failed {reason}")
+        alert = record["alert"]
+    return record, effective, reason, alert
 
 
 def cmd_status(args: argparse.Namespace) -> int:
@@ -249,6 +272,40 @@ def cmd_status(args: argparse.Namespace) -> int:
             print(f"  failure: {record['failure_reason']}")
         print(f"  recovery: {record.get('recovery') or 'none'}")
     return 0
+
+
+def cmd_check(args: argparse.Namespace) -> int:
+    paths = sorted(args.runs_dir.glob("*.json"))
+    if args.id:
+        paths = [record_path(args.runs_dir, args.id)]
+
+    rows = []
+    failures_to_report = 0
+    for path in paths:
+        if not path.exists():
+            continue
+        record, effective, reason, alert = check_record(path, args.mark_failed)
+        if effective == "failed" and (not args.mark_failed or alert):
+            failures_to_report += 1
+        rows.append((record, effective, reason, alert))
+
+    if args.json:
+        print(json.dumps([
+            dict(record, effective_state=effective, status_reason=reason, emitted_alert=alert)
+            for record, effective, reason, alert in rows
+        ], indent=2))
+        return 1 if failures_to_report else 0
+
+    if not rows:
+        print("No matching Codex cycle runs.")
+        return 0
+
+    for record, effective, reason, alert in rows:
+        print(f"{record['run_id']} | {effective} | {record.get('role')} | {record.get('target_issue')}")
+        print(f"  reason: {reason}")
+        if alert:
+            print(f"  alert: {alert}")
+    return 1 if failures_to_report else 0
 
 
 def cmd_self_test(args: argparse.Namespace) -> int:
@@ -290,6 +347,73 @@ def cmd_self_test(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_failure_test(args: argparse.Namespace) -> int:
+    with tempfile.TemporaryDirectory() as d:
+        runs_dir = Path(d) / "runs"
+        triggered = {
+            "version": 1,
+            "run_id": "failure-triggered",
+            "role": "PM",
+            "target_issue": "obot-claw/obot-claw.github.io#39",
+            "repo": "obot-claw/obot-claw.github.io",
+            "executor": "failure-test",
+            "command": "not-started",
+            "write_scope": "none",
+            "prompt_template": None,
+            "state": "triggered",
+            "triggered_at": "2000-01-01T00:00:00Z",
+            "started_at": None,
+            "completed_at": None,
+            "heartbeat_at": None,
+            "deadline_at": None,
+            "trigger_grace_seconds": 1,
+            "heartbeat_interval_seconds": 1,
+            "timeout_seconds": 10,
+            "pid": None,
+            "exit_code": None,
+            "artifact": None,
+            "transcript": str(transcript_path(runs_dir, "failure-triggered")),
+            "failure_reason": None,
+            "recovery": "alert main obot and do not claim active work",
+        }
+        stale = dict(triggered)
+        stale.update({
+            "run_id": "failure-stale",
+            "state": "started",
+            "triggered_at": "2000-01-01T00:00:00Z",
+            "started_at": "2000-01-01T00:00:01Z",
+            "heartbeat_at": "2000-01-01T00:00:02Z",
+            "deadline_at": "2000-01-01T00:00:03Z",
+            "transcript": str(transcript_path(runs_dir, "failure-stale")),
+        })
+        save_json(record_path(runs_dir, "failure-triggered"), triggered)
+        save_json(record_path(runs_dir, "failure-stale"), stale)
+
+        check_args = argparse.Namespace(runs_dir=runs_dir, id=None, mark_failed=True, json=True)
+        code = cmd_check(check_args)
+        assert code == 1, code
+        checked_triggered = load_json(record_path(runs_dir, "failure-triggered"))
+        checked_stale = load_json(record_path(runs_dir, "failure-stale"))
+        assert checked_triggered["state"] == "failed", checked_triggered
+        assert checked_triggered["failure_reason"] == "triggered run never reached started", checked_triggered
+        assert checked_stale["state"] == "failed", checked_stale
+        assert checked_stale["failure_reason"] == "started run passed deadline", checked_stale
+        assert len(checked_triggered["alert"]) <= 500, checked_triggered["alert"]
+        assert len(checked_stale["alert"]) <= 500, checked_stale["alert"]
+        _, repeat_triggered_effective, _, repeat_triggered_alert = check_record(
+            record_path(runs_dir, "failure-triggered"), mark=True
+        )
+        _, repeat_stale_effective, _, repeat_stale_alert = check_record(
+            record_path(runs_dir, "failure-stale"), mark=True
+        )
+        assert repeat_triggered_effective == "failed", repeat_triggered_effective
+        assert repeat_stale_effective == "failed", repeat_stale_effective
+        assert repeat_triggered_alert is None, repeat_triggered_alert
+        assert repeat_stale_alert is None, repeat_stale_alert
+    print("failure-test passed")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one supervised Codex cycle")
     parser.add_argument("--runs-dir", type=Path, default=DEFAULT_RUNS_DIR, help="directory for run records and transcripts")
@@ -316,8 +440,17 @@ def build_parser() -> argparse.ArgumentParser:
     status.add_argument("--json", action="store_true")
     status.set_defaults(func=cmd_status)
 
+    check = sub.add_parser("check", help="watchdog check for failed/stale run records")
+    check.add_argument("--id")
+    check.add_argument("--mark-failed", action="store_true", help="write failed state, failure_reason, and alert for detected failures")
+    check.add_argument("--json", action="store_true")
+    check.set_defaults(func=cmd_check)
+
     self_test = sub.add_parser("self-test", help="run built-in smoke test")
     self_test.set_defaults(func=cmd_self_test)
+
+    failure_test = sub.add_parser("failure-test", help="run triggered/stale failure-injection test")
+    failure_test.set_defaults(func=cmd_failure_test)
     return parser
 
 

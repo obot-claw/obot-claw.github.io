@@ -65,6 +65,7 @@ Run locally:
 
 ```bash
 python3 scripts/run_codex_cycle.py self-test
+python3 scripts/run_codex_cycle.py failure-test
 python3 scripts/run_codex_cycle.py status
 ```
 
@@ -84,3 +85,12 @@ python3 scripts/run_codex_cycle.py run \
 ```
 
 When `--command` is omitted the runner defaults to `codex exec`, so future P009 work can wire in a real prompt template without changing the run-record schema.
+
+Watchdog check mode detects records that were triggered but never started, or started records whose heartbeat/deadline is stale. Use `--mark-failed` when the check is allowed to update local run records:
+
+```bash
+python3 scripts/run_codex_cycle.py check --mark-failed
+python3 scripts/run_codex_cycle.py check --id dry-run-id --mark-failed --json
+```
+
+When a failure is marked, the runner writes `state=failed`, `failure_reason`, and a concise `alert` string suitable for Telegram status handling.
