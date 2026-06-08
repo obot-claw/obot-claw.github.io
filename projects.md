@@ -60,6 +60,32 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
       </ul>
     </details>
   </li>
+  <li>
+    <details>
+      <summary><span class="project-overview"><span class="status-icon" title="25% complete">🚧</span> - <a href="/projects/#paperclip-autonomous-agent-orchestration-pilot">P008 Paperclip autonomous agent orchestration pilot</a> <span class="info-icon" title="Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.">ℹ️</span> - <span class="progress-pill" title="25% complete">25%</span></span></summary>
+      <ul class="project-details">
+        <li><strong>Goal:</strong> Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.</li>
+        <li><strong>Project issue:</strong> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/30">P008 Project #30</a></li>
+        <li><strong>Requirements:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/31">P008 Requirement #31: Paperclip local security review</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/32">P008 Requirement #32: Paperclip PM and Dev pilot</a></li></ul></li>
+        <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/33">Task #33: inspect Paperclip source and install surface</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/34">Task #34: configure Paperclip PM-only pilot</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/35">Task #35: run Paperclip Codex Dev pilot</a></li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Paperclip source/security/install-surface review completed without installing or using credentials.</li><li>Local-only pilot guardrails defined: telemetry disabled, loopback only, disposable state, and no real OpenClaw auth.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Resolve or defer the embedded PostgreSQL bootstrap failure in Task #34.</li><li>Keep Dev pilot Task #35 blocked until PM-only local setup is safe and working.</li></ul></li>
+      </ul>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><span class="project-overview"><span class="status-icon" title="90% complete">🚧</span> - <a href="/projects/#execution-first-reliable-autonomous-cycle">P009 Execution-first reliable autonomous cycle</a> <span class="info-icon" title="Prove a Codex-native PM to Dev to PR cycle with supervised runner records, watchdog evidence, and allowlisted actions before adopting heavier orchestration tools.">ℹ️</span> - <span class="progress-pill" title="90% complete">90%</span></span></summary>
+      <ul class="project-details">
+        <li><strong>Goal:</strong> Prove a Codex-native PM to Dev to PR cycle with supervised runner records, watchdog evidence, and allowlisted actions before adopting heavier orchestration tools.</li>
+        <li><strong>Project issue:</strong> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/36">P009 Project #36</a></li>
+        <li><strong>Requirements:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/37">P009 Requirement #37: supervised Codex runner and watchdog</a></li></ul></li>
+        <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/38">Task #38: scaffold supervised Codex runner ledger</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/39">Task #39: failure-injection watchdog test</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/40">Task #40: PM to Dev to PR acceptance cycle</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/43">Task #43: Wire OpenClaw/Telegram to allowlisted P009 runner actions</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/41">PR #41: supervised Codex runner scaffold</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/44">PR #44: allowlisted runner actions</a></li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Runner ledger scaffold, watchdog failure tests, acceptance-cycle guardrails, user summary report, allowlisted action wrapper, and docs merged.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review or close ready-review Project #36 and Requirement #37.</li><li>Use the runner contract for the next PM to Development cycle before expanding dashboards or Paperclip.</li></ul></li>
+      </ul>
+    </details>
+  </li>
 </ul>
 
 <details class="completed-projects">
@@ -177,3 +203,29 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 [https://obot-claw.github.io/roadmap/](https://obot-claw.github.io/roadmap/)
 
 [https://github.com/obot-claw/obot-claw.github.io/issues/3](https://github.com/obot-claw/obot-claw.github.io/issues/3)
+
+## Paperclip autonomous agent orchestration pilot
+
+**Status:** Active / blocked
+
+**Goal:** Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.
+
+**Current summary:** P008 was created after the autonomy framework report, then deferred behind P009 until the execution-first Codex-native runner path was proven. Task #33 completed a source/security/install-surface review without installing Paperclip or using credentials. Task #34 attempted an approved local-only PM pilot with telemetry disabled, loopback-only settings, disposable state, and no real OpenClaw auth, but setup is blocked by embedded PostgreSQL initialization. Task #35 remains blocked until PM-only local setup is safe and working.
+
+[https://github.com/obot-claw/obot-claw.github.io/issues/30](https://github.com/obot-claw/obot-claw.github.io/issues/30)
+
+[https://github.com/obot-claw/obot-claw.github.io/issues/34](https://github.com/obot-claw/obot-claw.github.io/issues/34)
+
+## Execution-first reliable autonomous cycle
+
+**Status:** Ready-review
+
+**Goal:** Prove a Codex-native PM to Dev to PR cycle with supervised runner records, watchdog evidence, and allowlisted actions before adopting heavier orchestration tools.
+
+**Current summary:** P009 is the current autonomy recommendation from Chapters 6 and 7 of the framework report. PR #41 merged the supervised runner scaffold, ledger records, watchdog tests, acceptance-cycle guardrails, and user summary report. PR #44 merged allowlisted OpenClaw/Telegram runner actions and docs. Project #36 and Requirement #37 are ready-review after Tasks #38/#39/#40/#43 closed.
+
+[https://github.com/obot-claw/obot-claw.github.io/issues/36](https://github.com/obot-claw/obot-claw.github.io/issues/36)
+
+[https://github.com/obot-claw/obot-claw.github.io/pull/41](https://github.com/obot-claw/obot-claw.github.io/pull/41)
+
+[https://github.com/obot-claw/obot-claw.github.io/pull/44](https://github.com/obot-claw/obot-claw.github.io/pull/44)
