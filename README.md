@@ -56,3 +56,56 @@ python3 scripts/portfolio_audit.py --root . --worktree-root /Users/obot/.opencla
 ```
 
 The helper is read-only. It reports PM-fix-now, Development-handoff, and risk classifications; it does not mutate GitHub issues, PRs, or local repos.
+
+## Supervised Codex cycle runner
+
+The supervised Codex cycle runner is the P009 execution-layer scaffold. It records a single PM, Development, or Testing worker run as `triggered`, `started`, `completed`, or `failed`, writes heartbeat timestamps while the worker is alive, and stores a transcript path plus artifact/failure metadata. Run artifacts are local by default under `.codex-runs/` and are gitignored.
+
+Run locally:
+
+```bash
+python3 scripts/run_codex_cycle.py self-test
+python3 scripts/run_codex_cycle.py failure-test
+python3 scripts/run_codex_cycle.py status
+```
+
+Dry-run a supervised worker command:
+
+```bash
+python3 scripts/run_codex_cycle.py run \
+  --role PM \
+  --issue obot-claw/obot-claw.github.io#38 \
+  --repo obot-claw/obot-claw.github.io \
+  --write-scope none \
+  --timeout 60 \
+  --heartbeat-interval 5 \
+  --artifact dry-run:local \
+  --recovery "record failure and alert main obot" \
+  --command python3 -c "print('dry run artifact')"
+```
+
+When `--command` is omitted the runner defaults to `codex exec`, so future P009 work can wire in a real prompt template without changing the run-record schema.
+
+Watchdog check mode detects records that were triggered but never started, or started records whose heartbeat/deadline is stale. Use `--mark-failed` when the check is allowed to update local run records:
+
+```bash
+python3 scripts/run_codex_cycle.py check --mark-failed
+python3 scripts/run_codex_cycle.py check --id dry-run-id --mark-failed --json
+```
+
+When a failure is marked, the runner writes `state=failed`, `failure_reason`, and a concise `alert` string suitable for Telegram status handling.
+
+Dashboard proposal: see `docs/runner-status-dashboard.md` for the public/private runner status dashboard design and scrubbed export requirements.
+
+Security notes:
+
+- Local run records and transcripts may contain private prompts, command output, filesystem paths, or accidental secrets.
+- Never commit `.codex-runs/` or copied transcript content without reviewing it for public-safety first.
+- Telegram/OpenClaw integrations should expose allowlisted runner actions only, such as `self-test`, `failure-test`, `status`, and `check --mark-failed`.
+- Do not forward arbitrary chat text into `--command`; real PM/Development commands should come from controlled local templates or explicit operator-reviewed commands.
+
+P009 acceptance-cycle notes:
+
+- #38 proves the runner can record a successful supervised worker run.
+- #39 proves the watchdog can mark triggered-but-not-started and stale-heartbeat runs failed without repeat alerts.
+- #40 should link the PM audit run record, the Development PR, and the post-artifact Telegram summary before treating the runner as a reliable PM to Development baseline.
