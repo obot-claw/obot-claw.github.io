@@ -138,6 +138,7 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 ## Reports
 
+- [P009 supervised runner user summary](/reports/p009-supervised-runner-user-summary-2026-06-08/)
 - [Work-session supervision acceptance](/reports/work-session-supervision-acceptance-2026-06-06/)
 - [Subagent failure deep dive](/reports/subagent-failure-deep-dive-2026-06-06/)
 - [PM portfolio framework](/reports/pm-portfolio-framework-2026-06-06/)
