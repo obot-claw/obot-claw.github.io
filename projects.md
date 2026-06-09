@@ -62,14 +62,14 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="25% complete">🚧</span> - <a href="/projects/#paperclip-autonomous-agent-orchestration-pilot">P008 Paperclip autonomous agent orchestration pilot</a> <span class="info-icon" title="Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.">ℹ️</span> - <span class="progress-pill" title="25% complete">25%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="70% complete">🚧</span> - <a href="/projects/#paperclip-autonomous-agent-orchestration-pilot">P008 Paperclip autonomous agent orchestration pilot</a> <span class="info-icon" title="Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.">ℹ️</span> - <span class="progress-pill" title="70% complete">70%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.</li>
         <li><strong>Project issue:</strong> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/30">P008 Project #30</a></li>
         <li><strong>Requirements:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/31">P008 Requirement #31: Paperclip local security review</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/32">P008 Requirement #32: Paperclip PM and Dev pilot</a></li></ul></li>
-        <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/33">Task #33: inspect Paperclip source and install surface</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/34">Task #34: configure Paperclip PM-only pilot</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/35">Task #35: run Paperclip Codex Dev pilot</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/48">Task #48: harden Paperclip Dev disposition contract</a></li></ul></li>
-        <li><strong>Completed tasks:</strong><ul><li>Paperclip source/security/install-surface review completed without installing or using credentials.</li><li>Local-only pilot guardrails defined: telemetry disabled, loopback only, disposable state, and no real OpenClaw auth.</li><li>Task #34 finished with a local Paperclip install running and Task #46 confirmed the loopback API/status-update path.</li><li>Task #35 completed as a docs-only Dev pilot via PR #47.</li><li>Task #48 proved agent-authored Paperclip issue disposition without operator repair.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Resolve or defer the embedded PostgreSQL bootstrap failure in Task #34.</li><li>Tighten Dev-agent no-edit compliance before using Paperclip on broader repo work.</li></ul></li>
+        <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/33">Task #33: inspect Paperclip source and install surface</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/34">Task #34: configure Paperclip PM-only pilot</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/35">Task #35: run Paperclip Codex Dev pilot</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/45">Task #45: productionize local Paperclip install</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/46">Task #46: prove Paperclip Codex runtime baseline</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/48">Task #48: harden Paperclip Dev disposition contract</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/50">Task #50: tighten no-edit compliance</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/47">PR #47: Paperclip Dev pilot state</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/49">PR #49: Paperclip disposition proof</a></li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Paperclip source/security/install-surface review completed without installing or using credentials.</li><li>Local-only pilot guardrails defined: telemetry disabled, loopback only, disposable state, and no real OpenClaw auth.</li><li>Local Paperclip install, health endpoint, and Codex runtime baseline proved on loopback.</li><li>Docs-only Dev pilot merged in PR #47.</li><li>Disposition and no-edit compliance hardened with PR #49 and Task #50.</li><li>Real-work Safety Histogram readiness note moved to safety-agent issue #6 after closing PR #8 unmerged.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review or close ready-review Requirements #31/#32 after the POC evidence.</li><li>Migrate OpenClaw role, supervision, launch-field, GitHub, Telegram, and human-decision contracts into Paperclip agents.</li><li>Keep production rollout loopback-only and evidence-first until any schedules, credentials, or remote access receive separate review.</li></ul></li>
       </ul>
     </details>
   </li>
@@ -82,7 +82,7 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
         <li><strong>Requirements:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/37">P009 Requirement #37: supervised Codex runner and watchdog</a></li></ul></li>
         <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/38">Task #38: scaffold supervised Codex runner ledger</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/39">Task #39: failure-injection watchdog test</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/40">Task #40: PM to Dev to PR acceptance cycle</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/43">Task #43: Wire OpenClaw/Telegram to allowlisted P009 runner actions</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/41">PR #41: supervised Codex runner scaffold</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/44">PR #44: allowlisted runner actions</a></li></ul></li>
         <li><strong>Completed tasks:</strong><ul><li>Runner ledger scaffold, watchdog failure tests, acceptance-cycle guardrails, user summary report, allowlisted action wrapper, and docs merged.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Review or close ready-review Project #36 and Requirement #37.</li><li>Use the runner contract for the next PM to Development cycle before expanding dashboards or Paperclip.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review or close ready-review Project #36 and Requirement #37.</li><li>Reuse the runner liveness, watchdog, and Telegram boundary contracts inside the Paperclip migration rather than expanding a separate runner.</li></ul></li>
       </ul>
     </details>
   </li>
@@ -206,15 +206,15 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 ## Paperclip autonomous agent orchestration pilot
 
-**Status:** Active / blocked
+**Status:** Active / production-rollout planning
 
 **Goal:** Evaluate Paperclip as a bounded local PM/Dev orchestration layer without exposing credentials or private OpenClaw context.
 
-**Current summary:** P008 was created after the autonomy framework report, then deferred behind P009 until the execution-first Codex-native runner path was proven. Task #33 completed a source/security/install-surface review without installing Paperclip or using credentials. Task #34 completed an approved local-only PM pilot with telemetry disabled, loopback-only settings, disposable state, and no real OpenClaw auth, with a local Paperclip install currently running. Task #46 validated the loopback local API/status-update flow. Task #35 completed as a docs-only Dev PR pilot (PR #47), and Task #48 proved the Dev-agent contract can patch Paperclip issues to done automatically without operator repair.
+**Current summary:** P008 has moved from POC to staged production-rollout planning. Task #33 completed source/security review, #34/#45 established a local loopback-only Paperclip install with telemetry disabled and no real OpenClaw auth or credentials, #46 proved the Codex runtime baseline, #35 completed a docs-only Dev pilot via PR #47, and #48/#50 hardened task disposition plus no-edit compliance. Next work is migrating OpenClaw operating contracts into Paperclip agents while keeping loopback-only guardrails.
 
 [https://github.com/obot-claw/obot-claw.github.io/issues/30](https://github.com/obot-claw/obot-claw.github.io/issues/30)
 
-[https://github.com/obot-claw/obot-claw.github.io/issues/34](https://github.com/obot-claw/obot-claw.github.io/issues/34)
+[https://github.com/obot-claw/obot-claw.github.io/issues/32](https://github.com/obot-claw/obot-claw.github.io/issues/32)
 
 ## Execution-first reliable autonomous cycle
 
@@ -222,7 +222,7 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 **Goal:** Prove a Codex-native PM to Dev to PR cycle with supervised runner records, watchdog evidence, and allowlisted actions before adopting heavier orchestration tools.
 
-**Current summary:** P009 is the current autonomy recommendation from Chapters 6 and 7 of the framework report. PR #41 merged the supervised runner scaffold, ledger records, watchdog tests, acceptance-cycle guardrails, and user summary report. PR #44 merged allowlisted OpenClaw/Telegram runner actions and docs. Project #36 and Requirement #37 are ready-review after Tasks #38/#39/#40/#43 closed.
+**Current summary:** P009 proved the execution-first reliability contracts before Paperclip rollout. PR #41 merged the supervised runner scaffold, ledger records, watchdog tests, acceptance-cycle guardrails, and user summary report. PR #44 merged allowlisted OpenClaw/Telegram runner actions and docs. Project #36 and Requirement #37 remain ready-review; their liveness, watchdog, and Telegram-boundary lessons now feed the Paperclip Chapter 9 migration rather than a separate runner expansion.
 
 [https://github.com/obot-claw/obot-claw.github.io/issues/36](https://github.com/obot-claw/obot-claw.github.io/issues/36)
 
