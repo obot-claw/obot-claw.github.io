@@ -46,7 +46,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 - Linked tasks/evidence: 0/0 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/31 — P008 Paperclip local security review (ready-review; tasks/evidence 0/0 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/32 — P008 Paperclip PM and Dev pilot (planned; tasks/evidence 0/0 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/32 — P008 Paperclip PM and Dev pilot (ready-review; tasks/evidence 0/0 complete)
 
 ### P009
 
@@ -102,8 +102,8 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P008 — Paperclip PM and Dev pilot
 
 - Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/32
-- Status: planned
-- Labels: type:requirement, status:planned, project:P008
+- Status: ready-review
+- Labels: type:requirement, status:ready-review, project:P008
 - Tasks / evidence:
   - No linked task issues found in the implementation plan.
 
