@@ -27,12 +27,13 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="10% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">P005 gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="10% complete">10%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="15% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">P005 gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="15% complete">15%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Implement static ggplot safety displays aligned to FDA ST&amp;F guidance.</li>
         <li><strong>Requirements:</strong> Not created yet; PM/Design should create a Requirement issue before implementation starts.</li>
-        <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li><li>Static chart API boundary decided for R-side packages.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Review FDA ST&amp;F and Duke-Margolis materials.</li><li>Inventory recommended displays and map to data domains.</li><li>Create implementation issues after P004 interactive renderer patterns stabilize.</li></ul></li>
+        <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/gsm.safety/issues/27">Issue #27: QCThat testing framework</a></li><li><a href="https://github.com/obot-claw/gsm.safety/issues/28">Issue #28: pkgdown widget thumbnail gallery</a></li><li><a href="https://github.com/obot-claw/gsm.safety/pull/29">PR #29: widget thumbnail gallery draft</a></li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li><li>Static chart API boundary decided for R-side packages.</li><li>Public planning notes posted for widget thumbnail gallery and mixed QCThat/testthat testing coverage.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review FDA ST&amp;F and Duke-Margolis materials.</li><li>Inventory recommended displays and map to data domains.</li><li>Clean issue #28 body formatting and decide whether PR #29 should be pulled forward or left for an agent follow-up.</li><li>Create static-chart implementation issues after P004 interactive renderer patterns stabilize.</li></ul></li>
       </ul>
     </details>
   </li>
@@ -174,11 +175,15 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 ## gsm.safety static charts from FDA report
 
-**Status:** Planning
+**Status:** Planning / support backlog clarified
 
 **Goal:** Design and implement static `ggplot2` safety displays aligned to FDA Standard Safety Tables and Figures guidance, parallel to the interactive safetyCharts workflow approach where useful.
 
-**Current summary:** Initial design notes exist locally, and P004 clarified that static chart APIs should stay in R-side packages such as `gsm.safety` or `safetyCharts`. Next step is reviewing FDA ST&F / Duke-Margolis materials and turning the display inventory into `gsm.safety` issues once P004 interactive renderer patterns are stable.
+**Current summary:** Initial design notes exist locally, and P004 clarified that static chart APIs should stay in R-side packages such as `gsm.safety` or `safetyCharts`. On June 9, public planning notes clarified the widget thumbnail gallery path in issue #28 and the mixed QCThat/testthat testing split in issue #27. Next step is reviewing FDA ST&F / Duke-Margolis materials and turning the static display inventory into implementation issues once P004 interactive renderer patterns are stable.
+
+[https://github.com/obot-claw/gsm.safety/issues/27](https://github.com/obot-claw/gsm.safety/issues/27)
+
+[https://github.com/obot-claw/gsm.safety/issues/28](https://github.com/obot-claw/gsm.safety/issues/28)
 
 [https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs](https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs)
 

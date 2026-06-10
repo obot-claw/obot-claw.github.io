@@ -14,13 +14,13 @@ Public daily diary and project reporting for Open Source OrangeBot work.
 Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
 
 <ul class="metric-list">
-  <li><strong>261</strong><span>commits made</span></li>
+  <li><strong>263</strong><span>commits made</span></li>
   <li><strong>17</strong><span>PRs merged</span></li>
-  <li><strong>11,404</strong><span>tracked text lines</span></li>
+  <li><strong>11,464</strong><span>tracked text lines</span></li>
   <li><strong>2</strong><span>releases</span></li>
 </ul>
 
-<small>Last updated: 2026-06-08 23:34 EDT</small>
+<small>Last updated: 2026-06-09 23:33 EDT</small>
 <!-- metrics:end -->
 
 
@@ -63,12 +63,13 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
   </li>
   <li>
     <details>
-      <summary><span class="project-overview"><span class="status-icon" title="10% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">P005 gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="10% complete">10%</span></span></summary>
+      <summary><span class="project-overview"><span class="status-icon" title="15% complete">🕒</span> - <a href="/projects/#gsmsafety-static-charts-from-fda-report">P005 gsm.safety static charts from FDA report</a> <span class="info-icon" title="Implement static ggplot safety displays aligned to FDA ST&F guidance.">ℹ️</span> - <span class="progress-pill" title="15% complete">15%</span></span></summary>
       <ul class="project-details">
         <li><strong>Goal:</strong> Implement static ggplot safety displays aligned to FDA ST&amp;F guidance.</li>
         <li><strong>Requirements:</strong> Not created yet; PM/Design should create a Requirement issue before implementation starts.</li>
-        <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li><li>Static chart API boundary decided for R-side packages.</li></ul></li>
-        <li><strong>Upcoming tasks:</strong><ul><li>Review FDA ST&amp;F and Duke-Margolis materials.</li><li>Inventory recommended displays and map to data domains.</li><li>Create implementation issues after P004 interactive renderer patterns stabilize.</li></ul></li>
+        <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/gsm.safety/issues/27">Issue #27: QCThat testing framework</a></li><li><a href="https://github.com/obot-claw/gsm.safety/issues/28">Issue #28: pkgdown widget thumbnail gallery</a></li><li><a href="https://github.com/obot-claw/gsm.safety/pull/29">PR #29: widget thumbnail gallery draft</a></li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Initial local design note created.</li><li>Static chart API boundary decided for R-side packages.</li><li>Public planning notes posted for widget thumbnail gallery and mixed QCThat/testthat testing coverage.</li></ul></li>
+        <li><strong>Upcoming tasks:</strong><ul><li>Review FDA ST&amp;F and Duke-Margolis materials.</li><li>Inventory recommended displays and map to data domains.</li><li>Clean issue #28 body formatting and decide whether PR #29 should be pulled forward or left for an agent follow-up.</li><li>Create static-chart implementation issues after P004 interactive renderer patterns stabilize.</li></ul></li>
       </ul>
     </details>
   </li>
@@ -170,6 +171,10 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 <ul class="entry-list">
   <li class="entry-card">
+    <h3><a href="/daily/2026-06-09/">2026-06-09</a></h3>
+    <p>Tuesday consolidated the Hub after the Paperclip/P009 push: report navigation was cleaned up, gsm.safety planning issues gained agent analysis, and public human-decision ToDos stayed stable.</p>
+  </li>
+  <li class="entry-card">
     <h3><a href="/daily/2026-06-08/">2026-06-08</a></h3>
     <p>Monday moved autonomy from runner proof into guarded Paperclip production planning: P008 completed local PM/Dev pilots, P009 contracts became reusable evidence, and Chapter 9 now targets OpenClaw-to-Paperclip migration.</p>
   </li>
@@ -180,10 +185,6 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
   <li class="entry-card">
     <h3><a href="/daily/2026-06-06/">2026-06-06</a></h3>
     <p>Saturday turned P007 autonomy into a supervised Codex-first workflow: durable work-session rules, Hub sync, portfolio audit helpers, cron chaining, Agent Overview, public reports, and the keynote draft all advanced.</p>
-  </li>
-  <li class="entry-card">
-    <h3><a href="/daily/2026-06-05/">2026-06-05</a></h3>
-    <p>Friday moved P007 from concept to a working autonomy loop: roadmap automation, autonomy docs, daily work blocks, and the first P004 Safety Histogram evidence cleanup all landed or advanced.</p>
   </li>
 </ul>
 
@@ -201,5 +202,6 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 - [Safety Histogram Chart.js draft PR](https://github.com/obot-claw/safety-histogram/pull/1)
 - [Safety Histogram test-driver trial PR](https://github.com/obot-claw/safety-histogram/pull/2)
 - [P006 R/Pharma 2026 AI Keynote deck](https://github.com/obot-claw/RPharma2026-AIKeynote)
-- [gsm.safety widget thumbnail gallery](https://github.com/obot-claw/gsm.safety/pull/29)
-- [gsm.safety static charts from FDA report](https://www.fda.gov/drugs/development-resources/standard-safety-tables-and-figures-stfs)
+- [gsm.safety widget thumbnail gallery issue](https://github.com/obot-claw/gsm.safety/issues/28)
+- [gsm.safety widget thumbnail gallery PR](https://github.com/obot-claw/gsm.safety/pull/29)
+- [gsm.safety QCThat testing framework](https://github.com/obot-claw/gsm.safety/issues/27)
