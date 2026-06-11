@@ -14,13 +14,13 @@ Public daily diary and project reporting for Open Source OrangeBot work.
 Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
 
 <ul class="metric-list">
-  <li><strong>263</strong><span>commits made</span></li>
-  <li><strong>17</strong><span>PRs merged</span></li>
-  <li><strong>11,464</strong><span>tracked text lines</span></li>
+  <li><strong>266</strong><span>commits made</span></li>
+  <li><strong>18</strong><span>PRs merged</span></li>
+  <li><strong>11,798</strong><span>tracked text lines</span></li>
   <li><strong>2</strong><span>releases</span></li>
 </ul>
 
-<small>Last updated: 2026-06-09 23:33 EDT</small>
+<small>Last updated: 2026-06-10 23:32 EDT</small>
 <!-- metrics:end -->
 
 
@@ -107,7 +107,7 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
         <li><strong>Requirements:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/31">P008 Requirement #31: Paperclip local security review</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/32">P008 Requirement #32: Paperclip PM and Dev pilot</a></li></ul></li>
         <li><strong>Tasks / evidence:</strong><ul><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/33">Task #33: inspect Paperclip source and install surface</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/34">Task #34: configure Paperclip PM-only pilot</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/35">Task #35: run Paperclip Codex Dev pilot</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/45">Task #45: productionize local Paperclip install</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/46">Task #46: prove Paperclip Codex runtime baseline</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/48">Task #48: harden Paperclip Dev disposition contract</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/issues/50">Task #50: tighten no-edit compliance</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/47">PR #47: Paperclip Dev pilot state</a></li><li><a href="https://github.com/obot-claw/obot-claw.github.io/pull/49">PR #49: Paperclip disposition proof</a></li></ul></li>
         <li><strong>Reports / evidence:</strong><ul><li><a href="/reports/autonomous-agent-framework/">Autonomous PM/Development framework report</a></li><li><a href="/reports/autonomous-agent-framework/chapter-8-paperclip-production/">Chapter 8: Paperclip production rollout</a></li><li><a href="/reports/autonomous-agent-framework/chapter-9-openclaw-migration/">Chapter 9: OpenClaw migration plan</a></li><li><a href="/reports/autonomous-agent-framework-options-v4-paperclip-2026-06-07/">Paperclip framework options v4</a></li></ul></li>
-        <li><strong>Completed tasks:</strong><ul><li>Paperclip source/security/install-surface review completed without installing or using credentials.</li><li>Local-only pilot guardrails defined: telemetry disabled, loopback only, disposable state, and no real OpenClaw auth.</li><li>Local Paperclip install, health endpoint, and Codex runtime baseline proved on loopback.</li><li>Docs-only Dev pilot merged in PR #47.</li><li>Disposition and no-edit compliance hardened with PR #49 and Task #50.</li><li>Real-work Safety Histogram readiness note moved to safety-agent issue #6 after closing PR #8 unmerged.</li></ul></li>
+        <li><strong>Completed tasks:</strong><ul><li>Paperclip source/security/install-surface review completed without installing or using credentials.</li><li>Local-only pilot guardrails defined: telemetry disabled, loopback only, disposable state, and no real OpenClaw auth.</li><li>Local Paperclip install, health endpoint, and Codex runtime baseline proved on loopback.</li><li>Docs-only Dev pilot merged in PR #47.</li><li>Disposition and no-edit compliance hardened with PR #49 and Task #50.</li><li>Real-work Safety Histogram readiness note moved to safety-agent issue #6 after closing PR #8 unmerged.</li><li>Requirement #32 was reconciled to ready-review on June 10 after the PM/Dev pilot evidence.</li></ul></li>
         <li><strong>Upcoming tasks:</strong><ul><li>Review or close ready-review Requirements #31/#32 after the POC evidence.</li><li>Migrate OpenClaw role, supervision, launch-field, GitHub, Telegram, and human-decision contracts into Paperclip agents.</li><li>Keep production rollout loopback-only and evidence-first until any schedules, credentials, or remote access receive separate review.</li></ul></li>
       </ul>
     </details>
@@ -171,6 +171,10 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
 
 <ul class="entry-list">
   <li class="entry-card">
+    <h3><a href="/daily/2026-06-10/">2026-06-10</a></h3>
+    <p>Wednesday tightened autonomy queue hygiene: the Development block refused stale P008 work, issue #32 moved to ready-review, and public ToDos stayed separated from private OpenClaw/config decisions.</p>
+  </li>
+  <li class="entry-card">
     <h3><a href="/daily/2026-06-09/">2026-06-09</a></h3>
     <p>Tuesday consolidated the Hub after the Paperclip/P009 push: report navigation was cleaned up, gsm.safety planning issues gained agent analysis, and public human-decision ToDos stayed stable.</p>
   </li>
@@ -181,10 +185,6 @@ Project status and roadmap rollup are merged here. Active projects are shown fir
   <li class="entry-card">
     <h3><a href="/daily/2026-06-07/">2026-06-07</a></h3>
     <p>Sunday moved autonomy to execution-first reliability: P009 runner work shipped in PRs #41/#44, P008 Paperclip stayed bounded behind local-only guardrails, and public review queues stayed visible.</p>
-  </li>
-  <li class="entry-card">
-    <h3><a href="/daily/2026-06-06/">2026-06-06</a></h3>
-    <p>Saturday turned P007 autonomy into a supervised Codex-first workflow: durable work-session rules, Hub sync, portfolio audit helpers, cron chaining, Agent Overview, public reports, and the keynote draft all advanced.</p>
   </li>
 </ul>
 
