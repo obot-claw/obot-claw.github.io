@@ -186,7 +186,7 @@ function renderRequirement(issue, tasks) {
     `- Status: ${status}`,
     `- Labels: ${labels(issue).join(', ') || 'none'}`,
     '- Tasks / evidence:',
-    ...(taskLines.length ? taskLines : ['  - No linked task issues found in the implementation plan.']),
+    ...(taskLines.length ? taskLines : ['  - No linked sub-issues found in the Requirement body.']),
     ''
   ].join('\n');
 }
@@ -251,11 +251,10 @@ async function main() {
     '',
     '- **Project issues** live in `obot-claw/obot-claw.github.io` and use `type:project`.',
     '- **Requirement issues** live in `obot-claw/obot-claw.github.io` and link back to a parent Project issue when one exists.',
-    '- **Task issues** live in the repo closest to the implementation work.',
-    '- Every Requirement should include `# Overview`, `# Design`, and `# Implementation plan` sections.',
+    '- **Sub-issues** live in the repo closest to the implementation work and are linked to their Requirement via the GitHub sub-issue relationship.',
+    '- Every Requirement follows the [Requirement lifecycle](README.md#requirement-lifecycle): `Business Requirement` + `Overview` at creation, then `Data Requirement`, `Design`, and a `Sub-issues` list mirroring the linked sub-issue URLs.',
     '- Every Requirement should have one `project:P###` label.',
     '- Project issues should link child Requirement issues.',
-    '- Requirement implementation plans should link task sub-issues or PRs.',
     '',
     '## Project rollup',
     '',
@@ -276,7 +275,7 @@ async function main() {
     '',
     '## Automation',
     '',
-    'This page is generated from GitHub issues labeled `type:project` and `type:requirement`. Project issues parent Requirements; linked task issues and evidence PRs are pulled from Requirement implementation plans.',
+    'This page is generated from GitHub issues labeled `type:project` and `type:requirement`. Project issues parent Requirements; linked sub-issues and evidence PRs are pulled from the issue/PR URLs in each Requirement body (the Sub-issues section).',
     ''
   ].join('\n');
 

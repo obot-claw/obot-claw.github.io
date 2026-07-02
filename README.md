@@ -14,7 +14,35 @@ Only publish open-source/public project summaries here. Keep private, personal, 
 
 - `index.md` — homepage and recent diary links.
 - `daily/` — public daily diary entries.
+- `requirements/design/` — design documents, one per Requirement issue.
+- `.github/skills/` — requirement lifecycle skills for Claude Code sessions.
 - `.github/workflows/pages.yaml` — GitHub Pages deployment.
+
+## Requirement lifecycle
+
+Adopted July 2026 from the [gsm.roadmap](https://github.com/Gilead-BioStats/gsm.roadmap) requirement workflow, alongside the [gsm.agent](https://github.com/Gilead-BioStats/gsm.agent) development conventions (drafts, worktrees, TDD, approval gates). Requirement issues live in this repo; implementation work is tracked as **sub-issues** in the repo closest to the code.
+
+A Requirement issue body has five sections, populated incrementally:
+
+| Section | When filled | Required at creation |
+|---|---|---|
+| **Business Requirement** | Backlog | ✓ |
+| **Overview** | Backlog | ✓ |
+| **Data Requirement** | Requirement Gathering | — |
+| **Design** | Design (inline, or `requirements/design/{issue_number}_design.md`) | — |
+| **Sub-issues** | After Design — mirrors the linked sub-issue URLs for the roadmap rollup | — |
+
+Stages and skills:
+
+| Stage | Skill | Notes |
+|---|---|---|
+| Backlog | [`requirement-drafting`](.github/skills/requirement-drafting/SKILL.md) | `type:requirement` + `status:planned` + `project:P###` labels |
+| Design | [`requirement-design`](.github/skills/requirement-design/SKILL.md) | Design signed off before decomposition |
+| Tasks | [`requirement-tasks`](.github/skills/requirement-tasks/SKILL.md) | Repo-scoped sub-issues, linked via gsm.agent's `sub-issue-linking` |
+| Development | gsm.agent [`tdd`](https://github.com/Gilead-BioStats/gsm.agent/blob/main/skills/tdd/SKILL.md) | One `/tdd` run per sub-issue; PRs carry evidence; no merges without Jeremy |
+| Review / done | — | `status:ready-review` → close; rollup via the roadmap workflow |
+
+Differences from gsm.roadmap, kept deliberately lean for a solo project: no quarterly milestones or planning ceremony; lifecycle stage is tracked with the existing `status:*` labels; the `Sub-issues` body section is retained (gsm.roadmap removed its equivalent) because `scripts/generate-roadmap.mjs` counts tasks from body URLs; no scheduled requirement-status rollup — the roadmap workflow covers it.
 
 ## Hub sync gate
 
