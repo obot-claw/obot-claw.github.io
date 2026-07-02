@@ -1,0 +1,18 @@
+{
+  "commits": 297,
+  "prs": 26,
+  "loc": 14837,
+  "releases": 2,
+  "commits_fmt": "297",
+  "prs_fmt": "26",
+  "loc_fmt": "14,837",
+  "releases_fmt": "2",
+  "repos": [
+    "jwildfire/safety.viz",
+    "obot-claw/RPharma2026-AIKeynote",
+    "obot-claw/gsm.safety",
+    "obot-claw/obot-claw.github.io",
+    "obot-claw/safety-agent"
+  ],
+  "updated": "2026-07-02 11:01 EDT"
+}

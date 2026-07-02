@@ -1,0 +1,428 @@
+{
+  "generated_at": "2026-07-02T15:09:00Z",
+  "owner": "obot-claw",
+  "hub_repo": "obot-claw.github.io",
+  "extra_repos": [
+    "jwildfire/safety.viz"
+  ],
+  "reviewer": "jwildfire",
+  "queue": [
+    {
+      "kind": "pr",
+      "repo": "obot-claw/obot-claw.github.io",
+      "number": 56,
+      "title": "Align hub metrics and diary cadence with the Claude-era workflow",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/pull/56",
+      "reason": "Ready for review",
+      "updated_at": "2026-07-02T04:04:35Z"
+    },
+    {
+      "kind": "pr",
+      "repo": "obot-claw/obot-claw.github.io",
+      "number": 60,
+      "title": "Adopt HTML design docs; add designs for Requirements #57 and #58",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/pull/60",
+      "reason": "Open PR — review and merge gate",
+      "updated_at": "2026-07-02T15:05:57Z"
+    }
+  ],
+  "open_prs": [
+    {
+      "repo": "obot-claw/obot-claw.github.io",
+      "number": 60,
+      "title": "Adopt HTML design docs; add designs for Requirements #57 and #58",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/pull/60",
+      "draft": false,
+      "updated_at": "2026-07-02T15:05:57Z"
+    },
+    {
+      "repo": "obot-claw/obot-claw.github.io",
+      "number": 56,
+      "title": "Align hub metrics and diary cadence with the Claude-era workflow",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/pull/56",
+      "draft": false,
+      "updated_at": "2026-07-02T04:04:35Z"
+    },
+    {
+      "repo": "obot-claw/gsm.safety",
+      "number": 29,
+      "title": "[codex] Add widget thumbnail gallery",
+      "url": "https://github.com/obot-claw/gsm.safety/pull/29",
+      "draft": true,
+      "updated_at": "2026-06-07T13:34:58Z"
+    },
+    {
+      "repo": "obot-claw/safety-results-over-time",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/safety-results-over-time/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T23:19:42Z"
+    },
+    {
+      "repo": "obot-claw/web-codebook",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/web-codebook/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T22:23:04Z"
+    },
+    {
+      "repo": "obot-claw/safety-delta-delta",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/safety-delta-delta/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T22:23:03Z"
+    },
+    {
+      "repo": "obot-claw/safety-shift-plot",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/safety-shift-plot/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T22:23:02Z"
+    },
+    {
+      "repo": "obot-claw/paneled-outlier-explorer",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/paneled-outlier-explorer/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T22:23:00Z"
+    },
+    {
+      "repo": "obot-claw/safety-outlier-explorer",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/safety-outlier-explorer/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T22:22:59Z"
+    },
+    {
+      "repo": "obot-claw/ae-timelines",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/ae-timelines/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T22:22:58Z"
+    },
+    {
+      "repo": "obot-claw/aeexplorer",
+      "number": 1,
+      "title": "P004: Chart.js nextgen spike demo",
+      "url": "https://github.com/obot-claw/aeexplorer/pull/1",
+      "draft": true,
+      "updated_at": "2026-05-20T22:22:57Z"
+    }
+  ],
+  "requirements": [
+    {
+      "number": 4,
+      "title": "P004 autonomous SafetyGraphics renderer modernization standard",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/4",
+      "state": "closed",
+      "status": "done",
+      "project": "P004",
+      "assignees": [
+        "obot-claw"
+      ],
+      "design_doc": null,
+      "subitems": [
+        {
+          "url": "https://github.com/obot-claw/safety-agent/issues/5",
+          "repo": "obot-claw/safety-agent",
+          "kind": "issue",
+          "title": "promote P004 renderer migration standard",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/safety-agent/issues/6",
+          "repo": "obot-claw/safety-agent",
+          "kind": "issue",
+          "title": "reconcile Safety Histogram implementation and evidence PRs",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/safety-agent/issues/7",
+          "repo": "obot-claw/safety-agent",
+          "kind": "issue",
+          "title": "define P004 testing agent GitHub App implementation path",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/safety-agent/pull/4",
+          "repo": "obot-claw/safety-agent",
+          "kind": "pr",
+          "title": "Document P004 renderer requirements and testing framework",
+          "status": "merged",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/safety-histogram/pull/1",
+          "repo": "obot-claw/safety-histogram",
+          "kind": "pr",
+          "title": "Refactor Safety Histogram with Chart.js",
+          "status": "merged",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/safety-histogram/pull/2",
+          "repo": "obot-claw/safety-histogram",
+          "kind": "pr",
+          "title": "test-driver: trial safety histogram requirements",
+          "status": "closed",
+          "complete": true
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "title": "safety.viz — consolidated safety-chart JavaScript library",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/57",
+      "state": "open",
+      "status": "planned",
+      "project": "P004",
+      "assignees": [
+        "jwildfire"
+      ],
+      "design_doc": "/requirements/design/57_design.html",
+      "subitems": [
+        {
+          "url": "https://github.com/obot-claw/safety-histogram/pull/1",
+          "repo": "obot-claw/safety-histogram",
+          "kind": "pr",
+          "title": "Refactor Safety Histogram with Chart.js",
+          "status": "merged",
+          "complete": true
+        }
+      ]
+    },
+    {
+      "number": 58,
+      "title": "Safety Histogram migration (pilot)",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/58",
+      "state": "open",
+      "status": "planned",
+      "project": "P004",
+      "assignees": [
+        "jwildfire"
+      ],
+      "design_doc": "/requirements/design/58_design.html",
+      "subitems": [
+        {
+          "url": "https://github.com/obot-claw/safety-histogram/pull/1",
+          "repo": "obot-claw/safety-histogram",
+          "kind": "pr",
+          "title": "Refactor Safety Histogram with Chart.js",
+          "status": "merged",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/safety-agent/issues/6",
+          "repo": "obot-claw/safety-agent",
+          "kind": "issue",
+          "title": "reconcile Safety Histogram implementation and evidence PRs",
+          "status": "done",
+          "complete": true
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "P007 refactor development framework for increased autonomy",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/3",
+      "state": "closed",
+      "status": "done",
+      "project": "P007",
+      "assignees": [
+        "obot-claw"
+      ],
+      "design_doc": null,
+      "subitems": [
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/1",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "create autonomous work queue contract",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/2",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "add requirement and task issue templates",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/5",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "automate generated roadmap from GitHub issues",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/8",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "harden generated roadmap workflow concurrency",
+          "status": "done",
+          "complete": true
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "title": "P007 PM visibility and human ToDo tracking",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/14",
+      "state": "closed",
+      "status": "done",
+      "project": "P007",
+      "assignees": [
+        "obot-claw"
+      ],
+      "design_doc": null,
+      "subitems": [
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/12",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "Merge roadmap visibility into homepage projects",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/13",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "Track Jeremy human ToDo queue in PM workflow",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/15",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "Add Project issue type for requirement parents",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/21",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "create Agent Overview page for current autonomous agents",
+          "status": "done",
+          "complete": true
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "title": "P007 GitHub-native memory and work artifacts",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/18",
+      "state": "closed",
+      "status": "done",
+      "project": "P007",
+      "assignees": [
+        "obot-claw"
+      ],
+      "design_doc": null,
+      "subitems": [
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/19",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "Codify PM issue memory and development PR workflow",
+          "status": "done",
+          "complete": true
+        },
+        {
+          "url": "https://github.com/obot-claw/obot-claw.github.io/issues/20",
+          "repo": "obot-claw/obot-claw.github.io",
+          "kind": "issue",
+          "title": "Create Telegram formatting skill for clean status posts",
+          "status": "done",
+          "complete": true
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "title": "P008 Paperclip local security review",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/31",
+      "state": "closed",
+      "status": "done",
+      "project": "P008",
+      "assignees": [
+        "obot-claw"
+      ],
+      "design_doc": null,
+      "subitems": []
+    },
+    {
+      "number": 32,
+      "title": "P008 Paperclip PM and Dev pilot",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/32",
+      "state": "closed",
+      "status": "done",
+      "project": "P008",
+      "assignees": [
+        "obot-claw"
+      ],
+      "design_doc": null,
+      "subitems": []
+    },
+    {
+      "number": 37,
+      "title": "P009 supervised Codex runner and watchdog",
+      "url": "https://github.com/obot-claw/obot-claw.github.io/issues/37",
+      "state": "closed",
+      "status": "done",
+      "project": "P009",
+      "assignees": [
+        "obot-claw"
+      ],
+      "design_doc": null,
+      "subitems": []
+    }
+  ],
+  "counts": {
+    "queue": 2,
+    "open_prs": 2,
+    "draft_prs": 9,
+    "open_requirements": 2,
+    "completed_requirements": 7,
+    "requirements_by_status": {
+      "planned": 2
+    },
+    "status_tiles": [
+      {
+        "status": "planned",
+        "icon": "🕒",
+        "count": 2
+      },
+      {
+        "status": "in-progress",
+        "icon": "🚧",
+        "count": 0
+      },
+      {
+        "status": "ready-review",
+        "icon": "🙋",
+        "count": 0
+      },
+      {
+        "status": "blocked",
+        "icon": "⛔",
+        "count": 0
+      }
+    ]
+  }
+}

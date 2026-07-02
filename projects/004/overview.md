@@ -6,6 +6,9 @@ permalink: /projects/004/overview.html
 
 # P004 SafetyGraphics Renderer Modernization
 
+> 📦 **Legacy project catalog.** Projects were superseded by Requirement issues in July 2026; this page is kept as reference. Current status lives on the [Roadmap](/roadmap/) and [Dashboard](/dashboard/).
+
+
 ## Goal
 
 Modernize the legacy Safety Explorer Suite JavaScript renderers so they can become maintained SafetyGraphics tools with cleaner dependencies, stronger tests, and a shared design language for both interactive monitoring graphics and future static safety displays.

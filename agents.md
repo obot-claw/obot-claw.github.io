@@ -5,6 +5,9 @@ title: Agent Overview
 
 # Agent Overview
 
+> 📦 **Archived (obot era).** This page describes the autonomous-agent setup retired in July 2026 and is kept for history. Current work lives on the [Roadmap](/roadmap/) and [Dashboard](/dashboard/); the story of the change is [Chapter 10](/reports/autonomous-agent-framework/chapter-10-claude-code-migration/).
+
+
 This page summarizes the current OrangeBot working model: what exists today, what is still a proposed operating role, and how work should move from planning to implementation.
 
 ## Current status

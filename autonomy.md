@@ -5,6 +5,9 @@ title: Autonomy
 
 # Autonomous Work Blocks
 
+> 📦 **Archived (obot era).** This page describes the autonomous-agent setup retired in July 2026 and is kept for history. Current work lives on the [Roadmap](/roadmap/) and [Dashboard](/dashboard/); the story of the change is [Chapter 10](/reports/autonomous-agent-framework/chapter-10-claude-code-migration/).
+
+
 This page defines how obot should make daily evidence-backed progress on approved `obot-claw` projects when Jeremy is inactive.
 
 ## Default schedule

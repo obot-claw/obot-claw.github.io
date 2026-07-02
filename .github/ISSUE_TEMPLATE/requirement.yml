@@ -68,14 +68,14 @@ body:
       description: |
         High-level technical components and affected repos. Can be left blank
         at creation. Must be populated before sub-issues are filed. For complex
-        requirements, add a document under `requirements/design/{issue_number}_design.md`
+        requirements, add a document under `requirements/design/{issue_number}_design.html`
         and link it here.
       placeholder: |
         **Summary:**
 
         **Affected repos:**
 
-        **Design artifacts:** requirements/design/{issue_number}_design.md
+        **Design artifacts:** requirements/design/{issue_number}_design.html
 
   - type: textarea
     id: sub_issues

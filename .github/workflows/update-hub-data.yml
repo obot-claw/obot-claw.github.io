@@ -1,4 +1,4 @@
-name: Update Roadmap
+name: Update hub data
 
 on:
   workflow_dispatch:
@@ -13,20 +13,20 @@ permissions:
   pull-requests: read
 
 concurrency:
-  group: update-roadmap-main
+  group: update-hub-data-main
   cancel-in-progress: true
 
 jobs:
-  update-roadmap:
+  update-hub-data:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check roadmap generator
-        run: node --check scripts/generate-roadmap.mjs
-      - name: Commit roadmap changes
+      - name: Check generator
+        run: node --check scripts/generate-hub-data.mjs
+      - name: Commit roadmap and dashboard data
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -36,15 +36,15 @@ jobs:
           # Rebase before generating/committing so issue-triggered runs do not race.
           git fetch origin main
           git rebase origin/main
-          node scripts/generate-roadmap.mjs
+          node scripts/generate-hub-data.mjs
 
-          if git diff --quiet -- roadmap.md; then
-            echo "No roadmap changes."
+          if git diff --quiet -- roadmap.md _data/dashboard.json && [ -z "$(git status --porcelain _data/dashboard.json)" ]; then
+            echo "No hub data changes."
             exit 0
           fi
 
-          git add roadmap.md
-          git commit -m "Update generated roadmap"
+          git add roadmap.md _data/dashboard.json
+          git commit -m "Update generated roadmap and dashboard data"
 
           for attempt in 1 2 3; do
             if git push; then
@@ -53,14 +53,13 @@ jobs:
             echo "Push failed; rebasing and regenerating before retry $attempt."
             git fetch origin main
             git rebase origin/main
-            node scripts/generate-roadmap.mjs
-            if git diff --quiet -- roadmap.md; then
-              echo "Roadmap already current after rebase."
+            node scripts/generate-hub-data.mjs
+            if git diff --quiet -- roadmap.md _data/dashboard.json; then
+              echo "Hub data already current after rebase."
               exit 0
             fi
-            git add roadmap.md
-            git commit --amend --no-edit
+            git add roadmap.md _data/dashboard.json
+            git commit --amend -m "Update generated roadmap and dashboard data"
           done
-
-          echo "Failed to push roadmap update after retries."
+          echo "Failed to push after retries." >&2
           exit 1

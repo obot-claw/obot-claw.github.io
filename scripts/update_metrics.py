@@ -1,28 +1,36 @@
 #!/usr/bin/env python3
-"""Update homepage public metrics for obot-claw repositories.
+"""Update public metrics for the hub dashboard.
 
-Metrics are intentionally simple and reproducible:
-- commits: unique git commits authored by obot-claw across public obot-claw repos
-- merged PRs: GitHub PRs authored by obot-claw and merged under the obot-claw owner
+Writes `_data/metrics.json`, rendered on /dashboard/ via Liquid. Metrics are
+intentionally simple and reproducible:
+- commits: unique git commits by project authors across in-scope public repos
+- merged PRs: GitHub PRs by project authors merged in in-scope public repos
 - lines of code: tracked text lines on each repo's default branch, excluding common binary/archive files
-- releases: GitHub releases across public obot-claw repos
+- releases: GitHub releases across in-scope public repos
+
+Scope: public non-fork repos under OWNER plus EXTRA_REPOS (project repos that
+live under other owners, e.g. jwildfire/safety.viz). Known undercount: work
+inside the renderer staging forks is excluded by the non-fork filter.
+
+Owner/authors are parameterized so the script survives the planned move to
+jwildfire/obot.roadmap (set HUB_OWNER / HUB_AUTHORS / HUB_EXTRA_REPOS).
 """
 from __future__ import annotations
 
 import json
-import shutil
+import os
 import subprocess
 import tempfile
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-OWNER = "obot-claw"
-AUTHOR = "obot-claw"
+OWNER = os.environ.get("HUB_OWNER", "obot-claw")
+# obot era commits/PRs are authored by obot-claw; Claude era work is authored by jwildfire
+AUTHORS = [a for a in os.environ.get("HUB_AUTHORS", "obot-claw,jwildfire").split(",") if a]
+EXTRA_REPOS = [r for r in os.environ.get("HUB_EXTRA_REPOS", "jwildfire/safety.viz").split(",") if r]
 ROOT = Path(__file__).resolve().parents[1]
-INDEX = ROOT / "index.md"
-START = "<!-- metrics:start -->"
-END = "<!-- metrics:end -->"
+OUT = ROOT / "_data" / "metrics.json"
 BINARY_SUFFIXES = {
     ".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico", ".pdf", ".docx",
     ".gz", ".zip", ".rds", ".rda", ".RData", ".sqlite", ".db",
@@ -46,19 +54,29 @@ def get_repos() -> list[str]:
             break
         repos.extend(repo["full_name"] for repo in data if not repo.get("fork"))
         page += 1
-    return sorted(repos)
+    return sorted(set(repos) | set(EXTRA_REPOS))
 
 
 def count_merged_prs() -> int:
-    out = run([
-        "gh", "search", "prs",
-        "--owner", OWNER,
-        "--author", AUTHOR,
-        "--merged",
-        "--json", "url",
-        "--limit", "1000",
-    ])
-    return len(json.loads(out))
+    total = 0
+    owners = [OWNER] + sorted({r.split("/", 1)[0] for r in EXTRA_REPOS} - {OWNER})
+    for repo_owner in owners:
+        for author in AUTHORS:
+            out = run([
+                "gh", "search", "prs",
+                "--owner", repo_owner,
+                "--author", author,
+                "--merged",
+                "--json", "url",
+                "--limit", "1000",
+            ])
+            prs = json.loads(out)
+            if repo_owner == OWNER:
+                total += len(prs)
+            else:
+                # Outside the hub owner, only count the explicitly in-scope repos.
+                total += sum(1 for pr in prs if any(f"/{r}/" in pr["url"] for r in EXTRA_REPOS))
+    return total
 
 
 def is_text_countable(path: Path) -> bool:
@@ -68,11 +86,12 @@ def is_text_countable(path: Path) -> bool:
 
 
 def repo_metrics(repo: str, base: Path) -> tuple[int, int, int]:
-    name = repo.split("/", 1)[1]
-    dest = base / name
+    dest = base / repo.replace("/", "__")
     run(["git", "clone", "--quiet", f"https://github.com/{repo}.git", str(dest)])
 
-    commits = set(run(["git", "log", "--all", f"--author={AUTHOR}", "--format=%H"], cwd=dest).splitlines())
+    commits = set()
+    for author in AUTHORS:
+        commits.update(run(["git", "log", "--all", f"--author={author}", "--format=%H"], cwd=dest).splitlines())
 
     files = run(["git", "ls-files"], cwd=dest).splitlines()
     loc = 0
@@ -90,7 +109,7 @@ def repo_metrics(repo: str, base: Path) -> tuple[int, int, int]:
     return len(commits), loc, releases
 
 
-def build_metrics() -> dict[str, int | str]:
+def build_metrics() -> dict[str, int | str | list[str]]:
     repos = get_repos()
     total_commits = total_loc = total_releases = 0
     with tempfile.TemporaryDirectory(prefix="obot-metrics-") as tmp:
@@ -100,44 +119,29 @@ def build_metrics() -> dict[str, int | str]:
             total_commits += commits
             total_loc += loc
             total_releases += releases
+    prs = count_merged_prs()
     return {
         "commits": total_commits,
-        "prs": count_merged_prs(),
+        "prs": prs,
         "loc": total_loc,
         "releases": total_releases,
+        # Pre-formatted for Liquid, which has no thousands-separator filter.
+        "commits_fmt": f"{total_commits:,}",
+        "prs_fmt": f"{prs:,}",
+        "loc_fmt": f"{total_loc:,}",
+        "releases_fmt": f"{total_releases:,}",
+        "repos": repos,
         "updated": datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M %Z"),
     }
 
 
-def render(metrics: dict[str, int | str]) -> str:
-    return f"""{START}
-## Metrics
-
-Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
-
-<ul class="metric-list">
-  <li><strong>{metrics['commits']:,}</strong><span>commits made</span></li>
-  <li><strong>{metrics['prs']:,}</strong><span>PRs merged</span></li>
-  <li><strong>{metrics['loc']:,}</strong><span>tracked text lines</span></li>
-  <li><strong>{metrics['releases']:,}</strong><span>releases</span></li>
-</ul>
-
-<small>Last updated: {metrics['updated']}</small>
-{END}"""
-
-
 def main() -> None:
     metrics = build_metrics()
-    text = INDEX.read_text()
-    block = render(metrics)
-    if START in text and END in text:
-        before = text.split(START, 1)[0]
-        after = text.split(END, 1)[1]
-        text = before + block + after
-    else:
-        insert_after = "Public daily diary and project reporting for Open Source OrangeBot work.\n"
-        text = text.replace(insert_after, insert_after + "\n\n" + block + "\n", 1)
-    INDEX.write_text(text)
+    OUT.parent.mkdir(exist_ok=True)
+    OUT.write_text(json.dumps(metrics, indent=2) + "\n")
+    print(f"Wrote {OUT.relative_to(ROOT)}: {metrics['commits']} commits, "
+          f"{metrics['prs']} merged PRs, {metrics['loc']} lines, {metrics['releases']} releases "
+          f"across {len(metrics['repos'])} repos.")
 
 
 if __name__ == "__main__":
