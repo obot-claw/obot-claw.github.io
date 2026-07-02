@@ -5,6 +5,9 @@ title: P006 R/Pharma 2026 AI Keynote
 
 # P006 R/Pharma 2026 AI Keynote
 
+> 📦 **Legacy project catalog.** Projects were superseded by Requirement issues in July 2026; this page is kept as reference. Current status lives on the [Roadmap](/roadmap/) and [Dashboard](/dashboard/).
+
+
 ## Goal
 
 Create Jeremy's R/Pharma 2026 keynote deck as an HTML-first slide project, using iterative prompts to develop content around open-source clinical safety tooling, GSM, Agentic Engineering, and autonomous AI workers.

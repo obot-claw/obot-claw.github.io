@@ -6,6 +6,9 @@ permalink: /projects/004/safety-histogram.html
 
 # Safety Histogram Deep Dive
 
+> 📦 **Legacy project catalog.** Projects were superseded by Requirement issues in July 2026; this page is kept as reference. Current status lives on the [Roadmap](/roadmap/) and [Dashboard](/dashboard/).
+
+
 ## Why start here
 
 Safety Histogram is a good first migration target because it is clinically useful, structurally simpler than the linked AE displays, and representative of the dependency pattern we need to replace:

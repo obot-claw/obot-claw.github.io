@@ -5,6 +5,9 @@ title: Projects
 
 # Projects
 
+> 📦 **Legacy project catalog.** Projects were superseded by Requirement issues in July 2026; this page is kept as reference. Current status lives on the [Roadmap](/roadmap/) and [Dashboard](/dashboard/).
+
+
 High-level public project tracker for obot-claw work.
 
 ## Summary

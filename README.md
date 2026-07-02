@@ -1,22 +1,74 @@
 # obot-claw.github.io
 
-Public reporting hub for Open Source OrangeBot work.
+Public hub for the safetyGraphics → gsm modernization: requirement tracking
+(gsm.roadmap-style) plus the project site — home, dashboard, roadmap, diary, and
+artifacts.
 
 Site:
 
 https://obot-claw.github.io/
 
+> **Planned identity consolidation:** this repo is expected to move to
+> `jwildfire/obot.roadmap` (repo transfer + rename) as part of shuttering the
+> `obot-claw` identity. All automation is parameterized for the move
+> (`HUB_OWNER`, `HUB_REPO`, `HUB_AUTHORS`, `HUB_EXTRA_REPOS`) and internal links
+> use `relative_url`, so only `_config.yml` (`url`/`baseurl`) and the workflow
+> defaults change at transfer time.
+
 ## Privacy rule
 
-Only publish open-source/public project summaries here. Keep private, personal, credential, or ambiguous material local unless Jeremy explicitly marks it public.
+Only publish open-source/public project summaries here. Keep private, personal,
+credential, or ambiguous material local unless Jeremy explicitly marks it public.
 
-## Structure
+## Site structure
 
-- `index.md` — homepage and recent diary links.
-- `daily/` — public daily diary entries.
-- `requirements/design/` — design documents, one per Requirement issue.
-- `.github/skills/` — requirement lifecycle skills for Claude Code sessions.
-- `.github/workflows/pages.yaml` — GitHub Pages deployment.
+| Page | Source | Maintained by |
+| --- | --- | --- |
+| Home (`/`) | `index.md` | Hand-edited; latest-diary link is automatic (Liquid) |
+| Dashboard (`/dashboard/`) | `dashboard.md` + `_data/dashboard.json` + `_data/metrics.json` | Fully generated — never edit the JSON by hand |
+| Roadmap (`/roadmap/`) | `roadmap.md` | Fully generated — edit GitHub Requirement issues instead |
+| Diary (`/daily/`) | `daily/YYYY-MM-DD.md` | Agents add entry files; the index is automatic (Liquid) |
+| Artifacts (`/artifacts/`) | `artifacts.md` | Auto-lists design docs and reports; edit only to feature/curate |
+| Archive | `projects*.md`, `agents.md`, `autonomy.md`, `docs/`, `scripts/archive/` | Frozen obot-era pages, banner-marked |
+
+## Automation
+
+- **Update hub data** (`.github/workflows/update-hub-data.yml`) — hourly and on
+  issue changes; runs `scripts/generate-hub-data.mjs`, which regenerates
+  `roadmap.md` and `_data/dashboard.json` (requirements, sub-issue rollups, open
+  PRs, and the Jeremy queue) from the GitHub API.
+- **Update metrics** (`.github/workflows/update-metrics.yml`) — daily; runs
+  `scripts/update_metrics.py`, which writes `_data/metrics.json` (commits,
+  merged PRs, tracked lines, releases across the in-scope public repos).
+- **Deploy GitHub Pages** (`.github/workflows/pages.yaml`) — Jekyll build on
+  every push to `main`.
+
+Run either generator locally:
+
+```bash
+GITHUB_TOKEN=$(gh auth token) node scripts/generate-hub-data.mjs
+python3 scripts/update_metrics.py
+```
+
+### The Jeremy queue
+
+The dashboard surfaces everything that blocks on Jeremy, from three signals:
+
+1. `needs:jeremy` label on any issue or PR — the explicit flag agents apply when
+   an item needs his decision (replaces the old hand-maintained homepage ToDo list).
+2. `status:ready-review` label — lifecycle review gate.
+3. Any open non-draft PR — nothing merges without his approval.
+
+## Publishing a diary entry
+
+Diary entries are AI-written summaries of the public work, published on days
+with public activity. To publish one, an agent only needs to:
+
+1. Add `daily/YYYY-MM-DD.md` with front matter `layout: default` and
+   `title: YYYY-MM-DD`.
+2. Optionally run `python3 scripts/update_metrics.py` to refresh delivery totals.
+3. Commit and push. The diary index, homepage link, and dashboard pick the entry
+   up automatically — no other file needs editing.
 
 ## Requirement lifecycle
 
@@ -40,100 +92,28 @@ Stages and skills:
 | Design | [`requirement-design`](.github/skills/requirement-design/SKILL.md) | Design signed off before decomposition |
 | Tasks | [`requirement-tasks`](.github/skills/requirement-tasks/SKILL.md) | Repo-scoped sub-issues, linked via gsm.agent's `sub-issue-linking` |
 | Development | gsm.agent [`tdd`](https://github.com/Gilead-BioStats/gsm.agent/blob/main/skills/tdd/SKILL.md) | One `/tdd` run per sub-issue; PRs carry evidence; no merges without Jeremy |
-| Review / done | — | `status:ready-review` → close; rollup via the roadmap workflow |
+| Review / done | — | `status:ready-review` → close; rollup via the hub-data workflow |
 
-Differences from gsm.roadmap, kept deliberately lean for a solo project: no quarterly milestones or planning ceremony; lifecycle stage is tracked with the existing `status:*` labels; the `Sub-issues` body section is retained (gsm.roadmap removed its equivalent) because `scripts/generate-roadmap.mjs` counts tasks from body URLs; no scheduled requirement-status rollup — the roadmap workflow covers it.
+Differences from gsm.roadmap, kept deliberately lean for a solo project: no quarterly milestones or planning ceremony; lifecycle stage is tracked with the existing `status:*` labels; the `Sub-issues` body section is retained (gsm.roadmap removed its equivalent) because `scripts/generate-hub-data.mjs` counts tasks from body URLs; no scheduled requirement-status rollup — the hub-data workflow covers it.
 
-## Hub sync gate
+## Artifacts
 
-The Hub sync gate is a lightweight validation check for public project-tracking hygiene before PM/Development cycles rely on Hub state. It is implemented in `scripts/check_hub_sync.py` and runs in GitHub Actions via `.github/workflows/hub-sync-gate.yml`.
+Modeled on gsm.roadmap's artifact framework; indexed at
+[/artifacts/](https://obot-claw.github.io/artifacts/):
 
-What it checks:
+- `requirements/design/{issue}_design.html` — self-contained HTML design doc per
+  Requirement (see `requirements/design/README.md` for format rules).
+- `requirements/dataspec/{issue}_dataspec.md` — data specification per
+  Requirement, when needed.
+- `reports/` — AI-generated long-form reports. New reports are self-contained
+  HTML pages with Jekyll front matter (`layout: default`, `title:`); they
+  auto-list on the Artifacts page.
 
-- `index.md` exists and links to the Agent Overview page.
-- `agents.md` exists.
-- `roadmap.md` exists and the homepage visibly references the roadmap.
-- The homepage `🙋 ToDo` section uses linked `obot-claw` repositories and linked issue/PR numbers.
-- Each Hub-visible Human ToDo includes an explicit `@jwildfire` instruction.
-- Optional: if `HUMAN_TODO_PATH` is set, the helper warns about private/local ToDo lines that are not in linked repo/issue format.
+## Legacy (obot era)
 
-Run locally:
-
-```bash
-python3 scripts/check_hub_sync.py --root .
-python3 scripts/check_hub_sync.py --root . --format json
-```
-
-The check is intentionally narrow. It is not a scheduler or portfolio audit engine; it is a guardrail that catches obvious public Hub drift before agent work cycles treat the Hub as reliable context.
-
-## Portfolio audit helper
-
-The portfolio audit helper is a read-only PM aid for checking GitHub and Hub state before a Development cycle starts. It is implemented in `scripts/portfolio_audit.py` and validates GitHub Issue Type metadata, requirement/task parent references, PR linkage, Hub sync findings, and optional dirty local worktree risk. Project and Requirement templates use GitHub Issue Types instead of legacy `type:*` labels; task templates use the standard Task issue type.
-
-Run locally:
-
-```bash
-python3 scripts/portfolio_audit.py --root . --format markdown
-python3 scripts/portfolio_audit.py --root . --format json
-```
-
-Optional dirty worktree scan:
-
-```bash
-python3 scripts/portfolio_audit.py --root . --worktree-root /Users/obot/.openclaw/workspace/projects
-```
-
-The helper is read-only. It reports PM-fix-now, Development-handoff, and risk classifications; it does not mutate GitHub issues, PRs, or local repos.
-
-## Supervised Codex cycle runner
-
-The supervised Codex cycle runner is the P009 execution-layer scaffold. It records a single PM, Development, or Testing worker run as `triggered`, `started`, `completed`, or `failed`, writes heartbeat timestamps while the worker is alive, and stores a transcript path plus artifact/failure metadata. Run artifacts are local by default under `.codex-runs/` and are gitignored.
-
-Run locally:
-
-```bash
-python3 scripts/run_codex_cycle.py self-test
-python3 scripts/run_codex_cycle.py failure-test
-python3 scripts/run_codex_cycle.py status
-```
-
-Dry-run a supervised worker command:
-
-```bash
-python3 scripts/run_codex_cycle.py run \
-  --role PM \
-  --issue obot-claw/obot-claw.github.io#38 \
-  --repo obot-claw/obot-claw.github.io \
-  --write-scope none \
-  --timeout 60 \
-  --heartbeat-interval 5 \
-  --artifact dry-run:local \
-  --recovery "record failure and alert main obot" \
-  --command python3 -c "print('dry run artifact')"
-```
-
-When `--command` is omitted the runner defaults to `codex exec`, so future P009 work can wire in a real prompt template without changing the run-record schema.
-
-Watchdog check mode detects records that were triggered but never started, or started records whose heartbeat/deadline is stale. Use `--mark-failed` when the check is allowed to update local run records:
-
-```bash
-python3 scripts/run_codex_cycle.py check --mark-failed
-python3 scripts/run_codex_cycle.py check --id dry-run-id --mark-failed --json
-```
-
-When a failure is marked, the runner writes `state=failed`, `failure_reason`, and a concise `alert` string suitable for Telegram status handling.
-
-Dashboard proposal: see `docs/runner-status-dashboard.md` for the public/private runner status dashboard design and scrubbed export requirements.
-
-Security notes:
-
-- Local run records and transcripts may contain private prompts, command output, filesystem paths, or accidental secrets.
-- Never commit `.codex-runs/` or copied transcript content without reviewing it for public-safety first.
-- Telegram/OpenClaw integrations should expose allowlisted runner actions only. Use `scripts/p009_runner_action.py` for Telegram/OpenClaw-facing calls; it supports `self-test`, `status`, `check`, and `check-mark-failed` and never forwards arbitrary chat text into `--command`.
-- Do not forward arbitrary chat text into `--command`; real PM/Development commands should come from controlled local templates or explicit operator-reviewed commands.
-
-P009 acceptance-cycle notes:
-
-- #38 proves the runner can record a successful supervised worker run.
-- #39 proves the watchdog can mark triggered-but-not-started and stale-heartbeat runs failed without repeat alerts.
-- #40 should link the PM audit run record, the Development PR, and the post-artifact Telegram summary before treating the runner as a reliable PM to Development baseline.
+The P001–P009 project catalog, agent operating contracts, and autonomy
+framework were retired in July 2026 when development moved to interactive
+Claude Code sessions ([Chapter 10](https://obot-claw.github.io/reports/autonomous-agent-framework/chapter-10-claude-code-migration/)).
+Their pages carry archive banners; the P007–P009 helper scripts (hub sync gate,
+portfolio audit, work-session supervision, Codex runner) live unmaintained in
+`scripts/archive/`.

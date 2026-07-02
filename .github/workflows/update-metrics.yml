@@ -1,0 +1,49 @@
+name: Update metrics
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 7 * * *'   # daily, 03:45 ET
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-metrics-main
+  cancel-in-progress: true
+
+jobs:
+  update-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Commit refreshed metrics
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "obot-claw[bot]"
+          git config user.email "obot-claw[bot]@users.noreply.github.com"
+
+          python3 scripts/update_metrics.py
+
+          if git diff --quiet -- _data/metrics.json && [ -z "$(git status --porcelain _data/metrics.json)" ]; then
+            echo "No metrics changes."
+            exit 0
+          fi
+
+          git add _data/metrics.json
+          git commit -m "Update dashboard metrics"
+
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "Push failed; rebasing before retry $attempt."
+            git fetch origin main
+            git rebase origin/main
+          done
+          echo "Failed to push after retries." >&2
+          exit 1
