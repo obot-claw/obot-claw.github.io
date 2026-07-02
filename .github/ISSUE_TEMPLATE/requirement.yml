@@ -1,46 +1,90 @@
 name: Requirement
-description: High-level requirement with linked implementation tasks
+description: High-level requirement following the gsm.roadmap lifecycle, implemented via cross-repo sub-issues.
 type: Requirement
 title: "Requirement: "
-labels: ["status:planned"]
-assignees:
-  - obot-claw
+labels: ["type:requirement", "status:planned"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a Requirement issue (see the [Requirement lifecycle](../../README.md#requirement-lifecycle)).
+        Business Requirement and Overview are required at creation; Data Requirement and Design are
+        populated as the requirement moves through the lifecycle. Implementation work is tracked as
+        cross-repo **sub-issues**, mirrored in the Sub-issues section for the roadmap rollup.
+
   - type: input
     id: project
     attributes:
       label: Project
-      description: Project label, e.g. P004 or P007. Also apply the matching project:P### label and milestone.
-      placeholder: P007
+      description: Project code, e.g. P004 or P005. Also apply the matching project:P### label.
+      placeholder: P004
     validations:
       required: true
+
+  - type: textarea
+    id: business_requirement
+    attributes:
+      label: Business Requirement
+      description: "What need does this address? Who benefits, and what does success look like?"
+      placeholder: |
+        State the user-facing or operational need in plain language.
+        Avoid technical detail — capture the *why*, not the *how*.
+    validations:
+      required: true
+
   - type: textarea
     id: overview
     attributes:
       label: Overview
-      description: High-level overview of the work being done.
+      description: "Short technical summary + impact. Must be populated when the issue is created."
+      placeholder: |
+        Briefly describe the proposed approach and which repos / users it
+        affects. Detailed design lives in the Design section, populated
+        later in the lifecycle.
     validations:
       required: true
+
+  - type: textarea
+    id: data_requirement
+    attributes:
+      label: Data Requirement
+      description: |
+        What source data must exist for this requirement to be feasible?
+        Can be left blank at creation; populate before Design when data
+        availability is at issue.
+      placeholder: |
+        **Required domains / tables:**
+
+        **Required columns:**
+
+        **Data source / example data:**
+
+        **Availability status:** Confirmed / Unconfirmed / TBD
+
   - type: textarea
     id: design
     attributes:
       label: Design
-      description: Design constraints, tradeoffs, and ownership boundaries.
-    validations:
-      required: true
+      description: |
+        High-level technical components and affected repos. Can be left blank
+        at creation. Must be populated before sub-issues are filed. For complex
+        requirements, add a document under `requirements/design/{issue_number}_design.md`
+        and link it here.
+      placeholder: |
+        **Summary:**
+
+        **Affected repos:**
+
+        **Design artifacts:** requirements/design/{issue_number}_design.md
+
   - type: textarea
-    id: implementation_plan
+    id: sub_issues
     attributes:
-      label: Implementation plan
-      description: Link task sub-issues here. Tasks should have assignees, a parent requirement, a milestone, and linked PRs once code exists.
-      value: |
-        - [ ] https://github.com/obot-claw/<repo>/issues/<number>
-    validations:
-      required: true
-  - type: textarea
-    id: acceptance
-    attributes:
-      label: Acceptance criteria
-      description: What must be true before this Requirement can close.
-    validations:
-      required: true
+      label: Sub-issues
+      description: |
+        One line per implementation sub-issue (URL), maintained by the
+        requirement-tasks skill after sub-issues are filed and linked.
+        Canonical tracking is the GitHub sub-issue relationship; this list
+        feeds the generated roadmap rollup.
+      placeholder: |
+        - https://github.com/obot-claw/<repo>/issues/<number>
