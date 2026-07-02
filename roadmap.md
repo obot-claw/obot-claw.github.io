@@ -23,10 +23,11 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P004
 
 - Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/16 — P004 SafetyGraphics renderer modernization (in-progress)
-- Requirements: 1/1 complete
-- Linked tasks/evidence: 3/6 complete
+- Requirements: 1/2 complete
+- Linked tasks/evidence: 3/7 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (closed; tasks/evidence 3/6 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/57 — safety.viz — consolidated safety-chart JavaScript library (planned; tasks/evidence 0/1 complete)
 
 ### P007
 
@@ -57,10 +58,17 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ## Active requirements
 
-No open Requirement issues found.
+### P004 — safety.viz — consolidated safety-chart JavaScript library
+
+- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/57
+- Status: planned
+- Labels: type:requirement, project:P004, status:planned
+- Tasks / evidence:
+  - https://github.com/obot-claw/safety-histogram/pull/1 — PR: Refactor Safety Histogram with Chart.js (open; assignee: @obot-claw; milestone: P004)
 
 ## Metadata checks
 
+- https://github.com/obot-claw/obot-claw.github.io/issues/57 is missing a milestone.
 - https://github.com/obot-claw/obot-claw.github.io/issues/31 is missing a milestone.
 - https://github.com/obot-claw/obot-claw.github.io/issues/31 does not link back to parent project https://github.com/obot-claw/obot-claw.github.io/issues/30.
 - https://github.com/obot-claw/obot-claw.github.io/issues/32 is missing a milestone.
