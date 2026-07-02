@@ -12,7 +12,7 @@ Adapted from [gsm.roadmap's requirement-design skill](https://github.com/Gilead-
 
 - A Requirement issue has Business Requirement and Overview populated and is ready for design
 - Drafting or revising the **Design** section of a Requirement issue
-- Creating a long-form design artifact at `requirements/design/{issue_number}_design.md`
+- Creating a long-form design artifact at `requirements/design/{issue_number}_design.html`
 
 ## Procedure
 
@@ -25,7 +25,7 @@ Adapted from [gsm.roadmap's requirement-design skill](https://github.com/Gilead-
 
 3. **Decide where the design lives:**
    - **Simple requirement** → fill the Design section directly in the issue body (`Summary`, `Affected repos`, `Design artifacts`).
-   - **Complex requirement** → create `requirements/design/{issue_number}_design.md` in this repo, add the long-form design there, and reference it from the issue's Design section.
+   - **Complex requirement** → create `requirements/design/{issue_number}_design.html` in this repo, add the long-form design there, and reference it from the issue's Design section.
 
 4. **Draft the design** covering:
    - Summary of the approach
@@ -33,6 +33,13 @@ Adapted from [gsm.roadmap's requirement-design skill](https://github.com/Gilead-
    - Key technical components or changes
    - Dependencies on other requirements, data sources, or upstream repos
    - Open questions
+
+   **Format:** design documents are self-contained HTML pages (decided 2026-07-02;
+   see `requirements/design/README.md`) so they render directly on the hub site at
+   `https://obot-claw.github.io/requirements/design/{issue_number}_design.html`.
+   Use the site palette, include a status line (`Draft` / `Signed off`) and an
+   attribution line, and keep everything in the one file — no external CSS/JS
+   beyond web fonts.
 
 5. **Present the draft for review** and iterate. Design changes to the issue body go through `gh issue edit --body-file` (draft-sync convention). Verify Design is signed off before decomposing the work — then hand off to [`requirement-tasks`](../requirement-tasks/SKILL.md).
 
