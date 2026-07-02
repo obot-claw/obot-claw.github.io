@@ -22,13 +22,13 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ### P004
 
-- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/16 — P004 SafetyGraphics renderer modernization (in-progress)
-- Requirements: 1/3 complete
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/16 — P004 SafetyGraphics renderer modernization (closed)
+- Requirements: 3/3 complete
 - Linked tasks/evidence: 9/9 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (closed; tasks/evidence 6/6 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/57 — safety.viz — consolidated safety-chart JavaScript library (planned; tasks/evidence 1/1 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/58 — Safety Histogram migration (pilot) (planned; tasks/evidence 2/2 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/57 — safety.viz — consolidated safety-chart JavaScript library (closed; tasks/evidence 1/1 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/58 — Safety Histogram migration (pilot) (closed; tasks/evidence 2/2 complete)
 
 ### P007
 
@@ -59,22 +59,7 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 
 ## Active requirements
 
-### P004 — safety.viz — consolidated safety-chart JavaScript library
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/57
-- Status: planned
-- Labels: type:requirement, project:P004, status:planned
-- Tasks / evidence:
-  - https://github.com/obot-claw/safety-histogram/pull/1 — PR: Refactor Safety Histogram with Chart.js (merged; assignee: @obot-claw; milestone: P004)
-
-### P004 — Safety Histogram migration (pilot)
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/58
-- Status: planned
-- Labels: type:requirement, project:P004, status:planned
-- Tasks / evidence:
-  - https://github.com/obot-claw/safety-histogram/pull/1 — PR: Refactor Safety Histogram with Chart.js (merged; assignee: @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-agent/issues/6 — reconcile Safety Histogram implementation and evidence PRs (closed; assignee: @obot-claw; milestone: P004)
+No open Requirement issues found.
 
 ## Metadata checks
 
