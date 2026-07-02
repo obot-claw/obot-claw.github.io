@@ -29,7 +29,7 @@ A Requirement issue body has five sections, populated incrementally:
 | **Business Requirement** | Backlog | ✓ |
 | **Overview** | Backlog | ✓ |
 | **Data Requirement** | Requirement Gathering | — |
-| **Design** | Design (inline, or `requirements/design/{issue_number}_design.md`) | — |
+| **Design** | Design (inline, or `requirements/design/{issue_number}_design.html`) | — |
 | **Sub-issues** | After Design — mirrors the linked sub-issue URLs for the roadmap rollup | — |
 
 Stages and skills:
