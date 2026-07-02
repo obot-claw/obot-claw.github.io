@@ -7,6 +7,8 @@ title: Home
 
 Public daily diary and project reporting for Open Source OrangeBot work.
 
+> **Workflow update (July 2026):** this portfolio is now developed in interactive Claude Code sessions using the [gsm.agent](https://github.com/Gilead-BioStats/gsm.agent) conventions and the requirement lifecycle adopted in [#51](https://github.com/obot-claw/obot-claw.github.io/issues/51). Nightly briefings stopped June 12; the diary continues through Requirement issues, PR evidence, and [Chapter 10 of the framework report](/reports/autonomous-agent-framework/chapter-10-claude-code-migration/).
+
 
 <!-- metrics:start -->
 ## Metrics
@@ -29,13 +31,9 @@ Updated with each daily briefing, published on days with public work. Scope: pub
 Public items needing Jeremy input. Each item links to the GitHub artifact where the explicit @jwildfire question/instruction belongs.
 
 <ul class="todo-list">
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/pull/4">#4</a> - @jwildfire: please answer only the human decision: what should become the P004 requirements/testing standard? Development Bot should handle any fixable requested changes.</li>
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/pull/4">#4</a> - @jwildfire: please confirm the proper study repo or closeout path for P004 docs/requirements; otherwise delegate implementation cleanup to Development Bot.</li>
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/issues/7">#7</a> - @jwildfire: please approve or reject the P004 testing-agent GitHub App implementation path and install-scope decisions.</li>
-  <li><a href="https://github.com/obot-claw/safety-agent">safety-agent</a> <a href="https://github.com/obot-claw/safety-agent/issues/6">#6</a> - @jwildfire: no action until Development posts final merge-readiness evidence; then approve/decline PR #1 implementation merge path before PR #2 testing-framework follow-up.</li>
-  <li><a href="https://github.com/obot-claw/obot-claw.github.io">obot-claw.github.io</a> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/18">#18</a> - @jwildfire: please decide whether the GitHub-native memory requirement is accepted/closed or needs one more agent task.</li>
-  <li><a href="https://github.com/obot-claw/gsm.safety">gsm.safety</a> <a href="https://github.com/obot-claw/gsm.safety/pull/29">#29</a> - @jwildfire: please confirm whether this non-roadmap PR should be prioritized now; otherwise leave for agent follow-up after P004/P007.</li>
-  <li><a href="https://github.com/obot-claw/obot-claw.github.io">obot-claw.github.io</a> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/36">#36</a> - @jwildfire: please decide whether P009 execution-first runner work is accepted/closed, or whether agents should start another P009 follow-up before returning to P008/Paperclip.</li>
+  <li><a href="https://github.com/obot-claw/obot-claw.github.io">obot-claw.github.io</a> <a href="https://github.com/obot-claw/obot-claw.github.io/issues/51">#51</a> - @jwildfire: please create the <code>obot-claw/safety.viz</code> repository via the obot-claw account (public, add jwildfire as admin) so the consolidated renderer library can be pushed.</li>
+  <li><a href="https://github.com/obot-claw/safety-histogram">safety-histogram</a> <a href="https://github.com/obot-claw/safety-histogram/pull/1">#1</a> - @jwildfire: review and approve the Chart.js implementation merge to <code>dev</code> once local browser evidence is posted, per the decisions on <a href="https://github.com/obot-claw/safety-agent/issues/6">safety-agent #6</a>.</li>
+  <li><a href="https://github.com/obot-claw/gsm.safety">gsm.safety</a> <a href="https://github.com/obot-claw/gsm.safety/pull/29">#29</a> - @jwildfire: re-review the widget thumbnail gallery once real Playwright-captured thumbnails replace the placeholders.</li>
 </ul>
 
 ## Agents

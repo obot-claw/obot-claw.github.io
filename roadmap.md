@@ -23,96 +23,41 @@ Generated from GitHub Issues. Counts update when the roadmap workflow runs.
 ### P004
 
 - Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/16 — P004 SafetyGraphics renderer modernization (in-progress)
-- Requirements: 0/1 complete
-- Linked tasks/evidence: 0/6 complete
+- Requirements: 1/1 complete
+- Linked tasks/evidence: 3/6 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (in-progress; tasks/evidence 0/6 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/4 — P004 autonomous SafetyGraphics renderer modernization standard (closed; tasks/evidence 3/6 complete)
 
 ### P007
 
-- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/17 — P007 Refactor development framework for increased autonomy (in-progress)
-- Requirements: 1/3 complete
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/17 — P007 Refactor development framework for increased autonomy (closed)
+- Requirements: 3/3 complete
 - Linked tasks/evidence: 10/10 complete
 - Requirement drilldown:
   - https://github.com/obot-claw/obot-claw.github.io/issues/3 — P007 refactor development framework for increased autonomy (closed; tasks/evidence 4/4 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (in-progress; tasks/evidence 4/4 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/18 — P007 GitHub-native memory and work artifacts (ready-review; tasks/evidence 2/2 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/14 — P007 PM visibility and human ToDo tracking (closed; tasks/evidence 4/4 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/18 — P007 GitHub-native memory and work artifacts (closed; tasks/evidence 2/2 complete)
 
 ### P008
 
-- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/30 — P008 Paperclip autonomous agent orchestration pilot (in-progress)
-- Requirements: 0/2 complete
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/30 — P008 Paperclip autonomous agent orchestration pilot (closed)
+- Requirements: 2/2 complete
 - Linked tasks/evidence: 0/0 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/31 — P008 Paperclip local security review (ready-review; tasks/evidence 0/0 complete)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/32 — P008 Paperclip PM and Dev pilot (ready-review; tasks/evidence 0/0 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/31 — P008 Paperclip local security review (closed; tasks/evidence 0/0 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/32 — P008 Paperclip PM and Dev pilot (closed; tasks/evidence 0/0 complete)
 
 ### P009
 
-- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/36 — P009 execution-first reliable autonomous cycle (ready-review)
-- Requirements: 0/1 complete
+- Project issue: https://github.com/obot-claw/obot-claw.github.io/issues/36 — P009 execution-first reliable autonomous cycle (closed)
+- Requirements: 1/1 complete
 - Linked tasks/evidence: 0/0 complete
 - Requirement drilldown:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/37 — P009 supervised Codex runner and watchdog (ready-review; tasks/evidence 0/0 complete)
+  - https://github.com/obot-claw/obot-claw.github.io/issues/37 — P009 supervised Codex runner and watchdog (closed; tasks/evidence 0/0 complete)
 
 ## Active requirements
 
-### P004 — autonomous SafetyGraphics renderer modernization standard
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/4
-- Status: in-progress
-- Labels: type:requirement, project:P004, status:in-progress
-- Tasks / evidence:
-  - https://github.com/obot-claw/safety-agent/issues/5 — promote P004 renderer migration standard (planned; assignee: @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-agent/issues/6 — reconcile Safety Histogram implementation and evidence PRs (in-progress; assignee: @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-agent/issues/7 — define P004 testing agent GitHub App implementation path (planned; assignee: @jwildfire, @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-agent/pull/4 — PR: Document P004 renderer requirements and testing framework (open; assignee: @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-histogram/pull/1 — PR: Refactor Safety Histogram with Chart.js (open; assignee: @obot-claw; milestone: P004)
-  - https://github.com/obot-claw/safety-histogram/pull/2 — PR: test-driver: trial safety histogram requirements (open; assignee: @obot-claw; milestone: P004)
-
-### P007 — PM visibility and human ToDo tracking
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/14
-- Status: in-progress
-- Labels: type:requirement, project:P007, status:in-progress
-- Tasks / evidence:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/12 — Merge roadmap visibility into homepage projects (closed; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/13 — Track Jeremy human ToDo queue in PM workflow (closed; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/15 — Add Project issue type for requirement parents (closed; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/21 — create Agent Overview page for current autonomous agents (closed; assignee: @obot-claw; milestone: P007)
-
-### P007 — GitHub-native memory and work artifacts
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/18
-- Status: ready-review
-- Labels: type:requirement, project:P007, status:ready-review
-- Tasks / evidence:
-  - https://github.com/obot-claw/obot-claw.github.io/issues/19 — Codify PM issue memory and development PR workflow (closed; assignee: @obot-claw; milestone: P007)
-  - https://github.com/obot-claw/obot-claw.github.io/issues/20 — Create Telegram formatting skill for clean status posts (closed; assignee: @obot-claw; milestone: P007)
-
-### P008 — Paperclip local security review
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/31
-- Status: ready-review
-- Labels: type:requirement, status:ready-review, project:P008
-- Tasks / evidence:
-  - No linked sub-issues found in the Requirement body.
-
-### P008 — Paperclip PM and Dev pilot
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/32
-- Status: ready-review
-- Labels: type:requirement, status:ready-review, project:P008
-- Tasks / evidence:
-  - No linked sub-issues found in the Requirement body.
-
-### P009 — supervised Codex runner and watchdog
-
-- Requirement: https://github.com/obot-claw/obot-claw.github.io/issues/37
-- Status: ready-review
-- Labels: type:requirement, status:ready-review, project:P009
-- Tasks / evidence:
-  - No linked sub-issues found in the Requirement body.
+No open Requirement issues found.
 
 ## Metadata checks
 
