@@ -13,16 +13,16 @@ Public daily diary and project reporting for Open Source OrangeBot work.
 <!-- metrics:start -->
 ## Metrics
 
-Frozen at the last nightly briefing (June 11, 2026). Scope: public `obot-claw` repositories.
+Updated with each daily briefing, published on days with public work. Scope: public `obot-claw` repositories.
 
 <ul class="metric-list">
-  <li><strong>267</strong><span>commits made</span></li>
-  <li><strong>18</strong><span>PRs merged</span></li>
-  <li><strong>11,855</strong><span>tracked text lines</span></li>
+  <li><strong>285</strong><span>commits made</span></li>
+  <li><strong>23</strong><span>PRs merged</span></li>
+  <li><strong>12,131</strong><span>tracked text lines</span></li>
   <li><strong>2</strong><span>releases</span></li>
 </ul>
 
-<small>Last updated: 2026-06-11 23:32 EDT</small>
+<small>Last updated: 2026-07-01 23:54 EDT</small>
 <!-- metrics:end -->
 
 

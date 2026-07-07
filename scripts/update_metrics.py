@@ -18,7 +18,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 OWNER = "obot-claw"
-AUTHOR = "obot-claw"
+# obot era commits/PRs are authored by obot-claw; Claude era work is authored by jwildfire
+AUTHORS = ["obot-claw", "jwildfire"]
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "index.md"
 START = "<!-- metrics:start -->"
@@ -50,15 +51,18 @@ def get_repos() -> list[str]:
 
 
 def count_merged_prs() -> int:
-    out = run([
-        "gh", "search", "prs",
-        "--owner", OWNER,
-        "--author", AUTHOR,
-        "--merged",
-        "--json", "url",
-        "--limit", "1000",
-    ])
-    return len(json.loads(out))
+    total = 0
+    for author in AUTHORS:
+        out = run([
+            "gh", "search", "prs",
+            "--owner", OWNER,
+            "--author", author,
+            "--merged",
+            "--json", "url",
+            "--limit", "1000",
+        ])
+        total += len(json.loads(out))
+    return total
 
 
 def is_text_countable(path: Path) -> bool:
@@ -72,7 +76,9 @@ def repo_metrics(repo: str, base: Path) -> tuple[int, int, int]:
     dest = base / name
     run(["git", "clone", "--quiet", f"https://github.com/{repo}.git", str(dest)])
 
-    commits = set(run(["git", "log", "--all", f"--author={AUTHOR}", "--format=%H"], cwd=dest).splitlines())
+    commits = set()
+    for author in AUTHORS:
+        commits.update(run(["git", "log", "--all", f"--author={author}", "--format=%H"], cwd=dest).splitlines())
 
     files = run(["git", "ls-files"], cwd=dest).splitlines()
     loc = 0
@@ -113,7 +119,7 @@ def render(metrics: dict[str, int | str]) -> str:
     return f"""{START}
 ## Metrics
 
-Updated nightly with the daily briefing. Scope: public `obot-claw` repositories.
+Updated with each daily briefing, published on days with public work. Scope: public `obot-claw` repositories.
 
 <ul class="metric-list">
   <li><strong>{metrics['commits']:,}</strong><span>commits made</span></li>
